@@ -201,7 +201,7 @@ Due Today
 ^^^^^^^^^
 
 * Please do (and turn in) `this exercise from chapter 10 </Lists/Exercises#graded-lesson-assignment>`_.
-* Read through the `Crypto assignment </ProblemSets/Crypto>`_ (due Thurs May 3).
+* Read through the `Crypto assignment </ProblemSets/Crypto>`_ (due on class 1.15:).
 
 In Class
 ^^^^^^^^
