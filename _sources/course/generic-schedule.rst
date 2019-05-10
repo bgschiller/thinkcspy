@@ -243,7 +243,7 @@ Class 1.13:
 Due Today
 ^^^^^^^^^
 
-* No homework due today!
+* Complete guess_word on your own
 * Please read `Chapter 12: Classes and Objects Basics </#classes-and-objects-basics>`_.
 * Keep working on `Crypto </ProblemSets/Crypto>`_.
 
