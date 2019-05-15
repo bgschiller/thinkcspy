@@ -257,8 +257,8 @@ Class 1.14:
 
 Due Today
 ^^^^^^^^^
-
 * Please read `Chapter 13: Classes and Objects - Digging Deeper </#classes-and-objects-digging-deeper>`_ (the last chapter!)
+* Please do (and turn in) `this exercise from chapter 12 </ClassesBasics/Exercises#graded-lesson-assignment>`_.
 * Keep working on `Crypto </ProblemSets/Crypto>`_ (due next class)
 
 In Class
