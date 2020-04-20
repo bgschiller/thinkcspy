@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>5. Randomly Walking Turtles — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/MoreAboutIteration/ChoosingWhichLoopToUse" rel="next" title="6. Choosing Which Loop to Use"/>
+<link href="/MoreAboutIteration/breakandcontinueStatements" rel="prev" title="4. break and continue Statements"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="randomly-walking-turtles">
+<span id="index-0"></span><h1>5. Randomly Walking Turtles<a class="headerlink" href="#randomly-walking-turtles" title="Permalink to this headline">¶</a></h1>
+<p>Suppose we want to entertain ourselves by watching a turtle wander around randomly inside the screen. When we run the program we want it to behave in the following way:</p>
+<ol class="arabic simple">
+<li>The turtle begins in the center of the screen.</li>
+<li>Flip a coin. If it’s heads then the turtle turns left 90 degrees. If it’s tails then the turtle turns right 90 degrees.</li>
+<li>The turtle takes 50 steps forward.</li>
+<li>If the turtle has moved outside the screen then stop, otherwise go back to step 2 and repeat.</li>
+</ol>
+<p>Notice that we cannot predict how many times the turtle will need to flip the coin before it wanders out of the screen, so we can’t use a <code class="docutils literal"><span class="pre">for</span></code> loop in this case. In fact, although very unlikely, this program might never end, that is why we call this type of iteration <em>indefinite</em>.</p>
+<p>Based on the problem description above, we can outline a program as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">create</span> <span class="n">a</span> <span class="n">window</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">turtle</span>
+
+<span class="k">while</span> <span class="n">the</span> <span class="n">turtle</span> <span class="ow">is</span> <span class="n">still</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">window</span><span class="p">:</span>
+    <span class="n">generate</span> <span class="n">a</span> <span class="n">random</span> <span class="n">number</span> <span class="n">between</span> <span class="mi">0</span> <span class="ow">and</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">the</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">(</span><span class="n">heads</span><span class="p">):</span>
+        <span class="n">turn</span> <span class="n">left</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">turn</span> <span class="n">right</span>
+    <span class="n">move</span> <span class="n">the</span> <span class="n">turtle</span> <span class="n">forward</span> <span class="mi">50</span> <span class="n">steps</span>
+</pre></div>
+</div>
+<p>The only thing that might seem a bit confusing is the part about whether or not the turtle is still in the screen. But this is the nice thing about programming: we can delay the tough stuff and get <em>something</em> in our program working right away.</p>
+<p>The way we are going to do this is to delegate the work of deciding whether the turtle is still in the screen or not to a boolean function. Let’s call this boolean function <code class="docutils literal"><span class="pre">is_in_screen</span></code> We can write a very simple version of this boolean function by having it always return <code class="docutils literal"><span class="pre">True</span></code>, or by having it decide randomly, the point is to have it do something simple so that we can focus on the parts we already know how to do well and get them working. Since having it always return <code class="docutils literal"><span class="pre">True</span></code> would not be a good idea, we will write our version to decide randomly. Let’s say that there is a 90% chance the turtle is still in the window and a 10% chance that the turtle has escaped.</p>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="iter_randwalk1">
+import random
+import turtle
+
+
+def is_in_screen(w, t):
+    if random.random() &gt; 0.1:
+        return True
+    else:
+        return False
+
+
+def main():
+    julia = turtle.Turtle()
+    screen = turtle.Screen()
+
+    julia.shape('turtle')
+    while is_in_screen(screen, julia):
+
+        # simulates a coin flip (0 is heads, 1 is tails)
+        coin = random.randrange(0, 2)
+
+        if coin == 0:
+            julia.left(90)
+        else:
+            julia.right(90)
+
+        julia.forward(50)
+
+    screen.exitonclick()
+
+if __name__ == "__main__":
+    main()
+</textarea>
+<p>Now we have a working program that draws a random walk of our turtle that has a 90% chance of staying on the screen. We are in a good position because a large part of our program is working and we can focus on the next bit of work: deciding whether the turtle is inside the screen boundaries or not.</p>
+<p>We can find out the width and the height of the screen using the <code class="docutils literal"><span class="pre">window_width</span></code> and <code class="docutils literal"><span class="pre">window_height</span></code> methods of the screen object. However, remember that the turtle starts at position (0,0) in the middle of the screen. So we never want the turtle to go farther right than width/2 or farther left than negative width/2. We also never want the turtle to go further up than height/2 or further down than negative height/2. Once we know what the boundaries are we can use some conditionals to check the turtle position against the boundaries and return <code class="docutils literal"><span class="pre">False</span></code> if the turtle is outside or <code class="docutils literal"><span class="pre">True</span></code> if the turtle is inside.</p>
+<p>Once we have computed our boundaries we can get the current position of the turtle and then use conditionals to decide if it is still in the window. Here is one implementation:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_in_screen</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="n">left_bound</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">screen</span><span class="o">.</span><span class="n">window_width</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">right_bound</span> <span class="o">=</span> <span class="n">screen</span><span class="o">.</span><span class="n">window_width</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">top_bound</span> <span class="o">=</span> <span class="n">screen</span><span class="o">.</span><span class="n">window_height</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">bottom_bound</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">screen</span><span class="o">.</span><span class="n">window_height</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">turtle_x</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">xcor</span><span class="p">()</span>
+    <span class="n">turtle_y</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ycor</span><span class="p">()</span>
+
+    <span class="n">still_in</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">if</span> <span class="n">turtle_x</span> <span class="o">&gt;</span> <span class="n">right_bound</span> <span class="ow">or</span> <span class="n">turtle_x</span> <span class="o">&lt;</span> <span class="n">left_bound</span><span class="p">:</span>
+        <span class="n">still_in</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">if</span> <span class="n">turtle_y</span> <span class="o">&gt;</span> <span class="n">top_bound</span> <span class="ow">or</span> <span class="n">turtle_y</span> <span class="o">&lt;</span> <span class="n">bottom_bound</span><span class="p">:</span>
+        <span class="n">still_in</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="k">return</span> <span class="n">still_in</span>
+</pre></div>
+</div>
+<p>There are lots of ways that the conditional could be written. In this case, we have given <code class="docutils literal"><span class="pre">still_in</span></code> the default value of <code class="docutils literal"><span class="pre">True</span></code> and we use two <code class="docutils literal"><span class="pre">if</span></code> statements to set the value to <code class="docutils literal"><span class="pre">False</span></code> if the conditions determine the turtle has left the screen.  Another way you could write this is to use nested conditionals or <code class="docutils literal"><span class="pre">elif</span></code> statements and set <code class="docutils literal"><span class="pre">still_in</span></code> to <code class="docutils literal"><span class="pre">True</span></code> in an <code class="docutils literal"><span class="pre">else</span></code> clause.</p>
+<p>Here is the full version of our random walk program.</p>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="iter_randwalk2">
+import random
+import turtle
+
+def is_in_screen(screen, t):
+    left_bound = - screen.window_width() / 2
+    right_bound = screen.window_width() / 2
+    top_bound = screen.window_height() / 2
+    bottom_bound = -screen.window_height() / 2
+
+    turtle_x = t.xcor()
+    turtle_y = t.ycor()
+
+    still_in = True
+    if turtle_x &gt; right_bound or turtle_x &lt; left_bound:
+        still_in = False
+    if turtle_y &gt; top_bound or turtle_y &lt; bottom_bound:
+        still_in = False
+
+    return still_in
+
+def main():
+    julia = turtle.Turtle()
+    screen = turtle.Screen()
+
+    julia.shape('turtle')
+    while is_in_screen(screen, julia):
+        coin = random.randrange(0, 2)
+        if coin == 0:
+            julia.left(90)
+        else:
+            julia.right(90)
+
+        julia.forward(50)
+
+    screen.exitonclick()
+
+if __name__ == "__main__":
+    main()
+</textarea>
+<p>We could have written this program without using a boolean function. As an exercise, you could to try to rewrite it using a complex condition in the <code class="docutils literal"><span class="pre">while</span></code> statement. However, using a boolean function makes the program much more readable and easier to understand. It also gives us a reusable function for use if this program were larger and we needed to have a check  in another part of the program for whether the turtle was still in the screen. Breaking up this program into a couple of parts is another example of functional decomposition.</p>
+<p><strong>Check your understanding</strong></p>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question7_3_1">
+            Which type of loop can be used to perform the following iteration: You choose a positive integer at random and then print the numbers from 1 up to and including the selected integer.
+            <li data-component="answer" data-correct="" id="test_question7_3_1_opt_a">a for loop or a while loop</li><li data-component="feedback" id="test_question7_3_1_opt_a">Although you do not know how many iterations you loop will run before the program starts running, once you have chosen your random integer, Python knows exactly how many iterations the loop will run, so either a for loop or a while loop will work.</li>
+<li data-component="answer" id="test_question7_3_1_opt_b">only a for loop</li><li data-component="feedback" id="test_question7_3_1_opt_b">As you learned earlier, a while loop can always be used for anything a for loop can be used for.</li>
+<li data-component="answer" id="test_question7_3_1_opt_c">only a while loop</li><li data-component="feedback" id="test_question7_3_1_opt_c">Although you do not know how many iterations your loop will run before the program starts running, once you have chosen your random integer, Python knows exactly how many iterations the loop will run, so this is an example of definite iteration, and therefore a while loop is not the only choice.</li>
+</ul>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question7_3_2">
+            In the random walk program in this section, what does the is_in_screen function do?
+            <li data-component="answer" data-correct="" id="test_question7_3_2_opt_a">Returns True if the turtle is still on the screen and False if the turtle is no longer on the screen.</li><li data-component="feedback" id="test_question7_3_2_opt_a">The is_in_screen function computes the boolean test of whether the turtle is still in the window. It makes the condition of the while loop in the main part of the code simpler.</li>
+<li data-component="answer" id="test_question7_3_2_opt_b">Uses a while loop to move the turtle randomly until it goes off the screen.</li><li data-component="feedback" id="test_question7_3_2_opt_b">The is_in_screen function does not contain a while loop. That loop is outside the is_in_screen function.</li>
+<li data-component="answer" id="test_question7_3_2_opt_c">Turns the turtle right or left at random and moves the turtle forward 50.</li><li data-component="feedback" id="test_question7_3_2_opt_c">The is_in_screen function does not move the turtle.</li>
+<li data-component="answer" id="test_question7_3_2_opt_d">Calculates and returns the position of the turtle in the window.</li><li data-component="feedback" id="test_question7_3_2_opt_d">While the is_in_screen function does use the size of the window and position of the turtle, it does not return the turtle position.</li>
+</ul>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 4. break and continue Statements">
+<a href="/MoreAboutIteration/breakandcontinueStatements">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/MoreAboutIteration/breakandcontinueStatements" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 6. Choosing Which Loop to Use">
+<a href="/MoreAboutIteration/ChoosingWhichLoopToUse">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/MoreAboutIteration/ChoosingWhichLoopToUse" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/MoreAboutIteration/RandomlyWalkingTurtles.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

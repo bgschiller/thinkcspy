@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>13. The random module — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/PythonTurtle/Glossary" rel="next" title="14. Glossary"/>
+<link href="/PythonTurtle/Themathmodule" rel="prev" title="12. The math module"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="the-random-module">
+<h1>13. The <cite>random</cite> module<a class="headerlink" href="#the-random-module" title="Permalink to this headline">¶</a></h1>
+<p>We often want to use random numbers in programs. Here are a few typical uses:</p>
+<ul class="simple">
+<li>To play a game of chance where the computer needs to throw some dice, pick a number, or flip a coin</li>
+<li>To shuffle a deck of playing cards randomly</li>
+<li>To randomly allow a new enemy spaceship to appear and shoot at you</li>
+<li>To simulate possible rainfall when we make a computerized model for estimating the environmental impact of building a dam</li>
+<li>To encrypt your banking session on the Internet</li>
+</ul>
+<p>Python provides a module <code class="docutils literal"><span class="pre">random</span></code> that helps with tasks like this. You can take a look at it in <a class="reference external" href="https://docs.python.org/3/library/random.html#module-random">the documentation</a>. Here are the key things we can do with it:</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="chmodule_rand">
+import random
+
+prob = random.random()
+print(prob)
+
+diceThrow = random.randrange(1, 7)       # return an int, one of 1,2,3,4,5,6
+print(diceThrow)
+</textarea>
+<p>Press the run button a number of times. Note that the values change each time. These are random numbers.</p>
+<p>The <code class="docutils literal"><span class="pre">randrange</span></code> function generates an integer between its lower and upper argument, using the same semantics as <code class="docutils literal"><span class="pre">range</span></code> — so the lower bound is included, but the upper bound is excluded. All the values have an equal probability of occurring (i.e. the results are <em>uniformly</em> distributed).</p>
+<p>The <code class="docutils literal"><span class="pre">random()</span></code> function returns a floating point number in the range [0.0, 1.0) — the square bracket means “closed interval on the left” and the round parenthesis means “open interval on the right”.  In other words, 0.0 is possible, but all returned numbers will be strictly less than 1.0. It is usual to <em>scale</em> the results after calling this method, to get them into a range suitable for your application.</p>
+<p>In the case shown below, we’ve converted the result of the method call to a number in the range [0.0, 5.0).  Once more, these are uniformly distributed numbers — numbers close to 0 are just as likely to occur as numbers close to 0.5, or numbers close to 1.0. If you continue to press the run button you will see random values between 0.0 and up to but not including 5.0.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="chmodule_rand2">
+import random
+
+prob = random.random()
+result = prob * 5
+print(result)
+</textarea>
+<p id="index-0">It is important to note that random number generators are based on a <strong>deterministic</strong> algorithm — repeatable and predictable. So they’re called <strong>pseudo-random</strong> generators — they are not genuinely random. They start with a <strong>seed</strong> value. Each time you ask for another random number, you’ll get one based on the current seed attribute, and the state of the seed (which is one of the attributes of the generator) will be updated. The good news is that each time you run your program, the seed value is likely to be different. This means that even though the random numbers are being created algorithmically, you will likely
+get random behavior each time you execute.</p>
+<p><strong>Check your understanding</strong></p>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="question4_4_1">
+            Which of the following is the correct way to reference the value pi within the math module.   Assume you have already imported the math module.
+            <li data-component="answer" data-correct="" id="question4_4_1_opt_a">math.pi</li><li data-component="feedback" id="question4_4_1_opt_a">To invoke or reference something contained in a module you use the dot (.) notation.</li>
+<li data-component="answer" id="question4_4_1_opt_b">math(pi)</li><li data-component="feedback" id="question4_4_1_opt_b">This is the syntax for calling a function, not referencing an item in a module.</li>
+<li data-component="answer" id="question4_4_1_opt_c">pi.math</li><li data-component="feedback" id="question4_4_1_opt_c">The module name must come first when accessing values and functions with a module.</li>
+<li data-component="answer" id="question4_4_1_opt_d">math-&gt;pi</li><li data-component="feedback" id="question4_4_1_opt_d">The -&gt; notation is not used in Python.</li>
+</ul>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="question4_4_2">
+            Which module would you most likely use if you were writing a function to simulate rolling dice?
+            <li data-component="answer" id="question4_4_2_opt_a">the math module</li><li data-component="feedback" id="question4_4_2_opt_a">While you might want to use the math module for other numerical computations in your program, it does not contain functions that are likely to help you simulate a dice roll.</li>
+<li data-component="answer" data-correct="" id="question4_4_2_opt_b">the random module</li><li data-component="feedback" id="question4_4_2_opt_b">You would likely call the function random.randrange.</li>
+<li data-component="answer" id="question4_4_2_opt_c">the turtle module</li><li data-component="feedback" id="question4_4_2_opt_c">The turtle module, while producing interesting graphics, is unlikely to help you here.</li>
+<li data-component="answer" id="question4_4_2_opt_d">the game module</li><li data-component="feedback" id="question4_4_2_opt_d">Python does not have a game module.</li>
+</ul>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="question4_4_3">
+            The correct code to generate a random number between 1 and 100 (inclusive) is:
+            <li data-component="answer" data-correct="" id="question4_4_3_opt_a">prob = random.randrange(1, 101)</li><li data-component="feedback" id="question4_4_3_opt_a">This will generate a number between 1 and 101, but does not include 101.</li>
+<li data-component="answer" id="question4_4_3_opt_b">prob = random.randrange(1, 100)</li><li data-component="feedback" id="question4_4_3_opt_b">This will generate a number between 1 and 100, but does not include 100. The highest value generated will be 99.</li>
+<li data-component="answer" id="question4_4_3_opt_c">prob = random.randrange(0, 101)</li><li data-component="feedback" id="question4_4_3_opt_c">This will generate a number between 0 and 100. The lowest value generated is 0. The highest value generated will be 100.</li>
+<li data-component="answer" id="question4_4_3_opt_d">prob = random.randrange(0, 100)</li><li data-component="feedback" id="question4_4_3_opt_d">This will generate a number between 0 and 100, but does not include 100. The lowest value generated is 0 and the highest value generated will be 99.</li>
+</ul>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="question4_4_4">
+            One reason that lotteries don’t use computers to generate random numbers is:<span class="target" id="index-1"></span>
+<li data-component="answer" id="question4_4_4_opt_a">There is no computer on the stage for the drawing.</li><li data-component="feedback" id="question4_4_4_opt_a">They could easily put one there.</li>
+<li data-component="answer" data-correct="" id="question4_4_4_opt_b">Because computers don’t really generate random numbers, they generate pseudo-random numbers.</li><li data-component="feedback" id="question4_4_4_opt_b">Computers generate random numbers using a deterministic algorithm. This means that if anyone ever found out the algorithm they could accurately predict the next value to be generated and would always win the lottery.</li>
+<li data-component="answer" id="question4_4_4_opt_c">They would just generate the same numbers over and over again.</li><li data-component="feedback" id="question4_4_4_opt_c">This might happen if the same seed value was used over and over again, but they could make sure this was not the case.</li>
+<li data-component="answer" id="question4_4_4_opt_d">The computer can’t tell what values were already selected, so it might generate all 5’s instead of 5 unique numbers.</li><li data-component="feedback" id="question4_4_4_opt_d">While a programmer would need to ensure the computer did not select the same number more than once, it is easy to ensure this.</li>
+</ul>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 12. The &lt;cite&gt;math&lt;/cite&gt; module">
+<a href="/PythonTurtle/Themathmodule">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/PythonTurtle/Themathmodule" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 14. Glossary">
+<a href="/PythonTurtle/Glossary">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/PythonTurtle/Glossary" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/PythonTurtle/Therandommodule.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

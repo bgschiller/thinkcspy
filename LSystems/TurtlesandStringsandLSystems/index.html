@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>1. Turtles and Strings and L-Systems — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/LSystems/TheReturnofLSystems" rel="next" title="2. The Return of L-Systems"/>
+<link href="/Recursion/ProgrammingExercises" rel="prev" title="8. Programming Exercises"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="turtles-and-strings-and-l-systems">
+<h1>1. Turtles and Strings and L-Systems<a class="headerlink" href="#turtles-and-strings-and-l-systems" title="Permalink to this headline">¶</a></h1>
+<p>This section describes a much more interesting example of string iteration and the accumulator pattern. Even though it seems like we are doing something that is much more complex, the basic processing is the same as was shown in the previous sections.</p>
+<p>In 1968 Astrid Lindenmayer, a biologist, invented a formal system that
+provides a mathematical description of plant growth known as an
+<strong>L-system</strong>.  L-systems were designed to model the growth of biological
+systems. You can think of L-systems as containing the instructions for how
+a single cell can grow into a complex organism. L-systems can be used to
+specify the <strong>rules</strong> for all kinds of interesting patterns. In our case, we are going to use them to specify the rules for drawing pictures.</p>
+<p>The rules of an L-system are really a set of instructions for transforming
+one string into a new string. After a number of these string transformations
+are complete, the string contains a set of instructions. Our plan is to let these instructions direct a turtle
+as it draws a picture.</p>
+<p>To begin, we will look at an example set of rules:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%"></col>
+<col width="72%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>A</td>
+<td>Axiom</td>
+</tr>
+<tr class="row-even"><td>A -&gt; B</td>
+<td>Rule 1 Change A to B</td>
+</tr>
+<tr class="row-odd"><td>B -&gt; AB</td>
+<td>Rule 2 Change B to AB</td>
+</tr>
+</tbody>
+</table>
+<p>Each rule set contains an axiom which represents the starting point in the transformations that will follow. The rules are of the form:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">left</span> <span class="n">hand</span> <span class="n">side</span> <span class="o">-&gt;</span> <span class="n">right</span> <span class="n">hand</span> <span class="n">side</span>
+</pre></div>
+</div>
+<p>where the left hand side is a single symbol and the right had side is a sequence of symbols. You can think of both sides as being simple strings.
+The way the rules are used is to replace occurrences of the left hand side with the corresponding right hand side.</p>
+<p>Now let’s look at these simple rules in action, starting with the string A:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span>
+<span class="n">B</span>      <span class="n">Apply</span> <span class="n">Rule</span> <span class="mi">1</span>  <span class="p">(</span><span class="n">A</span> <span class="ow">is</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">AB</span>     <span class="n">Apply</span> <span class="n">Rule</span> <span class="mi">2</span>  <span class="p">(</span><span class="n">B</span> <span class="ow">is</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">AB</span><span class="p">)</span>
+<span class="n">BAB</span>    <span class="n">Apply</span> <span class="n">Rule</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">A</span> <span class="n">then</span> <span class="n">Rule</span> <span class="mi">2</span> <span class="n">to</span> <span class="n">B</span>
+<span class="n">ABBAB</span>  <span class="n">Apply</span> <span class="n">Rule</span> <span class="mi">2</span> <span class="n">to</span> <span class="n">B</span><span class="p">,</span> <span class="n">Rule</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">A</span><span class="p">,</span> <span class="ow">and</span> <span class="n">Rule</span> <span class="mi">2</span> <span class="n">to</span> <span class="n">B</span>
+</pre></div>
+</div>
+<p>Notice that each line represents a new transformation for entire string. Each character that matches a left-hand side of a rule in the original has been replaced by the corresponding right-hand side of that same rule. After doing the replacement for
+each character in the original, we have one transformation.</p>
+<p>So how would we encode these rules in a Python program? There are a couple
+of very important things to note here:</p>
+<ol class="arabic simple">
+<li>Rules are very much like if statements.</li>
+<li>We are going to start with a string and iterate over each of its characters.</li>
+<li>As we apply the rules to one string we leave that string alone and create
+a brand new string using the accumulator pattern. When we are all done with the original we replace it
+with the new string.</li>
+</ol>
+<p>Let’s look at a simple Python program that implements the example set of rules described
+above.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="string_lsys1">
+def applyRules(lhch):
+    rhstr = ""
+    if lhch == 'A':
+        rhstr = 'B'   # Rule 1
+    elif lhch == 'B':
+        rhstr = 'AB'  # Rule 2
+    else:
+        rhstr = lhch    # no rules apply so keep the character
+
+    return rhstr
+
+
+def processString(oldStr):
+    newstr = ""
+    for ch in oldStr:
+        newstr = newstr + applyRules(ch)
+
+    return newstr
+
+
+def createLSystem(numIters,axiom):
+    startString = axiom
+    endString = ""
+    for i in range(numIters):
+        endString = processString(startString)
+        startString = endString
+
+    return endString
+
+print(createLSystem(4, "A"))
+</textarea>
+<p>Try running the example above with different values for the <code class="docutils literal"><span class="pre">numIters</span></code>
+parameter. You should see that for values 1, 2, 3, and 4, the strings generated follow the
+example above exactly.</p>
+<p>One of the nice things about the program above is that if you want to
+implement a different set of rules, you don’t need to re-write the entire
+program. All you need to do is re-write the applyRules function.</p>
+<p>Suppose you had the following rules:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%"></col>
+<col width="75%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>A</td>
+<td>Axiom</td>
+</tr>
+<tr class="row-even"><td>A -&gt; BAB</td>
+<td>Rule 1 Change A to BAB</td>
+</tr>
+</tbody>
+</table>
+<p>What kind of a string would these rules create? Modify the program above to
+implement the rule.</p>
+<p>Now let’s look at a real L-system that implements a famous drawing. This
+L-system has just two rules:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%"></col>
+<col width="62%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>F</td>
+<td>Axiom</td>
+</tr>
+<tr class="row-even"><td>F -&gt; F-F++F-F</td>
+<td>Rule 1</td>
+</tr>
+</tbody>
+</table>
+<p>This L-system uses symbols that will have special meaning when we use them later with the turtle to draw a picture.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%"></col>
+<col width="90%"></col>
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>F</td>
+<td>Go forward by some number of units</td>
+</tr>
+<tr class="row-even"><td>B</td>
+<td>Go backward by some number of units</td>
+</tr>
+<tr class="row-odd"><td>-</td>
+<td>Turn left by some degrees</td>
+</tr>
+<tr class="row-even"><td>+</td>
+<td>Turn right by some degrees</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the <code class="docutils literal"><span class="pre">applyRules</span></code> function for this L-system.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">applyRules</span><span class="p">(</span><span class="n">ch</span><span class="p">):</span>
+    <span class="n">newstr</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">if</span> <span class="n">ch</span> <span class="o">==</span> <span class="s1">'F'</span><span class="p">:</span>
+        <span class="n">newstr</span> <span class="o">=</span> <span class="s1">'F-F++F-F'</span>   <span class="c1"># Rule 1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">newstr</span> <span class="o">=</span> <span class="n">ch</span>    <span class="c1"># no rules apply so keep the character</span>
+
+    <span class="k">return</span> <span class="n">newstr</span>
+</pre></div>
+</div>
+<p>Pretty simple so far. As you can imagine this string will get pretty long
+with a few applications of the rules. You might try to expand the string a
+couple of times on your own just to see.</p>
+<p>The last step is to take the final string and turn it into a picture. Let’s
+assume that we are always going to go forward or backward by 5 units. In
+addition we will also assume that when the turtle turns left or right we’ll
+turn by 60 degrees. Now look at the string <code class="docutils literal"><span class="pre">F-F++F-F</span></code>.  You might try to
+use the explanation above to show the resulting picture that this simple string represents. At this point its not a very exciting
+drawing, but once we expand it a few times it will get a lot more interesting.</p>
+<p>To create a Python function to draw a string we will write a function called
+<code class="docutils literal"><span class="pre">drawLsystem</span></code>  The function will take four parameters:</p>
+<ul class="simple">
+<li>A turtle to do the drawing</li>
+<li>An expanded string that contains the results of expanding the rules above.</li>
+<li>An angle to turn</li>
+<li>A distance to move forward or backward</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">drawLsystem</span><span class="p">(</span><span class="n">aTurtle</span><span class="p">,</span><span class="n">instructions</span><span class="p">,</span><span class="n">angle</span><span class="p">,</span><span class="n">distance</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">cmd</span> <span class="ow">in</span> <span class="n">instructions</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s1">'F'</span><span class="p">:</span>
+            <span class="n">aTurtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s1">'B'</span><span class="p">:</span>
+            <span class="n">aTurtle</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s1">'+'</span><span class="p">:</span>
+            <span class="n">aTurtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s1">'-'</span><span class="p">:</span>
+            <span class="n">aTurtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here is the complete program in activecode. The <code class="docutils literal"><span class="pre">main</span></code> function first creates the
+L-system string and then it creates a turtle and passes it and the string to the drawing function.</p>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="strings_lys2">
+import turtle
+
+def createLSystem(numIters,axiom):
+    startString = axiom
+    endString = ""
+    for i in range(numIters):
+        endString = processString(startString)
+        startString = endString
+
+    return endString
+
+def processString(oldStr):
+    newstr = ""
+    for ch in oldStr:
+        newstr = newstr + applyRules(ch)
+
+    return newstr
+
+def applyRules(ch):
+    newstr = ""
+    if ch == 'F':
+        newstr = 'F-F++F-F'   # Rule 1
+    else:
+        newstr = ch    # no rules apply so keep the character
+
+    return newstr
+
+def drawLsystem(aTurtle, instructions, angle, distance):
+    for cmd in instructions:
+        if cmd == 'F':
+            aTurtle.forward(distance)
+        elif cmd == 'B':
+            aTurtle.backward(distance)
+        elif cmd == '+':
+            aTurtle.right(angle)
+        elif cmd == '-':
+            aTurtle.left(angle)
+
+def main():
+    inst = createLSystem(4, "F")   # create the string
+    print(inst)
+    t = turtle.Turtle()            # create the turtle
+    wn = turtle.Screen()
+
+    t.up()
+    t.back(200)
+    t.down()
+    t.speed(9)
+    drawLsystem(t, inst, 60, 5)   # draw the picture
+                                  # angle 60, segment length 5
+    wn.exitonclick()
+
+main()
+</textarea>
+<p>Feel free to try some different angles and segment lengths to see how the drawing changes.</p>
+<span class="target" id="index-0"></span></div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 8. Programming Exercises">
+<a href="/Recursion/ProgrammingExercises">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/Recursion/ProgrammingExercises" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 2. The Return of L-Systems">
+<a href="/LSystems/TheReturnofLSystems">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/LSystems/TheReturnofLSystems" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/LSystems/TurtlesandStringsandLSystems.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

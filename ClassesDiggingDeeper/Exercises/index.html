@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>7. Exercises — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/ChapterHeadings/Studios" rel="next" title="Studios"/>
+<link href="/ClassesDiggingDeeper/Glossary" rel="prev" title="6. Glossary"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="exercises">
+<h1>7. Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="full-width container">
+<ol class="arabic">
+<li><div data-component="tabbedStuff" id="q1"><div data-component="tab" data-tabname="Question">
+<p>We can represent a rectangle by knowing three things: the location of its lower left corner, its width, and its height. Create a class definition for a Rectangle class using this idea. For instance, to create a Rectangle object at location (4,5) with width 6 and height 5, we would do the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">loc</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="classes_deeper_q1">
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl2_answer1">
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+
+class Rectangle:
+    """Rectangle class using Point, width and height"""
+
+    def __init__(self, init_p, init_w, init_h):
+
+        self.location = init_p
+        self.width = init_w
+        self.height = init_h
+
+    def __repr__(self):
+        return "I'm a rectangle with width {} and height {}".format(self.width, self.height)
+
+def main():
+    loc = Point(4, 5)
+    r = Rectangle(loc, 6, 5)
+    print(r)
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div>
+</div>
+</li>
+<li><p class="first">Add the following accessor methods to the Rectangle class: <code class="docutils literal"><span class="pre">get_width</span></code> and <code class="docutils literal"><span class="pre">get_height</span></code>.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl2_q2">
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+</textarea>
+</li>
+<li><div data-component="tabbedStuff" id="q3"><div data-component="tab" data-tabname="Question">
+<p>Add a method <code class="docutils literal"><span class="pre">area</span></code> to the Rectangle class that returns the area of any instance:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">testEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">area</span><span class="p">(),</span> <span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl2_q3">
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+from test import testEqual
+r = Rectangle(Point(0, 0), 10, 5)
+testEqual(r.area(), 50)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl2_q3answer">
+from test import testEqual
+
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+
+class Rectangle:
+    """Rectangle class using Point, width and height"""
+
+    def __init__(self, init_p, init_w, init_h):
+
+        self.location = init_p
+        self.width = init_w
+        self.height = init_h
+
+    def __repr__(self):
+        return "I'm a rectangle with width {} and height {}".format(self.width, self.height)
+
+    def area(self):
+        return self.width * self.height
+
+r = Rectangle(Point(0, 0), 10, 5)
+testEqual(r.area(), 50)
+
+r1 = Rectangle(Point(0,0), 4, 5)
+testEqual(r1.area(), 20)
+
+r2 = Rectangle(Point(0,0), 12, 3)
+testEqual(r2.area(), 36)
+</textarea>
+</div>
+</div>
+</li>
+<li><p class="first">Write a <code class="docutils literal"><span class="pre">perimeter</span></code> method in the Rectangle class so that we can find the perimeter of any rectangle instance:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">testEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">perimeter</span><span class="p">(),</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl2_q4">
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+from test import testEqual
+r = Rectangle(Point(0, 0), 10, 5)
+testEqual(r.perimeter(), 30)
+</textarea>
+</li>
+<li><div data-component="tabbedStuff" id="q5"><div data-component="tab" data-tabname="Question">
+<p>Write a <code class="docutils literal"><span class="pre">transpose</span></code> method in the Rectangle class that swaps the width and the height of any rectangle instance:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">testEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">testEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">testEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">testEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl2_q5">
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+from test import testEqual
+r = Rectangle(Point(100, 50), 10, 5)
+testEqual(r.width, 10)
+testEqual(r.height, 5)
+r.transpose()
+testEqual(r.width, 5)
+testEqual(r.height, 10)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl2_q5answer">
+from test import testEqual
+
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+
+class Rectangle:
+    """Rectangle class using Point, width and height"""
+
+    def __init__(self, init_p, init_w, init_h):
+
+        self.location = init_p
+        self.width = init_w
+        self.height = init_h
+
+    def __repr__(self):
+        return "I'm a rectangle with width {} and height {}".format(self.width, self.height)
+
+    def transpose(self):
+        temp = self.width
+        self.width = self.height
+        self.height = temp
+
+r = Rectangle(Point(100, 50), 10, 5)
+testEqual(r.width, 10)
+testEqual(r.height, 5)
+r.transpose()
+testEqual(r.width, 5)
+testEqual(r.height, 10)
+</textarea>
+</div>
+</div>
+</li>
+<li><p class="first">Write a new method called <code class="docutils literal"><span class="pre">contains</span></code> in the Rectangle class to test if a Point falls within the rectangle. For this exercise, assume that a rectangle at (0,0) with width 10 and height 5 has <em>open</em> upper bounds on the width and height, i.e. it stretches in the x direction from [0 to 10), where 0 is included but 10 is excluded, and from [0 to 5) in the y direction. So it does not contain the point (10, 2). These tests should pass:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">testEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">testEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">testEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)),</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">testEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">testEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">4.99999</span><span class="p">)),</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">testEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)),</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl2_q6">
+from test import testEqual
+
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+
+r = Rectangle(Point(0, 0), 10, 5)
+testEqual(r.contains(Point(0, 0)), True)
+testEqual(r.contains(Point(3, 3)), True)
+testEqual(r.contains(Point(3, 7)), False)
+testEqual(r.contains(Point(3, 5)), False)
+testEqual(r.contains(Point(3, 4.99999)), True)
+testEqual(r.contains(Point(-3, -3)), False)
+</textarea>
+</li>
+<li><div data-component="tabbedStuff" id="q7"><div data-component="tab" data-tabname="Question">
+<p>Write a new method called <code class="docutils literal"><span class="pre">diagonal</span></code> that will return the length of the diagonal that runs from the lower left corner to the opposite corner.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl2_q7">
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+from test import testEqual
+r = Rectangle(Point(0, 0), 10, 5)
+testEqual(r.diagonal(), 11.1803398875)
+
+r1 = Rectangle(Point(0,0), 12, 4)
+testEqual(r1.diagonal(), 12.6491106407)
+
+r2 = Rectangle(Point(0,0), 1,2)
+testEqual(r2.diagonal(), 2.2360679775)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl2_answer7">
+from test import testEqual
+
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+
+class Rectangle:
+    """Rectangle class using Point, width and height"""
+
+    def __init__(self, init_p, init_w, init_h):
+
+        self.location = init_p
+        self.width = init_w
+        self.height = init_h
+
+    def __repr__(self):
+        return "I'm a rectangle with width {} and height {}".format(self.width, self.height)
+
+    def diagonal(self):
+        d = (self.width ** 2 + self.height ** 2) ** 0.5
+        return d
+
+r = Rectangle(Point(0, 0), 10, 5)
+testEqual(r.diagonal(), 11.1803398875)
+
+r1 = Rectangle(Point(0,0), 12, 4)
+testEqual(r1.diagonal(), 12.6491106407)
+
+r2 = Rectangle(Point(0,0), 1,2)
+testEqual(r2.diagonal(), 2.2360679775)
+</textarea>
+</div>
+</div>
+</li>
+<li><p class="first">There are some games where we put a rectangular “bounding box” around our sprites in the game. We can then do <em>collision detection</em> between, say, bombs and spaceships, by comparing whether their rectangles overlap anywhere.</p>
+<p>Write a function to determine whether two rectangles collide. <em>Hint: this might be quite a tough exercise! Think carefully about all the cases as you code.</em></p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl2_q8">
+
+
+</textarea>
+</li>
+</ol>
+</div>
+<div class="section" id="graded-lesson-assignment">
+<h2>Graded Lesson Assignment<a class="headerlink" href="#graded-lesson-assignment" title="Permalink to this headline">¶</a></h2>
+<div class="full-width container">
+<p>The code below contains a <code class="docutils literal"><span class="pre">Chatbot</span></code> class. A <code class="docutils literal"><span class="pre">Chatbot</span></code> is an object that can engage in rudimentary conversation with a human. You will be asked to define a subclass that inherits from this <code class="docutils literal"><span class="pre">Chatbot</span></code> superclass.</p>
+<p>First, run the code below to talk to the chatbot. Then look over the code to make sure you understand it.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="chatbot">
+class Chatbot:
+    """ An object that can engage in rudimentary conversation with a human. """
+
+    def __init__(self, name):
+        self.name = name
+
+    def greeting(self):
+        """ Returns the Chatbot's way of introducing itself. """
+        return "Hello, my name is " + self.name
+
+    def response(self, prompt_from_human):
+        """ Returns the Chatbot's response to something the human said. """
+        return "It is very interesting that you say: '" + prompt_from_human + "'"
+
+# make a chatbot
+sally = Chatbot("Sally")
+# introduce the chatbot and allow the user to say something
+human_message = input(sally.greeting())
+# respond to the user
+print(sally.response(human_message))
+
+# TODO: keep reading! see below
+</textarea>
+<p>Your job is to make a subclass called <code class="docutils literal"><span class="pre">BoredChatbot</span></code> that inherits from <code class="docutils literal"><span class="pre">Chatbot</span></code>, but acts a little differently, in the following way:</p>
+<ul>
+<li><p class="first">A bored chatbot has a short attention span. When the human says something that is longer than 20 characters, it should respond by saying:</p>
+<blockquote>
+<div><p>“zzz... Oh excuse me, I dozed off reading your essay.”</p>
+</div></blockquote>
+</li>
+<li><p class="first">If, on the other hand, the human says something with a length of 20 characters or less, then the bored chatbot should respond just like a normal chatbot would.</p>
+</li>
+</ul>
+<p>Note that we are requiring you to use <strong>inheritance</strong>. Your new <code class="docutils literal"><span class="pre">BoredChatbot</span></code> class must be a <strong>subclass</strong> of the <code class="docutils literal"><span class="pre">Chatbot</span></code> class, and your subclass should only implement the things that make it distinct. (See the <em>Inheritance</em> chapter for a review of how this works.)</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="bored_chatbot">
+class Chatbot:
+    """ An object that can engage in rudimentary conversation with a human. """
+
+    def __init__(self, name):
+        self.name = name
+
+    def greeting(self):
+        """ Returns the Chatbot's way of introducing itself. """
+        return "Hello, my name is " + self.name
+
+    def response(self, prompt_from_human):
+        """ Returns the Chatbot's response to something the human said. """
+        return "It is very interesting that you say: '" + prompt_from_human + "'"
+
+
+# TODO define a class called BoredChatbot
+</textarea>
+<p>When you think your code is correct, test it yourself by creating a few different instances and printing their responses to various inputs.</p>
+</div>
+</div>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 6. Glossary">
+<a href="/ClassesDiggingDeeper/Glossary">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/ClassesDiggingDeeper/Glossary" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - Studios">
+<a href="/ChapterHeadings/Studios">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/ChapterHeadings/Studios" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/ClassesDiggingDeeper/Exercises.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

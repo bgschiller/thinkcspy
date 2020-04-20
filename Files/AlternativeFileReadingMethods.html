@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>5. Alternative File Reading Methods — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/Files/WritingTextFiles" rel="next" title="6. Writing Text Files"/>
+<link href="/Files/Iteratingoverlinesinafile" rel="prev" title="4. Iterating over lines in a file"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="alternative-file-reading-methods">
+<h1>5. Alternative File Reading Methods<a class="headerlink" href="#alternative-file-reading-methods" title="Permalink to this headline">¶</a></h1>
+<p>Again, recall the contents of the qbdata.txt file.</p>
+<pre id="qbdata.txt">
+Colt McCoy QB CLE  135 222 1576    6   9   60.8%   74.5
+Josh Freeman QB TB 291 474 3451    25  6   61.4%   95.9
+Michael Vick QB PHI    233 372 3018    21  6   62.6%   100.2
+Matt Schaub QB HOU 365 574 4370    24  12  63.6%   92.0
+Philip Rivers QB SD    357 541 4710    30  13  66.0%   101.8
+Matt Hasselbeck QB SEA 266 444 3001    12  17  59.9%   73.2
+Jimmy Clausen QB CAR   157 299 1558    3   9   52.5%   58.4
+Joe Flacco QB BAL  306 489 3622    25  10  62.6%   93.6
+Kyle Orton QB DEN  293 498 3653    20  9   58.8%   87.5
+Jason Campbell QB OAK  194 329 2387    13  8   59.0%   84.5
+Peyton Manning QB IND  450 679 4700    33  17  66.3%   91.9
+Drew Brees QB NO   448 658 4620    33  22  68.1%   90.9
+Matt Ryan QB ATL   357 571 3705    28  9   62.5%   91.0
+Matt Cassel QB KC  262 450 3116    27  7   58.2%   93.0
+Mark Sanchez QB NYJ    278 507 3291    17  13  54.8%   75.3
+Brett Favre QB MIN 217 358 2509    11  19  60.6%   69.9
+David Garrard QB JAC   236 366 2734    23  15  64.5%   90.8
+Eli Manning QB NYG 339 539 4002    31  25  62.9%   85.3
+Carson Palmer QB CIN   362 586 3970    26  20  61.8%   82.4
+Alex Smith QB SF   204 342 2370    14  10  59.6%   82.1
+Chad Henne QB MIA  301 490 3301    15  19  61.4%   75.4
+Tony Romo QB DAL   148 213 1605    11  7   69.5%   94.9
+Jay Cutler QB CHI  261 432 3274    23  16  60.4%   86.3
+Jon Kitna QB DAL   209 318 2365    16  12  65.7%   88.9
+Tom Brady QB NE    324 492 3900    36  4   65.9%   111.0
+Ben Roethlisberger QB PIT  240 389 3200    17  5   61.7%   97.0
+Kerry Collins QB TEN   160 278 1823    14  8   57.6%   82.2
+Derek Anderson QB ARI  169 327 2065    7   10  51.7%   65.9
+Ryan Fitzpatrick QB BUF    255 441 3000    23  15  57.8%   81.8
+Donovan McNabb QB WAS  275 472 3377    14  15  58.3%   77.1
+Kevin Kolb QB PHI  115 189 1197    7   7   60.8%   76.1
+Aaron Rodgers QB GB    312 475 3922    28  11  65.7%   101.2
+Sam Bradford QB STL    354 590 3512    18  15  60.0%   76.5
+Shaun Hill QB DET  257 416 2686    16  12  61.8%   81.3
+</pre><p>In addition to the <code class="docutils literal"><span class="pre">for</span></code> loop, Python provides three methods to read data
+from the input file. The <code class="docutils literal"><span class="pre">readline</span></code> method reads one line from the file and
+returns it as a string. The string returned by <code class="docutils literal"><span class="pre">readline</span></code> will contain the
+newline character at the end. This method returns the empty string when it
+reaches the end of the file. The <code class="docutils literal"><span class="pre">readlines</span></code> method returns the contents of
+the entire file as a list of strings, where each item in the list represents
+one line of the file. It is also possible to read the entire file into a
+single string with <code class="docutils literal"><span class="pre">read</span></code>. <a class="reference internal" href="/Files/#filemethods2a"><span class="std std-ref">Table 2</span></a> summarizes these methods
+and the following session shows them in action.</p>
+<p>Note that we need to reopen the file before each read so that we start from
+the beginning. Each file has a marker that denotes the current read position
+in the file. Any time one of the read methods is called the marker is moved to
+the character immediately following the last character returned. In the case
+of <code class="docutils literal"><span class="pre">readline</span></code> this moves the marker to the first character of the next line
+in the file. In the case of <code class="docutils literal"><span class="pre">read</span></code> or <code class="docutils literal"><span class="pre">readlines</span></code> the marker is moved to
+the end of the file.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"qbdata.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aline</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aline</span>
+<span class="go">'Colt McCoy QB, CLE\t135\t222\t1576\t6\t9\t60.8%\t74.5\n'</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"qbdata.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linelist</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">linelist</span><span class="p">))</span>
+<span class="go">34</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">linelist</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+<span class="go">['Colt McCoy QB CLE\t135\t222\t1576\t6\t9\t60.8%\t74.5\n',</span>
+<span class="go"> 'Josh Freeman QB TB\t291\t474\t3451\t25\t6\t61.4%\t95.9\n',</span>
+<span class="go"> 'Michael Vick QB PHI\t233\t372\t3018\t21\t6\t62.6%\t100.2\n',</span>
+<span class="go"> 'Matt Schaub QB HOU\t365\t574\t4370\t24\t12\t63.6%\t92.0\n']</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"qbdata.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filestring</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">filestring</span><span class="p">))</span>
+<span class="go">1708</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">filestring</span><span class="p">[:</span><span class="mi">256</span><span class="p">])</span>
+<span class="go">Colt McCoy QB CLE   135     222     1576    6       9       60.8%   74.5</span>
+<span class="go">Josh Freeman QB TB  291     474     3451    25      6       61.4%   95.9</span>
+<span class="go">Michael Vick QB PHI 233     372     3018    21      6       62.6%   100.2</span>
+<span class="go">Matt Schaub QB HOU  365     574     4370    24      12      63.6%   92.0</span>
+<span class="go">Philip Rivers QB SD 357     541     4710    30      13      66.0%   101.8</span>
+<span class="go">Matt Ha</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<table border="1" class="docutils" id="filemethods2a">
+<colgroup>
+<col width="26%"></col>
+<col width="30%"></col>
+<col width="44%"></col>
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Method Name</strong></th>
+<th class="head"><strong>Use</strong></th>
+<th class="head"><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">write</span></code></td>
+<td><code class="docutils literal"><span class="pre">filevar.write(astring)</span></code></td>
+<td>Add astring to the end of the file.
+filevar must refer to a file that has
+been  opened for writing.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">read(n)</span></code></td>
+<td><code class="docutils literal"><span class="pre">filevar.read()</span></code></td>
+<td>Reads and returns a string of <code class="docutils literal"><span class="pre">n</span></code>
+characters, or the entire file as a
+single string if  n is not provided.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">readline(n)</span></code></td>
+<td><code class="docutils literal"><span class="pre">filevar.readline()</span></code></td>
+<td>Returns the next line of the file with
+all text up to and including the
+newline character. If n is provided as
+a parameter than only n characters
+will be returned if the line is longer
+than <code class="docutils literal"><span class="pre">n</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">readlines(n)</span></code></td>
+<td><code class="docutils literal"><span class="pre">filevar.readlines()</span></code></td>
+<td>Returns a list of strings, each
+representing a single line of the file.
+If n is not provided then all lines of
+the file are returned. If n is provided
+then n characters are read but n is
+rounded up so that an entire line is
+returned.</td>
+</tr>
+</tbody>
+</table>
+<p>Now let’s look at another method of reading our file using a <code class="docutils literal"><span class="pre">while</span></code> loop. This is important because many other programming languages do not support the <code class="docutils literal"><span class="pre">for</span></code> loop style for reading files but they do support the pattern we’ll show you here.</p>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="files_while">
+infile = open("qbdata.txt", "r")
+line = infile.readline()
+while line:
+    values = line.split()
+    print('QB ', values[0], values[1], 'had a rating of ', values[10] )
+    line = infile.readline()
+
+infile.close()
+</textarea>
+<p>The important thing to notice is that on line 2 we have the statement <code class="docutils literal"><span class="pre">line</span> <span class="pre">=</span> <span class="pre">infile.readline()</span></code>.
+We call this initial read the <strong>priming read</strong>.
+It is very important because the while condition needs to have a value for the <code class="docutils literal"><span class="pre">line</span></code> variable. The <code class="docutils literal"><span class="pre">readline</span></code> method will return the
+empty string if there is no more data in the file. The condition <code class="docutils literal"><span class="pre">while</span> <span class="pre">line:</span></code> means <cite>while the content of line is not the empty string</cite>.  Remember that a
+blank line in the file actually has a single character, the <code class="docutils literal"><span class="pre">\n</span></code> character (newline).  So, the only way that a line of data from the
+file can be empty is if you are reading at the end of the file.</p>
+<p>Finally, notice that the last line of the body of the <code class="docutils literal"><span class="pre">while</span></code> loop performs another <code class="docutils literal"><span class="pre">readline</span></code>.  This statement will reassign the variable <code class="docutils literal"><span class="pre">line</span></code> to the next line of the file. It represents the <cite>change of state</cite> that is necessary for the iteration to
+function correctly. Without it, there would be an infinite loop processing the same line of data over and over.</p>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 4. Iterating over lines in a file">
+<a href="/Files/Iteratingoverlinesinafile">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/Files/Iteratingoverlinesinafile" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 6. Writing Text Files">
+<a href="/Files/WritingTextFiles">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/Files/WritingTextFiles" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/Files/AlternativeFileReadingMethods.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

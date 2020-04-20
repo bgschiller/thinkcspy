@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>7. The range Type — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/PythonTurtle/AFewMoreturtleMethodsandObservations" rel="next" title="8. A Few More turtle Methods and Observations"/>
+<link href="/PythonTurtle/IterationSimplifiesourTurtleProgram" rel="prev" title="6. Iteration Simplifies Our Turtle Program"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="the-range-type">
+<h1>7. The range Type<a class="headerlink" href="#the-range-type" title="Permalink to this headline">¶</a></h1>
+<p>In our simple example from the last section (shown again below), we used a list of four integers to cause the iteration to happen four times. We said that we could have used any four values. In fact, we even used four colors.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>            <span class="c1"># set up alex</span>
+<span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">alex</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>   <span class="c1"># repeat four times</span>
+    <span class="n">alex</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">alex</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">wn</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Iterating a certain number of times is a very common thing to do, especially when you want to write simple <code class="docutils literal"><span class="pre">for</span></code> loop controlled iteration. Because this is such a common task, Python gives us a special built-in <code class="docutils literal"><span class="pre">range</span></code> type that can provide a sequence of values for the <code class="docutils literal"><span class="pre">for</span></code> loop to iterate through. The sequence provided by <code class="docutils literal"><span class="pre">range</span></code> always starts with 0. If you ask for <code class="docutils literal"><span class="pre">range(4)</span></code>, then you will get 4 values starting with 0. In other words, 0, 1, 2, and finally 3. Notice that 4 is not included since we started with 0. Likewise, <code class="docutils literal"><span class="pre">range(10)</span></code> provides 10 values, 0 through 9. This way of starting a count at 0, instead of at 1, is called <strong>zero-based indexing</strong> and is very common in computer programming.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="c1"># Executes the body with i = 0, then 1, then 2, then 3</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="c1"># sets x to each of ... [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Computer scientists like to count from 0!</p>
+</div>
+<p>So to repeat something four times, a good Python programmer would do this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">alex</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">alex</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typesseq-range">range</a> constructor (a <em>constructor</em> is a special class method that creates an object; we’ll learn more about this in the chapter on classes) can take one, two, or three parameters. We have seen the simplest case of one parameter such as <code class="docutils literal"><span class="pre">range(4)</span></code> which creates the sequence <code class="docutils literal"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>. But what if we really want to have the sequence <code class="docutils literal"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code> instead? We can do this by using a two parameter version of <code class="docutils literal"><span class="pre">range</span></code> where the first parameter is the starting point and the second parameter is the ending point. The evaluation of <code class="docutils literal"><span class="pre">range(1,5)</span></code> produces the desired sequence. Why don’t we see a 5 in the sequence? It’s because we interpret the parameters to mean <code class="docutils literal"><span class="pre">range(start,stop+1)</span></code>. So you must subtract 1 from the second parameter to know what the final integer in the sequence will be.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Why in the world would range not just work like <code class="docutils literal"><span class="pre">range(start,</span> <span class="pre">stop)</span></code>?  Think about it like this. Because computer scientists like to start counting at 0 instead of 1, <code class="docutils literal"><span class="pre">range(N)</span></code> produces a sequence of things that is N long, but the consequence of this is that the final number of the sequence is N-1. In the case of <code class="docutils literal"><span class="pre">(start,</span> <span class="pre">stop)</span></code> it helps to simply think that the sequence begins with <code class="docutils literal"><span class="pre">start</span></code> and continues as long as the number <em>is less than</em> <code class="docutils literal"><span class="pre">stop</span></code>.</p>
+</div>
+<p>Codelens will help us to further understand the way <code class="docutils literal"><span class="pre">range</span></code> works. In this case, the variable <code class="docutils literal"><span class="pre">i</span></code> will take on values produced by <code class="docutils literal"><span class="pre">range(10)</span></code>.</p>
+<div class="alert alert-warning cd_section">
+<div id="rangeme"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (rangeme)</span> </p>
+</div>
+<script type="text/javascript">
+var rangeme_trace = {"code": "for i in range(10):\n    print(i)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 0}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 0}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 1}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 1}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 2}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 2}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 3}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 3}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 4}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n4\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 4}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n4\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 5}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n4\n5\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 5}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n4\n5\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 6}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n4\n5\n6\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 6}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n4\n5\n6\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 7}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n4\n5\n6\n7\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 7}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n4\n5\n6\n7\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 8}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n4\n5\n6\n7\n8\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 8}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n4\n5\n6\n7\n8\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 9}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 9}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 9}, "heap": {}, "line": 1, "event": "return"}]};
+var rangeme_vis;
+
+$(document).ready(function() {
+    try {
+        rangeme_vis = new ExecutionVisualizer('rangeme',rangeme_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    // LC MOD
+                                    // increase codelense width to 600
+                                    codeDivWidth: 600,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(rangeme_vis,'rangeme');
+        styleButtons('rangeme');
+        allVisualizers.push(rangeme_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component rangeme_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#rangeme_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'rangeme'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (rangeme_vis) {
+        rangeme_vis.redrawConnectors();
+    }
+});
+</script>
+<p>Finally, suppose we want to have a sequence of even numbers. How would we do that? Easy, we add another parameter, a <code class="docutils literal"><span class="pre">step</span></code>, that tells <code class="docutils literal"><span class="pre">range</span></code> what to count by. Say that for even numbers we want to start at 0 and count by 2’s. So if we wanted the first 10 <em>even</em> numbers we would use <code class="docutils literal"><span class="pre">range(0,19,2)</span></code>.</p>
+<p>Try it in codelens.</p>
+<div class="alert alert-warning cd_section">
+<div id="rangeme2"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (rangeme2)</span> </p>
+</div>
+<script type="text/javascript">
+var rangeme2_trace = {"code": "for i in range(0, 19, 2):\n   print(i)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 0}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 0}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 2}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 2}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 4}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 4}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 6}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 6}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 8}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n8\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 8}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n8\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 10}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n8\n10\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 10}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n8\n10\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 12}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n8\n10\n12\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 12}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n8\n10\n12\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 14}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n8\n10\n12\n14\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 14}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n8\n10\n12\n14\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 16}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n8\n10\n12\n14\n16\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 16}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n8\n10\n12\n14\n16\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 18}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 18}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["i"], "stdout": "0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 18}, "heap": {}, "line": 1, "event": "return"}]};
+var rangeme2_vis;
+
+$(document).ready(function() {
+    try {
+        rangeme2_vis = new ExecutionVisualizer('rangeme2',rangeme2_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    // LC MOD
+                                    // increase codelense width to 600
+                                    codeDivWidth: 600,
+                                    lang : 'py3'
+                                    });
+        attachLoggers(rangeme2_vis,'rangeme2');
+        styleButtons('rangeme2');
+        allVisualizers.push(rangeme2_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component rangeme2_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#rangeme2_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'rangeme2'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (rangeme2_vis) {
+        rangeme2_vis.redrawConnectors();
+    }
+});
+</script>
+<p>The most general form of <code class="docutils literal"><span class="pre">range</span></code> is <code class="docutils literal"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code>. You can also create a sequence of numbers that starts big and gets smaller by using a negative value for the step parameter.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch03_6">
+print(list(range(0, 19, 2)))
+print(list(range(0, 20, 2)))
+print(list(range(10, 0, -1)))
+</textarea>
+<p>Note that we are casting the <code class="docutils literal"><span class="pre">range</span></code> object as a list — a data type we will discuss further later in the book.</p>
+<p><strong>Check your understanding</strong></p>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question3_5_1">
+            In the command <code class="docutils literal"><span class="pre">range(3,</span> <span class="pre">10,</span> <span class="pre">2)</span></code>, what does the second argument (10) specify?
+            <li data-component="answer" data-correct="" id="test_question3_5_1_opt_a">range should generate a sequence that stops at 9 (including 9).</li><li data-component="feedback" id="test_question3_5_1_opt_a">range will generate [3, 5, 7, 9].</li>
+<li data-component="answer" id="test_question3_5_1_opt_b">range should generate a sequence that starts at 10 (including 10).</li><li data-component="feedback" id="test_question3_5_1_opt_b">The first argument (3) tells range what number to start at.</li>
+<li data-component="answer" id="test_question3_5_1_opt_c">range should generate a sequence starting at 3 that stops at 10 (including 10).</li><li data-component="feedback" id="test_question3_5_1_opt_c">range will always stop at the number before (not including) the specified ending point for the list.</li>
+<li data-component="answer" id="test_question3_5_1_opt_d">range should generate a sequence using every 10th number between the start and the stopping number.</li><li data-component="feedback" id="test_question3_5_1_opt_d">The third argument (2) tells range how many numbers to skip between each element in the sequence.</li>
+</ul>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question3_5_2">
+            What command correctly generates [2, 5, 8]?
+            <li data-component="answer" id="test_question3_5_2_opt_a">range(2, 5, 8)</li><li data-component="feedback" id="test_question3_5_2_opt_a">This command generates [2] because the first number (2) tells range where to start, the second number tells range where to end (5, not inclusive) and the third number tells range how many numbers to skip between elements (8). Since 10&gt;= 8, there is only one number in this list.</li>
+<li data-component="answer" id="test_question3_5_2_opt_b">range(2, 8, 3)</li><li data-component="feedback" id="test_question3_5_2_opt_b">This command generates [2, 5] because 8 is not less than 8 (the specified ending number).</li>
+<li data-component="answer" data-correct="" id="test_question3_5_2_opt_c">range(2, 10, 3)</li><li data-component="feedback" id="test_question3_5_2_opt_c">The first number is the starting point, the second is the maximum allowed, and the third is the amount to increment by.</li>
+<li data-component="answer" id="test_question3_5_2_opt_d">range(8, 1, -3)</li><li data-component="feedback" id="test_question3_5_2_opt_d">This command generates [8, 5, 3] because it starts at 8, ends at (or above 1), and skips every third number going down.</li>
+</ul>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question3_5_3">
+            What happens if you give range only one argument? For example: <code class="docutils literal"><span class="pre">range(4)</span></code><span class="target" id="index-0"></span>
+<li data-component="answer" data-correct="" id="test_question3_5_3_opt_a">It will generate a sequence starting at 0, with every number included up to but not including the argument it was passed.</li><li data-component="feedback" id="test_question3_5_3_opt_a">Yes, if you only give one number to range it starts with 0 and ends before the number specified incrementing by 1.</li>
+<li data-component="answer" id="test_question3_5_3_opt_b">It will generate a sequence starting at 1, with every number up to but not including the argument it was passed.</li><li data-component="feedback" id="test_question3_5_3_opt_b">Range starts at 0 unless otherwise specified.</li>
+<li data-component="answer" id="test_question3_5_3_opt_c">It will generate a sequence starting at 1, with every number including the argument it was passed.</li><li data-component="feedback" id="test_question3_5_3_opt_c">Range starts at 0 unless otherwise specified, and never includes its ending element (which is the argument it was passed).</li>
+<li data-component="answer" id="test_question3_5_3_opt_d">It will cause an error: range always takes exactly 3 arguments.</li><li data-component="feedback" id="test_question3_5_3_opt_d">If range is passed only one argument, it interprets that argument as the end of the list (not inclusive).</li>
+</ul>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 6. Iteration Simplifies Our Turtle Program">
+<a href="/PythonTurtle/IterationSimplifiesourTurtleProgram">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/PythonTurtle/IterationSimplifiesourTurtleProgram" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 8. A Few More turtle Methods and Observations">
+<a href="/PythonTurtle/AFewMoreturtleMethodsandObservations">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/PythonTurtle/AFewMoreturtleMethodsandObservations" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/PythonTurtle/TherangeType.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

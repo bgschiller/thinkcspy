@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>11. Exercises — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/ChapterHeadings/Heading13" rel="next" title="Chapter 13: Class and Objects — Digging Deeper"/>
+<link href="/ClassesBasics/Glossary" rel="prev" title="10. Glossary"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="exercises">
+<h1>11. Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="full-width container">
+<ol class="arabic">
+<li><div data-component="tabbedStuff" id="q1"><div data-component="tab" data-tabname="Question">
+<p>Add a <code class="docutils literal"><span class="pre">distance_from_point</span></code> method that works similar to <code class="docutils literal"><span class="pre">distance_from_origin</span></code> except that it takes a <code class="docutils literal"><span class="pre">Point</span></code> as a parameter and
+computes the distance between that point and self.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl_q1">
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl_ex_1_answer">
+import math
+
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+    def distance_from_point(self, otherP):
+        dx = (otherP.get_x() - self.x)
+        dy = (otherP.get_y() - self.y)
+        return math.sqrt(dy**2 + dx**2)
+
+def main():
+    p = Point(3, 3)
+    q = Point(6, 7)
+    print(p.distance_from_point(q))
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div>
+</div>
+</li>
+<li><p class="first">Add a method <code class="docutils literal"><span class="pre">reflect_x</span></code> to the class <code class="docutils literal"><span class="pre">Point</span></code> which returns a new <code class="docutils literal"><span class="pre">Point</span></code>, one which is the
+reflection of the point across the x-axis. For example,
+<code class="docutils literal"><span class="pre">Point(3,</span> <span class="pre">5).reflect_x()</span></code> is (3, -5)</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl_02">
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+</textarea>
+</li>
+<li><p class="first">Add a method <code class="docutils literal"><span class="pre">slope_from_origin</span></code>, which returns the slope of the line joining the origin to the point. For example,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">slope_from_origin</span><span class="p">()</span>
+<span class="go">2.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">slope_from_origin</span><span class="p">()</span>
+<span class="go">-0.25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">slope_from_origin</span><span class="p">()</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<p>The equation for calculating slope between any two points is <strong>slope = (Y2 - Y1) / (X2 - X1)</strong>. Remember that dividing by 0 is not allowed, so there are some inputs that will cause your method to fail. Return <code class="docutils literal"><span class="pre">None</span></code> when that happens.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl_04">
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+    # TODO define a method called slope_from_origin here
+
+
+# some tests to check your code
+from test import testEqual
+testEqual( Point(4, 10).slope_from_origin(), 2.5 )
+testEqual( Point(5, 10).slope_from_origin(), 2 )
+testEqual( Point(0, 10).slope_from_origin(), None )
+testEqual( Point(20, 10).slope_from_origin(), 0.5 )
+testEqual( Point(20, 20).slope_from_origin(), 1 )
+testEqual( Point(4, -10).slope_from_origin(), -2.5 )
+testEqual( Point(-4, -10).slope_from_origin(), 2.5 )
+testEqual( Point(-6, 0).slope_from_origin(), 0 )
+</textarea>
+</li>
+<li><div data-component="tabbedStuff" id="q5"><div data-component="tab" data-tabname="Question">
+<p>Add a method called <code class="docutils literal"><span class="pre">move</span></code> that will take two parameters, call them <code class="docutils literal"><span class="pre">dx</span></code> and <code class="docutils literal"><span class="pre">dy</span></code>.  The method will cause the point to move in the x and y direction the number of units given. (Hint: you will change the values of the state of the point)</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl_q5">
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl_05_answer">
+class Point:
+
+    def __init__(self, init_x, init_y):
+        """ Create a new point at the given coordinates. """
+        self.x = init_x
+        self.y = init_y
+
+    def get_x(self):
+        return self.x
+
+    def get_y(self):
+        return self.y
+
+    def distance_from_origin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __repr__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+    def move(self, dx, dy):
+        self.x = self.x + dx
+        self.y = self.y + dy
+
+def main():
+    p = Point(7, 6)
+    print(p)
+    p.move(5, 10)
+    print(p)
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="graded-lesson-assignment">
+<h2>Graded Lesson Assignment<a class="headerlink" href="#graded-lesson-assignment" title="Permalink to this headline">¶</a></h2>
+<div class="full-width container">
+<p>Create a <code class="docutils literal"><span class="pre">Car</span></code> class that has the following characteristics:</p>
+<ul class="simple">
+<li>It has a <code class="docutils literal"><span class="pre">gas_level</span></code> attribute.</li>
+<li>It has a constructor (<code class="docutils literal"><span class="pre">__init__</span></code> method) that takes a float representing the initial gas level and sets the gas level of the car to this value.</li>
+<li>It has an <code class="docutils literal"><span class="pre">add_gas</span></code> method that takes a single float value and adds this amount to the current value of the <code class="docutils literal"><span class="pre">gas_level</span></code> attribute.</li>
+<li>It has a <code class="docutils literal"><span class="pre">fill_up</span></code> method that sets the car’s gas level up to 13.0 by adding the amount of gas necessary to reach this level. It will return a float of the amount of gas that had to be added to the car to get the gas level up to 13.0. However, if the car’s gas level was greater than or equal to 13.0 <em>to begin with</em>, then it doesn’t need to add anything and it simply returns a <code class="docutils literal"><span class="pre">0</span></code>.</li>
+</ul>
+<p>(Note: you can call the <code class="docutils literal"><span class="pre">add_gas</span></code> method from within the <code class="docutils literal"><span class="pre">fill_up</span></code> method by using this syntax: <code class="docutils literal"><span class="pre">self.add_gas(amount)</span></code>.)</p>
+<p>Here’s an example.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">example_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">example_car</span><span class="o">.</span><span class="n">fill_up</span><span class="p">())</span>  <span class="c1"># should print 4</span>
+
+<span class="n">another_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">another_car</span><span class="o">.</span><span class="n">fill_up</span><span class="p">())</span> <span class="c1"># should print 0</span>
+</pre></div>
+</div>
+<p>Reminder: Don’t forget about the <code class="docutils literal"><span class="pre">self</span></code> parameter!</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch_cl_q3">
+# TODO: add the Car class
+
+
+from test import testEqual
+testEqual( Car(10).fill_up(), 3 )
+testEqual( Car(20).fill_up(), 0 )
+testEqual( Car(5.5).fill_up(), 7.5 )
+testEqual( Car(12.5).fill_up(), 0.5 )
+testEqual( Car(13).fill_up(), 0 )
+</textarea>
+</div>
+<p><strong>Ready to submit your code?  Time to fork, and submit a Pull Request to</strong>: <a class="reference external" href="https://github.com/devetrycodeforward/12-car-class">this Github Repository</a>.</p>
+</div>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 10. Glossary">
+<a href="/ClassesBasics/Glossary">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/ClassesBasics/Glossary" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - Chapter 13: Class and Objects — Digging Deeper">
+<a href="/ChapterHeadings/Heading13">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/ChapterHeadings/Heading13" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/ClassesBasics/Exercises.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

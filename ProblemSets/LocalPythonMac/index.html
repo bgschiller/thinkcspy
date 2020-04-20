@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Using Python Locally: macOS — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="using-python-locally-macos">
+<span id="mac-setup"></span><h1>Using Python Locally: macOS<a class="headerlink" href="#using-python-locally-macos" title="Permalink to this headline">¶</a></h1>
+<p>It’s time to get Python running independently on your own computer! This will require some setup along with learning some new things about your computer, such as how to use a command line interface.</p>
+<p>If that sounds intimidating, don’t worry. While learning to use the command line can seem scary, it’s not bad at all if you learn it in steps and practice regularly. Before you know it, you’ll find interacting with your computer via the command line super useful and even fun!</p>
+<div class="section" id="getting-familiar-with-the-command-line">
+<h2>Getting Familiar with the Command Line<a class="headerlink" href="#getting-familiar-with-the-command-line" title="Permalink to this headline">¶</a></h2>
+<p>Before we install Python on our computers, let’s get familiar with the command line.</p>
+<div class="section" id="install-git">
+<h3>Install Git<a class="headerlink" href="#install-git" title="Permalink to this headline">¶</a></h3>
+<p>If you haven’t already done this during <strong>Unit 0: Coding Prep</strong>, then the first step is to ensure Git is installed on your Mac. To do so, open the terminal (see instructions below), and type <code class="docutils literal"><span class="pre">git</span> <span class="pre">--version</span></code>. If you see a git version listed, e.g., “git 2.5.4”, then you are good to go. Otherwise, you will get an alert asking you if you would like to install the developer tools. Click “Install”. Note that we will not be using Git until Unit 2, but while we’re doing set up now, it’s a good idea to add this, too.</p>
+</div>
+<div class="section" id="opening-terminal">
+<h3>Opening Terminal<a class="headerlink" href="#opening-terminal" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://support.apple.com/en-us/HT204014">Use Spotlight</a> to open the Terminal application, or find Terminal in the <code class="docutils literal"><span class="pre">/Applications</span></code> folder and open it from there.</p>
+<p>Once Terminal is open, right-click on its icon in your dock and select <em>Options &gt; Keep in Dock</em>. We’ll be using Terminal quite a bit, and this will keep it at short reach.</p>
+</div>
+<div class="section" id="practice-the-command-line">
+<h3>Practice the command line<a class="headerlink" href="#practice-the-command-line" title="Permalink to this headline">¶</a></h3>
+<p>We’re going to use Appendix A from the online book <em>Learn Python the Hard Way</em> (don’t worry, the book is more approachable than it sounds). This section is called <a class="reference external" href="http://learnpythonthehardway.org/book/appendixa.html">Command Line Crash Course</a> and it contains 15 short tutorials teaching you the basics of how to interact with your computer’s file and operating systems using a “terminal” or “shell”.</p>
+</div>
+</div>
+<div class="section" id="installing-and-running-python-locally">
+<h2>Installing and Running Python Locally<a class="headerlink" href="#installing-and-running-python-locally" title="Permalink to this headline">¶</a></h2>
+<p>By “locally” we mean that you are now about to install and run Python directly on your computer, as opposed to through some web-based or remote tool. <strong>Please follow all of the install instructions below exactly</strong>.</p>
+<div class="section" id="install-a-code-editor">
+<h3>Install a code editor<a class="headerlink" href="#install-a-code-editor" title="Permalink to this headline">¶</a></h3>
+<p>First, we’ll install Visual Studio Code, a general-purpose code editor. There are lots of great code editors out there, but we’ll use Visual Studio Code in large part due to its nice Python extension, which includes a very useful debugger.</p>
+<p>To install Visual Studio Code (VS Code):</p>
+<ol class="arabic simple">
+<li>Go to <a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a> and select the Mac platform to download. If the “Download for Mac” message is not displayed on the green button, select the Stable macOS package using the dropdown arrow).</li>
+<li>Double click the downloaded file and follow the installer instructions (the default selections are fine; if there is an option to set the PATH environment variable, select it).</li>
+<li>Launch VS Code.</li>
+<li>Open the Command Palette (⇧⌘P) in VS Code and type ‘shell command’ to find the <code class="docutils literal"><span class="pre">Shell</span> <span class="pre">Command:</span> <span class="pre">Install</span> <span class="pre">'code'</span> <span class="pre">command</span> <span class="pre">in</span> <span class="pre">PATH</span> <span class="pre">command</span></code>. Select this and then quit VS Code (we’ll relaunch it from the command line in the next step).</li>
+<li>Close and reopen your Terminal window for the changes to take effect. In the new Terminal window, run <code class="docutils literal"><span class="pre">code</span></code> to open VS Code. If you run into any problems with this, check out this <a class="reference external" href="https://code.visualstudio.com/docs/setup/mac">article</a> on VS Code setup.</li>
+<li>Select <em>View &gt; Extensions</em> within VS Code. In the Extensions menu that will appear, you’ll see an option named “Python” with a subheader of “Linting, Debugging(multi-threaded...)”. Click the green “Install” button for this extension. If prompted to restart VS Code, do so.</li>
+<li>Add Visual Studio Code to your dock, just as you did with Terminal above.</li>
+</ol>
+</div>
+<div class="section" id="install-miniconda-python-3">
+<h3>Install Miniconda Python 3<a class="headerlink" href="#install-miniconda-python-3" title="Permalink to this headline">¶</a></h3>
+<p>Now let’s install Python 3 using Miniconda. <strong>Before continuing, ensure that the shell you are using for terminal is bash</strong>. You can see what kind of shell you are using by looking at the title bar of your terminal. It should say <em>bash</em>. If you are using any other shell (if the terminal title bar says <em>zsh</em> or <em>tcsh</em>, for example) the following instructions will not work properly. Visit this <a class="reference external" href="http://osxdaily.com/2012/03/21/change-shell-mac-os-x">link</a> for guidance on changing your shell. Then follow these steps:</p>
+<ol class="arabic simple">
+<li>Go to <a class="reference external" href="https://conda.io/miniconda.html">Conda</a> and download the Miniconda “Python 3.6” Mac 64-bit (bash installer) (Note: the version may have changed since the time of this writing; just make sure to select the latest version of Python beginning with “3.”). If you click on the download link and it asks whether you want to open or save it, select “save”.</li>
+<li>In the Terminal application, change to your <code class="docutils literal"><span class="pre">Downloads/</span></code> directory: <code class="docutils literal"><span class="pre">cd</span> <span class="pre">~/Downloads</span></code>.</li>
+<li>Run the installer script by using the following command: <code class="docutils literal"><span class="pre">bash</span> <span class="pre">Miniconda3-latest-MacOSX-x86_64.sh</span></code>. Accept any default options and <strong>make sure to answer yes</strong> when you are asked: “Do you wish the installer to prepend the Miniconda3 install location to PATH in your /Users/YourUserName/.bash_profile ? [yes|no]”. Note that if you view the license agreement, you’ll have to page through using it using the spacebar.</li>
+<li><strong>Close and reopen your Terminal window for the changes to take effect</strong>.</li>
+<li>Verify that Python 3 installed correctly by opening Terminal and typing <code class="docutils literal"><span class="pre">python</span> <span class="pre">-V</span></code>. It should print to the screen the version of Python you just installed.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="make-your-first-local-python-program">
+<h2>Make Your First Local Python Program<a class="headerlink" href="#make-your-first-local-python-program" title="Permalink to this headline">¶</a></h2>
+<p>Follow these steps to get your first Python program up and running on your computer:</p>
+<ol class="arabic simple">
+<li>Make a directory to store your Python code on your computer using Terminal.<ol class="loweralpha">
+<li>Make sure you are in your home directory with the command <code class="docutils literal"><span class="pre">cd</span> <span class="pre">~</span></code></li>
+<li>Make a new directory named “lc101”: <code class="docutils literal"><span class="pre">mkdir</span> <span class="pre">lc101</span></code></li>
+<li>Move into that directory: <code class="docutils literal"><span class="pre">cd</span> <span class="pre">lc101</span></code></li>
+</ol>
+</li>
+<li>Enter your Python code and run it.<ol class="loweralpha">
+<li>Create a file in that directory named “hello.py”: <code class="docutils literal"><span class="pre">touch</span> <span class="pre">hello.py</span></code></li>
+<li>Open your “lc101” directory in the Visual Studio Code editor from Terminal with the command: <code class="docutils literal"><span class="pre">code</span> <span class="pre">.</span></code></li>
+<li>In your code editor, open <code class="docutils literal"><span class="pre">hello.py</span></code> and type <code class="docutils literal"><span class="pre">print("Hello,</span> <span class="pre">World!")</span></code>. Then save the file (you can use the shortcut <code class="docutils literal"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">S</span></code>).</li>
+<li>Back in Terminal, run the program by typing <code class="docutils literal"><span class="pre">python</span> <span class="pre">hello.py</span></code>. You should see “Hello, World!” appear (without the quotes).</li>
+</ol>
+</li>
+</ol>
+<p><strong>Congratulations on running your first python program locally!!</strong></p>
+<p>Now you’re ready work on the second part of <a class="reference external" href="Initials.html#part-2-initials">Initials</a>.</p>
+</div>
+</div>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/ProblemSets/LocalPythonMac.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

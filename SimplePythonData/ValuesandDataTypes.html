@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>1. Values and Data Types — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/SimplePythonData/Typeconversionfunctions" rel="next" title="2. Type conversion functions"/>
+<link href="/ChapterHeadings/Heading2" rel="prev" title="Chapter 2: Simple Python Data"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="values-and-data-types">
+<span id="index-0"></span><h1>1. Values and Data Types<a class="headerlink" href="#values-and-data-types" title="Permalink to this headline">¶</a></h1>
+<p>A <strong>value</strong> is one of the fundamental things — like a word or a number — that a program manipulates. The values we have seen so far are <code class="docutils literal"><span class="pre">5</span></code> (the result when we added <code class="docutils literal"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span></code>), and <code class="docutils literal"><span class="pre">"Hello,</span> <span class="pre">World!"</span></code>.  We often refer to these values as <strong>objects</strong> and we will use the words value and object interchangeably.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The 2 and the 3 that are part of the addition above are values (objects) as well.</p>
+</div>
+<p>These objects are classified into different <strong>classes</strong>, or <strong>data types</strong>: <code class="docutils literal"><span class="pre">4</span></code> is an <strong>integer</strong>, and <code class="docutils literal"><span class="pre">"Hello,</span> <span class="pre">World!"</span></code> is a <strong>string</strong>, so-called because it contains a string, or sequence, of letters. You (and the interpreter) can identify strings because they are enclosed in either single or double quotation marks.</p>
+<p>If you are not sure what class a value falls into, Python has a function called <code class="docutils literal"><span class="pre">type()</span></code> which can tell you.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch02_1">
+print(type("Hello, World!"))
+print(type(17))
+print("Hello, World")
+</textarea>
+<p>Not surprisingly, strings belong to the class <code class="docutils literal"><span class="pre">str</span></code> and integers belong to the class <code class="docutils literal"><span class="pre">int</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When we show the value of a string using the <code class="docutils literal"><span class="pre">print()</span></code> function, such as in the third example above, the quotes are no longer present. The value of the string is the sequence of characters inside the quotes. The quotes are only necessary to help Python know what the value is.</p>
+</div>
+<p>In the Python shell, it is not necessary to use the <code class="docutils literal"><span class="pre">print()</span></code> function to see the values shown above. The shell evaluates the Python function and automatically prints the result. For example, consider the shell session shown below. When we ask the shell to evaluate <code class="docutils literal"><span class="pre">type("Hello,</span> <span class="pre">World!")</span></code>, it responds with the appropriate answer and then goes on to display the prompt for the next use.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Python 3.1.2 (r312:79360M, Mar 24 2010, 01:33:18)
+[GCC 4.0.1 (Apple Inc. build 5493)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; type("Hello, World!")
+&lt;class 'str'&gt;
+&gt;&gt;&gt; type(17)
+&lt;class 'int'&gt;
+&gt;&gt;&gt; "Hello, World"
+'Hello, World'
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>Note that in the last example, we simply ask the shell to evaluate the string “Hello, World”.  The result is as you might expect, the string itself.</p>
+<p>Continuing with our discussion of data types, numbers with a decimal point belong to a class called <strong>float</strong>, because these numbers are represented in a format called <em>floating-point</em>.  At this stage, you can treat the words <em>class</em> and <em>type</em> interchangeably. We’ll come back to a deeper understanding of what a class is in later chapters.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch02_2">
+print(type(3.2))
+</textarea>
+<p>What about values like <code class="docutils literal"><span class="pre">"17"</span></code> and <code class="docutils literal"><span class="pre">"3.2"</span></code>? They look like numbers, but they are in quotation marks like strings.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch02_3">
+print(type("17"))
+print(type("3.2"))
+</textarea>
+<p>They’re strings!</p>
+<p>Strings in Python can be enclosed in either single quotes (<code class="docutils literal"><span class="pre">'</span></code>) or double
+quotes (<code class="docutils literal"><span class="pre">"</span></code>), or three of each (<code class="docutils literal"><span class="pre">'''</span></code> or <code class="docutils literal"><span class="pre">"""</span></code>)</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch02_4">
+print(type('This is a string.') )
+print(type("And so is this.") )
+print(type("""and this.""") )
+print(type('''and even this...''') )
+</textarea>
+<p>Double quoted strings can contain single quotes inside them, as in <code class="docutils literal"><span class="pre">"Bruce's</span> <span class="pre">beard"</span></code>, and single quoted strings can have double quotes inside them, as in <code class="docutils literal"><span class="pre">'The</span> <span class="pre">knights</span> <span class="pre">who</span> <span class="pre">say</span> <span class="pre">"Ni!"'</span></code>. Strings enclosed with three occurrences of either quote symbol are called triple quoted strings. They can contain either single or double quotes:</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch02_5">
+print('''"Oh no", she exclaimed, "Ben's bike is broken!"''')
+</textarea>
+<p>Triple quoted strings can even span multiple lines:</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch02_6">
+message = """This message will
+span several
+lines."""
+print(message)
+
+print("""This message will span
+several lines
+of the text.""")
+</textarea>
+<p>Python doesn’t care whether you use single or double quotes or the three-of-a-kind quotes to surround your strings. Once it has parsed the text of your program or command, the way it stores the value is identical in all cases, and the surrounding quotes are not part of the value.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch02_7">
+print('This is a string.')
+print("""And so is this.""")
+</textarea>
+<p>So the Python language designers usually chose to surround their strings by single quotes. What do you think would happen if the string already contained single quotes?</p>
+<p>When you type a large integer, you might be tempted to use commas between groups of three digits, as in <code class="docutils literal"><span class="pre">42,000</span></code>. This is not a legal integer in Python, but it does mean something else, which is legal:</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch02_8">
+print(42000)
+print(42,000)
+</textarea>
+<p>Well, that’s not what we expected at all! Because of the comma, Python chose to treat this as a <em>pair</em> of values. In fact, the <code class="docutils literal"><span class="pre">print()</span></code> function can print any number of values as long as you separate them by commas. Notice that the values are separated by spaces when they are displayed.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch02_8a">
+print(42, 17, 56, 34, 11, 4.35, 32)
+print(3.4, "hello", 45)
+</textarea>
+<p>Remember not to put commas or spaces in your integers, no matter how big they are. Also revisit what we said in the previous chapter: formal languages are strict, the notation is concise, and even the smallest change might mean something quite different from what you intended.</p>
+<p><strong>Check your understanding</strong></p>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question2_1_1">
+            How can you determine the type of a variable?
+            <li data-component="answer" id="test_question2_1_1_opt_a">Print out the value and determine the data type based on the value printed.</li><li data-component="feedback" id="test_question2_1_1_opt_a">You may be able to determine the data type based on the printed value, but it may also be  deceptive, like when a string prints, there are no quotes around it.</li>
+<li data-component="answer" data-correct="" id="test_question2_1_1_opt_b">Use the type() function.</li><li data-component="feedback" id="test_question2_1_1_opt_b">The type() function will tell you the class the value belongs to.</li>
+<li data-component="answer" id="test_question2_1_1_opt_c">Use it in a known equation and print the result.</li><li data-component="feedback" id="test_question2_1_1_opt_c">Only numeric values can be used in equations.</li>
+<li data-component="answer" id="test_question2_1_1_opt_d">Look at the declaration of the variable.</li><li data-component="feedback" id="test_question2_1_1_opt_d">In Python variables are not declared.</li>
+</ul>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question2_1_2">
+            What is the data type of ‘this is what kind of data’?
+            <li data-component="answer" id="test_question2_1_2_opt_a">Character</li><li data-component="feedback" id="test_question2_1_2_opt_a">It is not a single character.</li>
+<li data-component="answer" id="test_question2_1_2_opt_b">Integer</li><li data-component="feedback" id="test_question2_1_2_opt_b">The data is not numeric.</li>
+<li data-component="answer" id="test_question2_1_2_opt_c">Float</li><li data-component="feedback" id="test_question2_1_2_opt_c">The value is not numeric with a decimal point.</li>
+<li data-component="answer" data-correct="" id="test_question2_1_2_opt_d">String</li><li data-component="feedback" id="test_question2_1_2_opt_d">Strings can be enclosed in single quotes.</li>
+</ul>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - Chapter 2: Simple Python Data">
+<a href="/ChapterHeadings/Heading2">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/ChapterHeadings/Heading2" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 2. Type conversion functions">
+<a href="/SimplePythonData/Typeconversionfunctions">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/SimplePythonData/Typeconversionfunctions" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/SimplePythonData/ValuesandDataTypes.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

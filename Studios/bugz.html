@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>9. Bugz — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/Studios/bubble-sort" rel="next" title="10. Bubble Sort"/>
+<link href="/Studios/sorted" rel="prev" title="8. Sorted"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="bugz">
+<h1>9. Bugz<a class="headerlink" href="#bugz" title="Permalink to this headline">¶</a></h1>
+<p><em>Studios are in-class activities to give you hands-on practice with new concepts. The first half is the Walkthrough, an instructor-led programming problem. The second half is for you to work on individually or in pairs in class.</em></p>
+<p><em>These problems are not graded, and you are not obligated to finish them. Get as far as you can while in class, and use them as an opportunity to play with and solidify new concepts.</em></p>
+<div class="section" id="walkthrough">
+<h2>Walkthrough<a class="headerlink" href="#walkthrough" title="Permalink to this headline">¶</a></h2>
+<p>This is LaunchScrabble, a unique version of Scrabble! This function takes a list of words from a LaunchScrabble game and calculates the player’s score. All words count as one point, but words that begin with ‘q’ are 10 points!</p>
+<p>But since ‘q’ words are worth so many points, we want to make sure our players aren’t cheating and making up words that start with ‘q’. So for every word that begins with ‘q’, the program checks to make sure the following letter is ‘u’. If we find an exception, for instance “qrie”, negate all their points and give that cheater an overall score of 0!</p>
+<p>The only problem is, the code we have so far doesn’t work.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="bugz_walkthrough">
+def launch_scrabble(words):
+    points = 0
+    for word in words:
+        points += 1     # equivalent to points = points + 1
+        if (word[0] == "q" and word[1] == "u"):
+            points += 10
+        else:
+            return 0
+    return points
+
+test_words_1 = ['dog']
+print('test_words_1 score:', launch_scrabble(test_words_1))
+
+test_words_2 = ['quiet']
+print('test_words_2 score:', launch_scrabble(test_words_2))
+</textarea>
+<p><strong>Problems:</strong></p>
+<ol class="arabic simple">
+<li>All words that do not begin with ‘q’ will automatically return 0</li>
+<li>q words add 11 to the total points</li>
+</ol>
+<p>There are a couple ways to fix this (for instance, you could use nested conditionals or boolean logic to deal with the ‘q’ words), but one possible solution is below.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="bugz_walkthrough_solution">
+def launch_scrabble(words):
+    points = 0
+    for word in words:
+        if (word[0] == "q"):
+            if (word[1] == "u"):
+                points += 10
+            else:
+                return 0
+        else:
+            points += 1
+    return points
+
+test_words_1 = ['dog']
+print('test_words_1 score:', launch_scrabble(test_words_1))
+
+test_words_2 = ['quiet']
+print('test_words_2 score:', launch_scrabble(test_words_2))
+</textarea>
+</div>
+<div class="section" id="studio">
+<h2>Studio<a class="headerlink" href="#studio" title="Permalink to this headline">¶</a></h2>
+<p>Today’s studio, rather than explicitly pertaining to strings, is more of an overall review. You will get some practice debugging a variety of common mistakes that new coders make.</p>
+<p>Below are a handful of code snippets that are broken. See if you can fix them!</p>
+<p><strong>Printing the ith Element</strong></p>
+<p>The function below, <code class="docutils literal"><span class="pre">print_every(i,</span> <span class="pre">nums)</span></code> receives a list of numbers <code class="docutils literal"><span class="pre">nums</span></code>, along with an integer <code class="docutils literal"><span class="pre">i</span></code>. The function is supposed to print every <code class="docutils literal"><span class="pre">ith</span></code> element from the list. But it’s not working!</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="bugz_studio_1">
+# in a list of numbers, print every ith number
+def print_every(i, nums):
+counter = 0
+for i in nums:
+    if counter % i == 0:
+        print(i)
+    counter += 1
+
+print_every(3, [4, 7, 2, 10, 1, 0, 9, 6])
+# should print 4, then print 10, then print 9
+</textarea>
+<p><strong>Seniors Bar</strong></p>
+<p>You are the bouncer outside the door of a <em>seniors only</em> bar. People must be 70 or older, otherwise they are not allowed in. When a group of friends arrives, your job is to determine whether to accept or reject the group. The function below, <code class="docutils literal"><span class="pre">check_group</span></code>, is supposed to return a boolean indicating whether or not the group is allowed inside. But it’s not working!</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="bugz_studio_2">
+# return True if every member of the group is at least 70, otherwise return False
+def check_group(ages):
+for age in ages:
+    if age &lt; 70:
+        return False
+    else:
+        return True
+
+
+from test import testEqual
+
+# this group should not be allowed inside the bar
+group = [78, 71, 25, 84]
+testEqual(check_group(group), False)
+
+# this group should also not be allowed inside the bar
+group2 = [ 2, 99 ]
+testEqual(check_group(group2), False)
+
+# this loner is allowed
+group3 = [ 99 ]
+testEqual(check_group(group3), True)
+</textarea>
+<p><strong>Password Check</strong></p>
+<p>When registering for an online account, users must create a password. For your service, you enforce the following rules on passwords: The password must contain at least one non-alphabetical character, and may not contain any spaces. The function below is supposed to check the validity of passwords. But! It’s! Not! Working!</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="bugz_studio_3">
+def password_checker(password):
+"""
+A valid password has no spaces,
+and at least one non-alphabetical character
+"""
+contains_non_alpha = False
+
+for char in password:
+    if char == " ":
+        return False
+    else not char.isalpha():
+        contains_non_alpha = True
+
+return contains_non_alpha
+
+pw1 = "i &lt;3 makonnen"
+print(password_checker(pw1))
+# should print False
+
+pw2 = "puzzlesareforfun"
+print(password_checker(pw2))
+# should print False
+
+pw2 = "puzzlesr4fun"
+print(password_checker(pw2))
+# should print True
+</textarea>
+<div class="section" id="bonus-missions">
+<h3>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Write a function called <code class="docutils literal"><span class="pre">stretch</span></code> that takes in a string and doubles each of the letters contained in the string. For example, <code class="docutils literal"><span class="pre">stretch("chihuahua")</span></code> would return “cchhiihhuuaahhuuaa”.</li>
+<li>Add an optional parameter to your <code class="docutils literal"><span class="pre">stretch</span></code> function that indicates how many times each letter should be duplicated. The default value for this optional parameter should be 2. For example, <code class="docutils literal"><span class="pre">stretch("chihuahua",</span> <span class="pre">4)</span></code> would return “cccchhhhiiiihhhhuuuuaaaahhhhuuuuaaaa” but <code class="docutils literal"><span class="pre">stretch("chihuahua")</span></code> should still return “cchhiihhuuaahhuuaa”, as before.</li>
+<li>Add an additional optional parameter to your <code class="docutils literal"><span class="pre">stretch</span></code> function that contains a list of characters. This version of <code class="docutils literal"><span class="pre">stretch</span></code> will only duplicate letters that are contained in the list. The default value for this new parameter should be the list of lowercase characters. For example, <code class="docutils literal"><span class="pre">stretch("chihuahua",</span> <span class="pre">3,</span> <span class="pre">"ha")</span></code> would return “chhhihhhuaaahhhuaaa”.</li>
+</ul>
+<p>You can read about optional parameters, also called optional arguments, in this <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions">Python Tutorial section</a> .</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="bugz_studio_stretch">
+
+
+</textarea>
+</div>
+</div>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 8. Sorted">
+<a href="/Studios/sorted">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/Studios/sorted" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 10. Bubble Sort">
+<a href="/Studios/bubble-sort">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/Studios/bubble-sort" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/Studios/bugz.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

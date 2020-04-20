@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>10. Using Lists as Parameters — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/Lists/ListComprehensions" rel="next" title="11. List Comprehensions"/>
+<link href="/Lists/RepetitionandReferences" rel="prev" title="9. Repetition and References"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="using-lists-as-parameters">
+<span id="index-0"></span><h1>10. Using Lists as Parameters<a class="headerlink" href="#using-lists-as-parameters" title="Permalink to this headline">¶</a></h1>
+<p>Now that we understand more about the difference between copies and references, we can look at how we use lists as parameters to functions, as well as how we return lists. There are two types of functions that take lists as parameters, modifiers and pure functions.</p>
+<div class="section" id="modifiers">
+<h2>Modifiers<a class="headerlink" href="#modifiers" title="Permalink to this headline">¶</a></h2>
+<p>Functions which take lists as arguments and change them during execution are called <strong>modifiers</strong> and the changes they make are called <strong>side effects</strong>. Passing a list as an argument actually <em>passes a reference to the list, not a copy of the list</em>. Since lists are mutable, changes made to the elements referenced by the parameter change the same list that the argument is referencing. For example, the function below takes a list as an argument and multiplies each element in the list by 2:</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="chp09_parm1">
+def double_stuff(alist):
+    """ Overwrite each element in alist with double its value. """
+    for position in range(len(alist)):
+        alist[position] = 2 * alist[position]
+
+def main():
+    things = [2, 5, 9]
+    print(things)
+    double_stuff(things)
+    print(things)
+
+if __name__ == "__main__":
+    main()
+</textarea>
+<p>The parameter <code class="docutils literal"><span class="pre">alist</span></code> and the variable <code class="docutils literal"><span class="pre">things</span></code> are aliases for the same object.</p>
+<img alt="State snapshot for multiple references to a list as a parameter" src="/_images/references4.png"/>
+<p>Since the list object is shared by two references, there is only one copy. If a function modifies the elements of a list parameter, the change also occurs in the original.</p>
+<p>This can be easily seen in codelens. Note that after the call to <code class="docutils literal"><span class="pre">double_stuff</span></code>, the formal parameter <code class="docutils literal"><span class="pre">alist</span></code> refers to the same object as the actual parameter <code class="docutils literal"><span class="pre">things</span></code>.  There is only one copy of the list object itself.</p>
+<div class="alert alert-warning cd_section">
+<div id="chp09_parm1_trace"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (chp09_parm1_trace)</span> </p>
+</div>
+<script type="text/javascript">
+var chp09_parm1_trace_trace = {"code": "def double_stuff(alist):\n    \"\"\" Overwrite each element in alist with double its value. \"\"\"\n    for position in range(len(alist)):\n        alist[position] = 2 * alist[position]\n\ndef main():\n    things = [2, 5, 9]\n    double_stuff(things)\n\nif __name__ == \"__main__\":\n    main()", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["double_stuff"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null]}, "line": 10, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "main", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": []}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null]}, "line": 6, "event": "call"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "main", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": []}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "main", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9]}, "line": 1, "event": "call"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"position": 0, "alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "position"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"position": 0, "alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "position"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 4, 5, 9]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"position": 1, "alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "position"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 4, 5, 9]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"position": 1, "alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "position"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 4, 10, 9]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"position": 2, "alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "position"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 4, 10, 9]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"position": 2, "alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "position"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 4, 10, 18]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"__return__": null, "position": 2, "alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "position", "__return__"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 4, 10, 18]}, "line": 3, "event": "return"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "main", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"__return__": null, "things": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things", "__return__"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 4, 10, 18]}, "line": 8, "event": "return"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null]}, "line": 11, "event": "return"}]};
+var chp09_parm1_trace_vis;
+
+$(document).ready(function() {
+    try {
+        chp09_parm1_trace_vis = new ExecutionVisualizer('chp09_parm1_trace',chp09_parm1_trace_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    // LC MOD
+                                    // increase codelense width to 600
+                                    codeDivWidth: 600,
+                                    lang : 'py3'
+                                    });
+        attachLoggers(chp09_parm1_trace_vis,'chp09_parm1_trace');
+        styleButtons('chp09_parm1_trace');
+        allVisualizers.push(chp09_parm1_trace_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component chp09_parm1_trace_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#chp09_parm1_trace_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'chp09_parm1_trace'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (chp09_parm1_trace_vis) {
+        chp09_parm1_trace_vis.redrawConnectors();
+    }
+});
+</script>
+</div>
+<div class="section" id="pure-functions">
+<h2>Pure Functions<a class="headerlink" href="#pure-functions" title="Permalink to this headline">¶</a></h2>
+<p>On the contrary, a <strong>pure function</strong> does not produce side effects. It communicates with the calling program only through parameters (which it does not modify) and a return value. Here is the <code class="docutils literal"><span class="pre">double_stuff</span></code> function from the previous section written as a pure function. To use the pure function version of <code class="docutils literal"><span class="pre">double_stuff</span></code> to modify <code class="docutils literal"><span class="pre">things</span></code>, you would assign the return value back to <code class="docutils literal"><span class="pre">things</span></code>.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch09_mod2">
+def double_stuff(alist):
+    """ Return a new list in which contains doubles of the elements in alist. """
+    new_list = []
+    for value in alist:
+        new_elem = 2 * value
+        new_list.append(new_elem)
+    return new_list
+
+def main():
+    things = [2, 5, 9]
+    print(things)
+    things = double_stuff(things)
+    print(things)
+
+if __name__ == "__main__":
+    main()
+</textarea>
+<p>Once again, codelens helps us to see the actual references and objects as they are passed and returned.</p>
+<div class="alert alert-warning cd_section">
+<div id="ch09_mod3"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (ch09_mod3)</span> </p>
+</div>
+<script type="text/javascript">
+var ch09_mod3_trace = {"code": "def double_stuff(alist):\n    \"\"\" Return a new list in which contains doubles of the elements in alist. \"\"\"\n    new_list = []\n    for value in alist:\n        new_elem = 2 * value\n        new_list.append(new_elem)\n    return new_list\n\ndef main():\n    things = [2, 5, 9]\n    things = double_stuff(things)\n\nif __name__ == \"__main__\":\n    main()", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["double_stuff"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null]}, "line": 13, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null]}, "line": 14, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "main", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": []}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null]}, "line": 9, "event": "call"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "main", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": []}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null]}, "line": 10, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "main", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9]}, "line": 1, "event": "call"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"new_list": ["REF", 4], "alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "new_list"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9], "4": ["LIST"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"new_list": ["REF", 4], "alist": ["REF", 3], "value": 2}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "new_list", "value"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9], "4": ["LIST"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"new_elem": 4, "new_list": ["REF", 4], "alist": ["REF", 3], "value": 2}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "new_list", "value", "new_elem"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9], "4": ["LIST"]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"new_elem": 4, "new_list": ["REF", 4], "alist": ["REF", 3], "value": 2}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "new_list", "value", "new_elem"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9], "4": ["LIST", 4]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"new_elem": 4, "new_list": ["REF", 4], "alist": ["REF", 3], "value": 5}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "new_list", "value", "new_elem"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9], "4": ["LIST", 4]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"new_elem": 10, "new_list": ["REF", 4], "alist": ["REF", 3], "value": 5}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "new_list", "value", "new_elem"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9], "4": ["LIST", 4]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"new_elem": 10, "new_list": ["REF", 4], "alist": ["REF", 3], "value": 5}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "new_list", "value", "new_elem"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9], "4": ["LIST", 4, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"new_elem": 10, "new_list": ["REF", 4], "alist": ["REF", 3], "value": 9}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "new_list", "value", "new_elem"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9], "4": ["LIST", 4, 10]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"new_elem": 18, "new_list": ["REF", 4], "alist": ["REF", 3], "value": 9}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "new_list", "value", "new_elem"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9], "4": ["LIST", 4, 10]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"new_elem": 18, "new_list": ["REF", 4], "alist": ["REF", 3], "value": 9}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "new_list", "value", "new_elem"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9], "4": ["LIST", 4, 10, 18]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"new_elem": 18, "new_list": ["REF", 4], "alist": ["REF", 3], "value": 9}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "new_list", "value", "new_elem"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9], "4": ["LIST", 4, 10, 18]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "double_stuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"things": ["REF", 3]}, "is_highlighted": false, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things"]}, {"frame_id": 2, "encoded_locals": {"new_elem": 18, "new_list": ["REF", 4], "__return__": ["REF", 4], "alist": ["REF", 3], "value": 9}, "is_highlighted": true, "is_parent": false, "func_name": "double_stuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "double_stuff_f2", "ordered_varnames": ["alist", "new_list", "value", "new_elem", "__return__"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "3": ["LIST", 2, 5, 9], "4": ["LIST", 4, 10, 18]}, "line": 7, "event": "return"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "main", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"__return__": null, "things": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "main", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "main_f1", "ordered_varnames": ["things", "__return__"]}], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null], "4": ["LIST", 4, 10, 18]}, "line": 11, "event": "return"}, {"ordered_globals": ["double_stuff", "main"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"main": ["REF", 2], "double_stuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "double_stuff(alist)", null], "2": ["FUNCTION", "main()", null]}, "line": 14, "event": "return"}]};
+var ch09_mod3_vis;
+
+$(document).ready(function() {
+    try {
+        ch09_mod3_vis = new ExecutionVisualizer('ch09_mod3',ch09_mod3_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    // LC MOD
+                                    // increase codelense width to 600
+                                    codeDivWidth: 600,
+                                    lang : 'py3'
+                                    });
+        attachLoggers(ch09_mod3_vis,'ch09_mod3');
+        styleButtons('ch09_mod3');
+        allVisualizers.push(ch09_mod3_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component ch09_mod3_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#ch09_mod3_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'ch09_mod3'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (ch09_mod3_vis) {
+        ch09_mod3_vis.redrawConnectors();
+    }
+});
+</script>
+</div>
+<div class="section" id="which-is-better">
+<h2>Which is Better?<a class="headerlink" href="#which-is-better" title="Permalink to this headline">¶</a></h2>
+<p>Anything that can be done with modifiers can also be done with pure functions. In fact, some programming languages only allow pure functions. There is some evidence that programs that use pure functions are faster to develop and less error-prone than programs that use modifiers. Nevertheless, modifiers are convenient at times, and in some cases, functional programs are less efficient.</p>
+<p>In general, we recommend that you write pure functions whenever it is reasonable to do so and resort to modifiers only if there is a compelling advantage. This approach might be called a <em>functional programming style</em>.</p>
+</div>
+<div class="section" id="functions-that-produce-lists">
+<h2>Functions that Produce Lists<a class="headerlink" href="#functions-that-produce-lists" title="Permalink to this headline">¶</a></h2>
+<p>The pure version of <code class="docutils literal"><span class="pre">double_stuff</span></code> above made use of an  important <strong>pattern</strong> for your toolbox. Whenever you need to write a function that creates and returns a list, the pattern is
+usually:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">initialize</span> <span class="n">a</span> <span class="n">result</span> <span class="n">variable</span> <span class="n">to</span> <span class="n">be</span> <span class="n">an</span> <span class="n">empty</span> <span class="nb">list</span>
+<span class="n">loop</span>
+   <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">element</span>
+   <span class="n">append</span> <span class="n">it</span> <span class="n">to</span> <span class="n">result</span>
+<span class="k">return</span> <span class="n">the</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>Let us show another use of this pattern. Assume you already have a function <code class="docutils literal"><span class="pre">is_prime(x)</span></code> that can test if <code class="docutils literal"><span class="pre">x</span></code> is a prime number (meaning divisible by only itself and 1). Now, write a function to return a list of all prime numbers less than <code class="docutils literal"><span class="pre">n</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">primes_up_to</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">""" Return a list of all prime numbers less than n. """</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 9. Repetition and References">
+<a href="/Lists/RepetitionandReferences">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/Lists/RepetitionandReferences" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 11. List Comprehensions">
+<a href="/Lists/ListComprehensions">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/Lists/ListComprehensions" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/Lists/UsingListsasParameters.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

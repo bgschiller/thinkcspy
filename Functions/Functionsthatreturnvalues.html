@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>2. Functions That Return Values — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/Functions/Parametersandlocalvariables" rel="next" title="3. Parameters and Local Variables"/>
+<link href="/Functions/functions" rel="prev" title="1. Functions"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="functions-that-return-values">
+<h1>2. Functions That Return Values<a class="headerlink" href="#functions-that-return-values" title="Permalink to this headline">¶</a></h1>
+<p>Most functions require arguments — values that control how the function does its job. For example, if you want to find the absolute value of a number, you have to indicate what the number is. Python has a built-in function for computing the absolute value:</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch04_4">
+print(abs(5))
+
+print(abs(-5))
+</textarea>
+<p>In this example, the arguments to the <code class="docutils literal"><span class="pre">abs</span></code> function are 5 and -5.</p>
+<p>Some functions take more than one argument. For example the math module contains a function called <code class="docutils literal"><span class="pre">pow</span></code> which takes two arguments, the base and the exponent.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch04_5">
+import math
+print(math.pow(2, 3))
+
+print(math.pow(7, 4))
+</textarea>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Of course, we have already seen that raising a base to an exponent can be done with the ** operator.</p>
+</div>
+<p>Another built-in function that takes more than one argument is <code class="docutils literal"><span class="pre">max</span></code>.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch04_6">
+print(max(7, 11))
+print(max(4, 1, 17, 2, 12))
+print(max(3 * 11, 5 ** 3, 512 - 9, 1024 ** 0))
+</textarea>
+<p><code class="docutils literal"><span class="pre">max</span></code> can be sent any number of arguments, separated by commas, and will return the maximum value sent. The arguments can be either simple values or expressions. In the last example, 503 is returned, since it is larger than 33, 125, and 1. Note that <code class="docutils literal"><span class="pre">max</span></code> also works on lists of values.</p>
+<p>Furthermore, functions like <code class="docutils literal"><span class="pre">range</span></code>, <code class="docutils literal"><span class="pre">int</span></code>, <code class="docutils literal"><span class="pre">abs</span></code> all return values that can be used to build more complex expressions.</p>
+<p>So an important difference between these functions and one like <code class="docutils literal"><span class="pre">draw_square</span></code> is that <code class="docutils literal"><span class="pre">draw_square</span></code> was not executed because we wanted it to return a value — on the contrary, we called <code class="docutils literal"><span class="pre">draw_square</span></code> because we wanted it to execute a sequence of steps that caused the turtle to draw a specific shape.</p>
+<p>Functions that return values are sometimes called <strong>fruitful functions</strong>. In many other languages, a chunk that <em>doesn’t</em> return a value is called a <strong>procedure</strong>, but we will stick here with the Python way of simply calling it a function, or if we want to stress its lack of a return value, a <em>non-fruitful</em> function.</p>
+<p>As you’ve seen, fruitful functions still allow the user to provide information (arguments). They just additionally return data from the function, which is their difference from non-fruitful functions.</p>
+<img alt="../_images/blackboxfun.png" src="/_images/blackboxfun.png"/>
+<p>How do we write our own fruitful function? Let’s start by creating a very simple mathematical function that we will call <code class="docutils literal"><span class="pre">square</span></code>.  The <code class="docutils literal"><span class="pre">square</span></code> function will take one number as a parameter and return the result of squaring that number. Here is the black-box diagram with the Python code following.</p>
+<img alt="../_images/squarefun.png" src="/_images/squarefun.png"/>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ch04_square">
+def square(x):
+    y = x * x
+    return y
+
+num = 10
+result = square(num)
+print("The result of ", num, " squared is ", result)
+</textarea>
+<p>The <strong>return</strong> statement is followed by an expression which is evaluated. Its result is returned to the caller as the “fruit” of calling this function. Because the return statement can contain any Python expression we could have avoided creating the <strong>temporary variable</strong> <code class="docutils literal"><span class="pre">y</span></code> and simply used <code class="docutils literal"><span class="pre">return</span> <span class="pre">x</span> <span class="pre">*</span> <span class="pre">x</span></code>. Try modifying the square function above to see that this works just the same.</p>
+<p>On the other hand, sometimes using <strong>temporary variables</strong> like <code class="docutils literal"><span class="pre">y</span></code> in the program above makes debugging easier. These temporary variables are referred to as <strong>local variables</strong>.</p>
+<p>Notice something important here. The name of the variable we pass as an argument, <code class="docutils literal"><span class="pre">num</span></code>, has nothing to do with the name of the formal parameter, <code class="docutils literal"><span class="pre">x</span></code>.  It is as if <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">num</span></code> is executed when <code class="docutils literal"><span class="pre">square</span></code> is called. It doesn’t matter what the value was named in the caller. Inside the <code class="docutils literal"><span class="pre">square</span></code> function, it’s name is <code class="docutils literal"><span class="pre">x</span></code>.  You can see this very clearly in codelens, where the global variables and the local variables for the <code class="docutils literal"><span class="pre">square</span></code> function are in separate boxes.</p>
+<p>As you step through the example in codelens notice that the <strong>return</strong> statement not only causes the function to return a value, but it also returns the flow of control back to the place in the program where the function call was made.</p>
+<div class="alert alert-warning cd_section">
+<div id="ch04_clsquare"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (ch04_clsquare)</span> </p>
+</div>
+<script type="text/javascript">
+var ch04_clsquare_trace = {"code": "def square(x):\n    y = x * x\n    return y\n\nnum = 10\nresult = square(num)\nprint(\"The result of \", num, \" squared is \", result)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["square"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["square", "num"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "num": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["square", "num"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "num": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["square", "num"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "num": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["square", "num"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 100, "x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "y"]}], "globals": {"square": ["REF", 1], "num": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "num"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 100, "x": 10, "__return__": 100}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "y", "__return__"]}], "globals": {"square": ["REF", 1], "num": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["square", "num", "result"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "num": 10, "result": 100}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["square", "num", "result"], "stdout": "('The result of ', 10, ' squared is ', 100)\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "num": 10, "result": 100}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 7, "event": "return"}]};
+var ch04_clsquare_vis;
+
+$(document).ready(function() {
+    try {
+        ch04_clsquare_vis = new ExecutionVisualizer('ch04_clsquare',ch04_clsquare_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    // LC MOD
+                                    // increase codelense width to 600
+                                    codeDivWidth: 600,
+                                    lang : 'py3'
+                                    });
+        attachLoggers(ch04_clsquare_vis,'ch04_clsquare');
+        styleButtons('ch04_clsquare');
+        allVisualizers.push(ch04_clsquare_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component ch04_clsquare_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#ch04_clsquare_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'ch04_clsquare'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (ch04_clsquare_vis) {
+        ch04_clsquare_vis.redrawConnectors();
+    }
+});
+</script>
+<p>Another important thing to notice as you step through this codelens is the movement of the red and green arrows. Codelens uses these arrows to show you where it is currently executing. Recall that the red arrow always points to the next line of code that will be executed. The light green arrow points to the line that was just executed in the last step.</p>
+<p>When you first start running this codelens you will notice that there is only a red arrow and it points to line 1. This is because line 1 is the next line to be executed and since it is the first line, there is no previously executed line of code.</p>
+<p>When you click on the forward button, notice that the red arrow moves to line 5, skipping lines 2 and 3 of the function (and the light green arrow has now appeared on line 1).  Why is this? The answer is that function definition is not the same as function execution. Lines 2 and 3 will not be executed until the function is called on line 6. Line 1 defines the function and the name <code class="docutils literal"><span class="pre">square</span></code> is added to the global variables, but that is all the <code class="docutils literal"><span class="pre">def</span></code> does at that point. The body of the function will be executed later. Continue to click the forward button to see how the flow of control moves from the call, back up to the body of the function, and then finally back to line 7, after the function has returned its value and the value has been assigned to <code class="docutils literal"><span class="pre">result</span></code>.</p>
+<p>Finally, there is one more aspect of function return values that should be noted. All Python functions return the value <code class="docutils literal"><span class="pre">None</span></code> unless there is an explicit return statement with a value other than <code class="docutils literal"><span class="pre">None</span></code>. Consider the following common mistake made by beginning Python programmers. As you step through this example, pay very close attention to the return value in the local variables listing. Then look at what is printed when the function returns.</p>
+<div class="alert alert-warning cd_section">
+<div id="ch04_clsquare_bad"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (ch04_clsquare_bad)</span> </p>
+</div>
+<script type="text/javascript">
+var ch04_clsquare_bad_trace = {"code": "def square(x):\n    y = x * x\n    print(y)   # Bad! should use return instead!\n\nnum = 10\nresult = square(num)\nprint(\"The result of \", num, \" squared is \", result)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["square"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["square", "num"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "num": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["square", "num"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "num": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["square", "num"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "num": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["square", "num"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 100, "x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "y"]}], "globals": {"square": ["REF", 1], "num": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "num"], "stdout": "100\n", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 100, "x": 10, "__return__": null}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "y", "__return__"]}], "globals": {"square": ["REF", 1], "num": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["square", "num", "result"], "stdout": "100\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "num": 10, "result": null}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["square", "num", "result"], "stdout": "100\n('The result of ', 10, ' squared is ', None)\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "num": 10, "result": null}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 7, "event": "return"}]};
+var ch04_clsquare_bad_vis;
+
+$(document).ready(function() {
+    try {
+        ch04_clsquare_bad_vis = new ExecutionVisualizer('ch04_clsquare_bad',ch04_clsquare_bad_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    // LC MOD
+                                    // increase codelense width to 600
+                                    codeDivWidth: 600,
+                                    lang : 'py3'
+                                    });
+        attachLoggers(ch04_clsquare_bad_vis,'ch04_clsquare_bad');
+        styleButtons('ch04_clsquare_bad');
+        allVisualizers.push(ch04_clsquare_bad_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component ch04_clsquare_bad_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#ch04_clsquare_bad_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'ch04_clsquare_bad'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (ch04_clsquare_bad_vis) {
+        ch04_clsquare_bad_vis.redrawConnectors();
+    }
+});
+</script>
+<p>The problem with this function is that even though it prints the value of the square, that value will not be returned to the place where the call was done. Since line 6 uses the return value as the right hand side of an assignment statement, the evaluation of the function will be <code class="docutils literal"><span class="pre">None</span></code>.  In this case, <code class="docutils literal"><span class="pre">result</span></code> will refer to that value after the assignment statement and therefore the result printed in line 7 is incorrect. Typically, functions will return values that can be printed or processed in some other way by the caller.</p>
+<p><strong>Check your understanding</strong></p>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question5_2_1">
+<p>What is wrong with the following function definition:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_em</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">'the answer is'</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<li data-component="answer" id="test_question5_2_1_opt_a">You should never use a print statement in a function definition.</li><li data-component="feedback" id="test_question5_2_1_opt_a">Although you should not mistake print for return, you may include print statements inside your functions.</li>
+<li data-component="answer" data-correct="" id="test_question5_2_1_opt_b">You should not have any statements in a function after the return statement. Once the function gets to the return statement it will immediately stop executing the function.</li><li data-component="feedback" id="test_question5_2_1_opt_b">This is a very common mistake so be sure to watch out for it when you write your code!</li>
+<li data-component="answer" id="test_question5_2_1_opt_c">You must calculate the value of x+y+z before you return it.</li><li data-component="feedback" id="test_question5_2_1_opt_c">Python will automatically calculate the value x+y+z and then return it in the statement as it is written</li>
+<li data-component="answer" id="test_question5_2_1_opt_d">A function cannot return a number.</li><li data-component="feedback" id="test_question5_2_1_opt_d">Functions can return any legal data, including (but not limited to) numbers, strings, turtles, etc.</li>
+</ul>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question5_2_2">
+<p>What will the following function return?</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_em</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<li data-component="answer" data-correct="" id="test_question5_2_2_opt_a">None</li><li data-component="feedback" id="test_question5_2_2_opt_a">We have accidentally used print where we mean return. Therefore, the function will return the value None by default. This is a VERY COMMON mistake so watch out! This mistake is also particularly difficult to find because when you run the function the output looks the same. It is not until you try to assign its value to a variable that you can notice a difference.</li>
+<li data-component="answer" id="test_question5_2_2_opt_b">The value of x + y + z</li><li data-component="feedback" id="test_question5_2_2_opt_b">Careful! This is a very common mistake. Here we have printed the value x+y+z but we have not returned it. To return a value we MUST use the return keyword.</li>
+<li data-component="answer" id="test_question5_2_2_opt_c">The string 'x + y + z'</li><li data-component="feedback" id="test_question5_2_2_opt_c">x+y+z calculates a number (assuming x+y+z are numbers) which represents the sum of the values x, y and z.</li>
+</ul>
+<span class="target" id="index-0"></span></div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 1. Functions">
+<a href="/Functions/functions">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/Functions/functions" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 3. Parameters and Local Variables">
+<a href="/Functions/Parametersandlocalvariables">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/Functions/Parametersandlocalvariables" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/Functions/Functionsthatreturnvalues.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

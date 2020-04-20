@@ -1,0 +1,1108 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Index — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<h1 id="index">Index</h1>
+<div class="genindex-jumpbox">
+<a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
+</div>
+<h2 id="_">_</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="ClassesDiggingDeeper/ArithmeticMethods.html#index-0">__add__</a>
+</dt>
+<dt><a href="ClassesBasics/UserDefinedClasses.html#index-0">__init__</a>
+</dt>
+<dt><a href="Functions/mainfunction.html#index-0">__name__</a>, <a href="ProblemSets/Initials.html#index-0">[1]</a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="ClassesBasics/ConvertinganObjecttoaString.html#index-0">__repr__</a>
+</dt>
+<dt><a href="ClassesBasics/ConvertinganObjecttoaString.html#index-0">__str__</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="A">A</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Functions/Functionscancallotherfunctions.html#index-0">abstraction</a>
+</dt>
+<dt><a href="Functions/TheAccumulatorPattern.html#index-0">accumulator pattern</a>, <a href="MoreAboutIteration/Theforlooprevisited.html#index-0">[1]</a>, <a href="MoreAboutIteration/ThewhileStatement.html#index-0">[2]</a>, <a href="ProblemSets/Initials.html#index-0">[3]</a>, <a href="Strings/Loopingandcounting.html#index-0">[4]</a>
+</dt>
+<dt><a href="GeneralIntro/SpecialWaystoExecutePythoninthisBook.html#index-0">activecode</a>, <a href="save-my-spot.html#index-3">[1]</a>, <a href="GeneralIntro/Glossary.html#term-activecode"><strong>[2]</strong></a>, <a href="save-my-spot.html#term-activecode"><strong>[3]</strong></a>
+</dt>
+<dt><a href="GeneralIntro/Algorithms.html#index-0">algorithm</a>, <a href="MoreAboutIteration/AlgorithmsRevisited.html#index-0">[1]</a>, <a href="MoreAboutIteration/NewtonsMethod.html#index-0">[2]</a>, <a href="save-my-spot.html#index-1">[3]</a>, <a href="GeneralIntro/Glossary.html#term-algorithm"><strong>[4]</strong></a>, <a href="save-my-spot.html#term-algorithm"><strong>[5]</strong></a>
+</dt>
+<dt><a href="ClassesDiggingDeeper/Sameness.html#index-0">alias</a>, <a href="Dictionaries/Aliasingandcopying.html#index-0">[1]</a>, <a href="Lists/Aliasing.html#index-0">[2]</a>
+</dt>
+<dt><a href="Lists/Glossary.html#term-aliases"><strong>aliases</strong></a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Lists/ListMethods.html#index-0">append</a>
+</dt>
+<dt><a href="ClassesBasics/ObjectsasArgumentsandParameters.html#index-0">argument</a>, <a href="Functions/Functionsthatreturnvalues.html#index-0">[1]</a>
+</dt>
+<dt><a href="MoreAboutIteration/Theforlooprevisited.html#index-0">assignment</a>, <a href="SimplePythonData/Reassignment.html#index-0">[1]</a>
+</dt>
+<dt><a href="SimplePythonData/Variables.html#index-0">assignment statement</a>, <a href="SimplePythonData/Glossary.html#term-assignment-statement"><strong>[1]</strong></a>
+</dt>
+<dt><a href="SimplePythonData/Variables.html#index-0">assignment token</a>, <a href="SimplePythonData/Glossary.html#term-assignment-token"><strong>[1]</strong></a>
+</dt>
+<dt><a href="PythonTurtle/OurFirstTurtleProgram.html#index-0">attribute</a>, <a href="PythonTurtle/Glossary.html#term-attribute"><strong>[1]</strong></a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="B">B</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Functions/ATurtleBarChart.html#index-0">bar chart</a>
+</dt>
+<dt><a href="Recursion/Glossary.html#term-base-case"><strong>base case</strong></a>
+</dt>
+<dt><a href="Selection/ConditionalExecutionBinarySelection.html#index-0">binary selection</a>
+</dt>
+<dt><a href="Selection/ConditionalExecutionBinarySelection.html#index-0">block</a>, <a href="Selection/Glossary.html#term-block"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Functions/functions.html#index-0">body</a>, <a href="Selection/Glossary.html#term-body"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">boolean expression</a>, <a href="Selection/Logicaloperators.html#index-0">[1]</a>, <a href="Selection/Glossary.html#term-boolean-expression"><strong>[2]</strong></a>
+</dt>
+<dt><a href="Selection/Glossary.html#term-boolean-function"><strong>boolean function</strong></a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Selection/BooleanFunctions.html#index-0">boolean functions</a>
+</dt>
+<dt><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">boolean value</a>, <a href="Selection/Logicaloperators.html#index-0">[1]</a>, <a href="Selection/Glossary.html#term-boolean-value"><strong>[2]</strong></a>
+</dt>
+<dt><a href="Debugging/HowtoAvoidDebugging.html#index-0">boundary conditions</a>
+</dt>
+<dt><a href="Selection/Glossary.html#term-branch"><strong>branch</strong></a>
+</dt>
+<dt><a href="MoreAboutIteration/breakandcontinueStatements.html#index-0">break</a>
+</dt>
+<dt><a href="Debugging/Glossary.html#term-bug"><strong>bug</strong></a>
+</dt>
+<dt><a href="GeneralIntro/Glossary.html#term-byte-code"><strong>byte code</strong></a>, <a href="save-my-spot.html#term-byte-code"><strong>[1]</strong></a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="C">C</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="PythonTurtle/OurFirstTurtleProgram.html#index-0">canvas</a>, <a href="PythonTurtle/Glossary.html#term-canvas"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Selection/Chainedconditionals.html#index-0">chained conditional</a>, <a href="Selection/Glossary.html#term-chained-conditional"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Strings/Characterclassification.html#index-0">character</a>
+</dt>
+<dt><a href="Strings/ACollectionDataType.html#index-0">characters</a>, <a href="Strings/IndexOperatorWorkingwiththeCharactersofaString.html#index-0">[1]</a>
+</dt>
+<dt><a href="ClassesBasics/UserDefinedClasses.html#index-0">class</a>, <a href="SimplePythonData/ValuesandDataTypes.html#index-0">[1]</a>, <a href="ClassesBasics/Glossary.html#term-class"><strong>[2]</strong></a>, <a href="SimplePythonData/Glossary.html#term-class"><strong>[3]</strong></a>
+</dt>
+<dt><a href="ClassesBasics/UserDefinedClasses.html#index-0">class definition</a>
+</dt>
+<dt><a href="ClassesDiggingDeeper/Fractions.html#index-0">class design</a>
+</dt>
+<dt><a href="Lists/Glossary.html#term-clone"><strong>clone</strong></a>
+</dt>
+<dt><a href="Lists/Aliasing.html#index-0">cloning</a>
+</dt>
+<dt><a href="Files/Glossary.html#term-close"><strong>close</strong></a>
+</dt>
+<dt><a href="GeneralIntro/SpecialWaystoExecutePythoninthisBook.html#index-0">codelens</a>, <a href="save-my-spot.html#index-3">[1]</a>, <a href="GeneralIntro/Glossary.html#term-codelens"><strong>[2]</strong></a>, <a href="save-my-spot.html#term-codelens"><strong>[3]</strong></a>
+</dt>
+<dt><a href="Strings/ACollectionDataType.html#index-0">collection data type</a>, <a href="Strings/Glossary.html#term-collection-data-type"><strong>[1]</strong></a>
+</dt>
+<dt><a href="GeneralIntro/Glossary.html#term-comment"><strong>comment</strong></a>, <a href="SimplePythonData/Glossary.html#term-comment"><strong>[1]</strong></a>, <a href="save-my-spot.html#term-comment"><strong>[2]</strong></a>
+</dt>
+<dt><a href="GeneralIntro/Comments.html#index-0">comments</a>, <a href="save-my-spot.html#index-6">[1]</a>
+</dt>
+<dt><a href="Strings/OperationsonStrings.html#index-0">comparison</a>
+</dt>
+<dt><a href="Selection/Glossary.html#term-comparison-operator"><strong>comparison operator</strong></a>
+</dt>
+<dt><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">comparison operators</a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="GeneralIntro/ThePythonProgrammingLanguage.html#index-0">compile</a>, <a href="save-my-spot.html#index-2">[1]</a>, <a href="GeneralIntro/Glossary.html#term-compile"><strong>[2]</strong></a>, <a href="save-my-spot.html#term-compile"><strong>[3]</strong></a>
+</dt>
+<dt><a href="Functions/Composition.html#index-0">composition</a>
+</dt>
+<dd><dl>
+<dt><a href="Functions/Glossary.html#term-composition-of-functions"><strong>(of functions)</strong></a>
+</dt>
+</dl></dd>
+<dt><a href="Functions/functions.html#index-0">compound statements</a>
+</dt>
+<dt><a href="Lists/ConcatenationandRepetition.html#index-0">concatenation</a>, <a href="Strings/Loopingandcounting.html#index-0">[1]</a>, <a href="Strings/OperationsonStrings.html#index-0">[2]</a>
+</dt>
+<dt><a href="GeneralIntro/MoreAboutPrograms.html#index-0">condition</a>, <a href="Selection/ConditionalExecutionBinarySelection.html#index-0">[1]</a>, <a href="save-my-spot.html#index-4">[2]</a>, <a href="Selection/Glossary.html#term-condition"><strong>[3]</strong></a>
+</dt>
+<dt><a href="Selection/Nestedconditionals.html#index-0">conditional</a>
+</dt>
+<dt><a href="Selection/Glossary.html#term-conditional-statement"><strong>conditional statement</strong></a>
+</dt>
+<dt><a href="Selection/ConditionalExecutionBinarySelection.html#index-0">conditional statements</a>
+</dt>
+<dt><a href="ClassesBasics/ImprovingourConstructor.html#index-0">constructor</a>, <a href="ClassesBasics/UserDefinedClasses.html#index-0">[1]</a>, <a href="ClassesBasics/Glossary.html#term-constructor"><strong>[2]</strong></a>
+</dt>
+<dt><a href="MoreAboutIteration/breakandcontinueStatements.html#index-0">continue</a>
+</dt>
+<dt><a href="Functions/FlowofExecutionSummary.html#index-0">control flow</a>, <a href="Functions/Functionsthatreturnvalues.html#index-0">[1]</a>, <a href="PythonTurtle/FlowofExecutionoftheforLoop.html#index-0">[2]</a>
+</dt>
+<dt><a href="Dictionaries/Aliasingandcopying.html#index-0">copy</a>
+</dt>
+<dt><a href="MoreAboutIteration/Glossary.html#term-counter"><strong>counter</strong></a>
+</dt>
+<dt><a href="Strings/Loopingandcounting.html#index-0">counting</a>
+</dt>
+<dt><a href="LSystems/TurtlesandStringsandLSystems.html#index-0">counting pattern</a>
+</dt>
+<dt><a href="MoreAboutIteration/SimpleTables.html#index-0">cursor</a>, <a href="MoreAboutIteration/Glossary.html#term-cursor"><strong>[1]</strong></a>
+</dt>
+<dt><a href="ClassesBasics/UserDefinedClasses.html#index-0">custom class</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="D">D</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Recursion/Glossary.html#term-data-structure"><strong>data structure</strong></a>
+</dt>
+<dt><a href="SimplePythonData/ValuesandDataTypes.html#index-0">data type</a>, <a href="SimplePythonData/Glossary.html#term-data-type"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Debugging/BeginningtipsforDebugging.html#index-0">debugging</a>, <a href="Debugging/HowtoAvoidDebugging.html#index-0">[1]</a>, <a href="Debugging/WhatisDebugging.html#index-0">[2]</a>, <a href="Debugging/intro-HowtobeaSuccessfulProgrammer.html#index-0">[3]</a>, <a href="Exceptions/DebuggingReview.html#index-0">[4]</a>, <a href="Exceptions/PrinciplesofProblemSolving.html#index-0">[5]</a>, <a href="Debugging/Glossary.html#term-debugging"><strong>[6]</strong></a>
+</dt>
+<dt><a href="SimplePythonData/UpdatingVariables.html#index-0">decrement</a>, <a href="SimplePythonData/Glossary.html#term-decrement"><strong>[1]</strong></a>
+</dt>
+<dt><a href="ClassesDiggingDeeper/Sameness.html#index-0">deep equality</a>, <a href="ClassesDiggingDeeper/Glossary.html#term-deep-equality"><strong>[1]</strong></a>
+</dt>
+<dt><a href="StringsContinued/Afindfunction.html#index-0">default value</a>
+</dt>
+<dt><a href="MoreAboutIteration/ThewhileStatement.html#index-0">definite iteration</a>, <a href="MoreAboutIteration/Glossary.html#term-definite-iteration"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Dictionaries/Dictionaryoperations.html#index-0">del</a>
+</dt>
+<dt><a href="Lists/splitandjoin.html#index-0">delimiter</a>, <a href="Lists/Glossary.html#term-delimiter"><strong>[1]</strong></a>
+</dt>
+<dt><a href="PythonTurtle/Glossary.html#term-deterministic"><strong>deterministic</strong></a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="PythonTurtle/Therandommodule.html#index-0">deterministic algorithm</a>
+</dt>
+<dt><a href="Dictionaries/Aliasingandcopying.html#index-0">dictionary</a>, <a href="Dictionaries/Dictionaryoperations.html#index-0">[1]</a>, <a href="Dictionaries/Enumerate.html#index-0">[2]</a>, <a href="Dictionaries/Sparsematrices.html#index-0">[3]</a>, <a href="Dictionaries/intro-Dictionaries.html#index-0">[4]</a>, <a href="Dictionaries/Glossary.html#term-dictionary"><strong>[5]</strong></a>
+</dt>
+<dt><a href="Dictionaries/Dictionarymethods.html#index-0">dictionary methods</a>
+</dt>
+<dt><a href="StringsContinued/Optionalparameters.html#index-0">dir function</a>
+</dt>
+<dt><a href="Functions/functions.html#index-0">docstring</a>, <a href="StringsContinued/Optionalparameters.html#index-0">[1]</a>
+</dt>
+<dt><a href="PythonTurtle/Glossary.html#term-documentation"><strong>documentation</strong></a>
+</dt>
+<dt><a href="ClassesBasics/AddingOtherMethodstoourClass.html#index-0">dot notation</a>, <a href="PythonTurtle/MoreAboutUsingModules.html#index-0">[1]</a>, <a href="Strings/StringMethods.html#index-0">[2]</a>, <a href="StringsContinued/Optionalparameters.html#index-0">[3]</a>, <a href="Strings/Glossary.html#term-dot-notation"><strong>[4]</strong></a>
+</dt>
+<dt><a href="ClassesDiggingDeeper/Inheritance.html#index-0">DRY</a>
+</dt>
+<dt><a href="ClassesBasics/ConvertinganObjecttoaString.html#index-0">dunder</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="E">E</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Lists/Glossary.html#term-element"><strong>element</strong></a>
+</dt>
+<dt><a href="Lists/Lists.html#index-0">elements</a>
+</dt>
+<dt><a href="Selection/Chainedconditionals.html#index-0">elif</a>
+</dt>
+<dt><a href="Selection/ConditionalExecutionBinarySelection.html#index-0">else clause</a>
+</dt>
+<dt><a href="Dictionaries/Enumerate.html#index-0">enumerate</a>, <a href="Dictionaries/Glossary.html#term-enumerate"><strong>[1]</strong></a>
+</dt>
+<dt><a href="ClassesDiggingDeeper/Sameness.html#index-0">equality</a>, <a href="SimplePythonData/Reassignment.html#index-0">[1]</a>
+</dt>
+<dt><a href="Debugging/KnowyourerrorMessages.html#index-0">error messages</a>
+</dt>
+<dt><a href="Exceptions/DebuggingReview.html#index-0">errors</a>, <a href="Exceptions/StandardExceptions.html#index-0">[1]</a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="MoreAboutIteration/SimpleTables.html#index-0">escape sequence</a>, <a href="MoreAboutIteration/Glossary.html#term-escape-sequence"><strong>[1]</strong></a>
+</dt>
+<dt><a href="SimplePythonData/Glossary.html#term-evaluate"><strong>evaluate</strong></a>
+</dt>
+<dt><a href="Exceptions/intro-Exceptions.html#index-0">except</a>
+</dt>
+<dt><a href="Exceptions/01_intro_exceptions.html#index-0">exception</a>, <a href="Exceptions/ExceptionSyntax.html#index-0">[1]</a>, <a href="Debugging/Glossary.html#term-exception"><strong>[2]</strong></a>, <a href="Recursion/Glossary.html#term-exception"><strong>[3]</strong></a>
+</dt>
+<dt><a href="Exceptions/ExceptionSyntax.html#index-0">exception syntax</a>
+</dt>
+<dt><a href="Exceptions/PrinciplesforUsingExceptions.html#index-0">exceptions</a>, <a href="Exceptions/StandardExceptions.html#index-0">[1]</a>, <a href="Exceptions/intro-Exceptions.html#index-0">[2]</a>
+</dt>
+<dt><a href="GeneralIntro/Glossary.html#term-executable"><strong>executable</strong></a>, <a href="save-my-spot.html#term-executable"><strong>[1]</strong></a>
+</dt>
+<dt><a href="SimplePythonData/StatementsandExpressions.html#index-0">expression</a>, <a href="SimplePythonData/Glossary.html#term-expression"><strong>[1]</strong></a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="F">F</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">False</a>
+</dt>
+<dt><a href="Dictionaries/TuplesandMutability.html#index-0">fields</a>
+</dt>
+<dt><a href="SimplePythonData/Input.html#index-0">float</a>, <a href="SimplePythonData/Typeconversionfunctions.html#index-0">[1]</a>, <a href="SimplePythonData/ValuesandDataTypes.html#index-0">[2]</a>, <a href="SimplePythonData/Glossary.html#term-float"><strong>[3]</strong></a>
+</dt>
+<dt><a href="Exceptions/intro-Exceptions.html#index-0">flow of control</a>, <a href="MoreAboutIteration/2DimensionalIterationImageProcessing.html#index-0">[1]</a>, <a href="MoreAboutIteration/ThewhileStatement.html#index-0">[2]</a>, <a href="MoreAboutIteration/breakandcontinueStatements.html#index-0">[3]</a>, <a href="Selection/Chainedconditionals.html#index-0">[4]</a>, <a href="Selection/Nestedconditionals.html#index-0">[5]</a>
+</dt>
+<dt><a href="Functions/FlowofExecutionSummary.html#index-0">flow of execution</a>, <a href="PythonTurtle/FlowofExecutionoftheforLoop.html#index-0">[1]</a>, <a href="Selection/OmittingtheelseClauseUnarySelection.html#index-0">[2]</a>
+</dt>
+<dt><a href="Exceptions/01_intro_exceptions.html#index-0">flow-of-control</a>
+</dt>
+<dt><a href="Dictionaries/Dictionarymethods.html#index-0">for</a>, <a href="MoreAboutIteration/ChoosingWhichLoopToUse.html#index-0">[1]</a>, <a href="Strings/StringTraversal.html#index-0">[2]</a>
+</dt>
+<dt><a href="MoreAboutIteration/Theforlooprevisited.html#index-0">for loop</a>, <a href="PythonTurtle/TheforLoop.html#index-0">[1]</a>, <a href="PythonTurtle/Glossary.html#term-for-loop"><strong>[2]</strong></a>
+</dt>
+<dt><a href="GeneralIntro/Glossary.html#term-formal-language"><strong>formal language</strong></a>, <a href="save-my-spot.html#term-formal-language"><strong>[1]</strong></a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="ClassesDiggingDeeper/Fractions.html#index-0">fraction</a>
+</dt>
+<dt><a href="Functions/Functionsthatreturnvalues.html#index-0">fruitful function</a>, <a href="Functions/Glossary.html#term-fruitful-function"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Functions/functions.html#index-0">function</a>
+</dt>
+<dt><a href="Functions/functions.html#index-0">function call</a>
+</dt>
+<dt><a href="Functions/functions.html#index-0">function definition</a>
+</dt>
+<dt><a href="StringsContinued/Optionalparameters.html#index-0">function type</a>
+</dt>
+<dt><a href="Functions/Functionscancallotherfunctions.html#index-0">functional decomposition</a>, <a href="MoreAboutIteration/RandomlyWalkingTurtles.html#index-0">[1]</a>
+</dt>
+<dt><a href="Lists/UsingListsasParameters.html#index-0">functional programming</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="G">G</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Functions/Functionscancallotherfunctions.html#index-0">generalization</a>
+</dt>
+<dt><a href="Dictionaries/Dictionarymethods.html#index-0">get</a>
+</dt>
+<dt><a href="Functions/Parametersandlocalvariables.html#index-0">global scope</a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Functions/Functionsthatreturnvalues.html#index-0">global variable</a>, <a href="Functions/Parametersandlocalvariables.html#index-0">[1]</a>
+</dt>
+<dt><a href="Lists/splitandjoin.html#index-0">glue</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="H">H</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Recursion/Glossary.html#term-handle-an-exception"><strong>handle an exception</strong></a>
+</dt>
+<dt><a href="Functions/functions.html#index-0">header</a>
+</dt>
+<dt><a href="GeneralIntro/ATypicalFirstProgram.html#index-0">Hello World</a>, <a href="save-my-spot.html#index-5">[1]</a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="ClassesDiggingDeeper/ObjectsareMutable.html#index-0">helper function</a>
+</dt>
+<dt><a href="GeneralIntro/ThePythonProgrammingLanguage.html#index-0">high-level language</a>, <a href="save-my-spot.html#index-2">[1]</a>, <a href="GeneralIntro/Glossary.html#term-high-level-language"><strong>[2]</strong></a>, <a href="save-my-spot.html#term-high-level-language"><strong>[3]</strong></a>
+</dt>
+<dt><a href="Lists/ListMethods.html#index-0">hybrid</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="I">I</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Selection/Chainedconditionals.html#index-0">if statement</a>, <a href="Selection/ConditionalExecutionBinarySelection.html#index-0">[1]</a>, <a href="Selection/Nestedconditionals.html#index-0">[2]</a>, <a href="Selection/OmittingtheelseClauseUnarySelection.html#index-0">[3]</a>
+</dt>
+<dt><a href="MoreAboutIteration/2DimensionalIterationImageProcessing.html#index-0">image module</a>
+</dt>
+<dt><a href="MoreAboutIteration/2DimensionalIterationImageProcessing.html#index-0">image processing</a>
+</dt>
+<dt><a href="Strings/StringMethods.html#index-0">immutability</a>
+</dt>
+<dt><a href="Lists/ObjectsandReferences.html#index-0">immutable</a>, <a href="Strings/Glossary.html#term-immutable"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Recursion/Glossary.html#term-immutable-data-type"><strong>immutable data type</strong></a>
+</dt>
+<dt><a href="PythonTurtle/MoreAboutUsingModules.html#index-0">import</a>, <a href="PythonTurtle/OurFirstTurtleProgram.html#index-0">[1]</a>, <a href="PythonTurtle/Glossary.html#term-import"><strong>[2]</strong></a>
+</dt>
+<dt><a href="Dictionaries/Dictionarymethods.html#index-0">in</a>, <a href="Lists/ListsandStringsareSimilar.html#index-0">[1]</a>, <a href="Strings/Loopingandcounting.html#index-0">[2]</a>
+</dt>
+<dt><a href="SimplePythonData/UpdatingVariables.html#index-0">increment</a>, <a href="SimplePythonData/Glossary.html#term-increment"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Functions/ProgramDevelopment.html#index-0">incremental development</a>, <a href="Functions/Glossary.html#term-incremental-development"><strong>[1]</strong></a>
+</dt>
+<dt><a href="MoreAboutIteration/ChoosingWhichLoopToUse.html#index-0">indefinite iteration</a>, <a href="MoreAboutIteration/RandomlyWalkingTurtles.html#index-0">[1]</a>, <a href="MoreAboutIteration/ThewhileStatement.html#index-0">[2]</a>, <a href="MoreAboutIteration/Glossary.html#term-indefinite-iteration"><strong>[3]</strong></a>
+</dt>
+<dt><a href="Lists/Lists.html#index-0">index</a>, <a href="Strings/IndexOperatorWorkingwiththeCharactersofaString.html#index-0">[1]</a>, <a href="Strings/Glossary.html#term-index"><strong>[2]</strong></a>
+</dt>
+<dt><a href="MoreAboutIteration/ThewhileStatement.html#index-0">infinite loop</a>, <a href="MoreAboutIteration/Glossary.html#term-infinite-loop"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Recursion/Glossary.html#term-infinite-recursion"><strong>infinite recursion</strong></a>
+</dt>
+<dt><a href="ClassesDiggingDeeper/Inheritance.html#index-0">inheritance</a>, <a href="ClassesDiggingDeeper/Glossary.html#term-inheritance"><strong>[1]</strong></a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="SimplePythonData/UpdatingVariables.html#index-0">initialization</a>
+</dt>
+<dd><dl>
+<dt><a href="SimplePythonData/Glossary.html#term-initialization-of-a-variable"><strong>(of a variable)</strong></a>
+</dt>
+</dl></dd>
+<dt><a href="ClassesBasics/Glossary.html#term-initializer-method"><strong>initializer method</strong></a>
+</dt>
+<dt><a href="Functions/ProgramDevelopment.html#index-0">input</a>, <a href="GeneralIntro/MoreAboutPrograms.html#index-0">[1]</a>, <a href="SimplePythonData/Input.html#index-0">[2]</a>, <a href="save-my-spot.html#index-4">[3]</a>
+</dt>
+<dt><a href="ProblemSets/Initials.html#index-0">install Python locally</a>
+</dt>
+<dt><a href="ClassesBasics/InstancesasReturnValues.html#index-0">instance</a>, <a href="ClassesBasics/UserDefinedClasses.html#index-0">[1]</a>, <a href="PythonTurtle/InstancesAHerdofTurtles.html#index-0">[2]</a>, <a href="ClassesBasics/Glossary.html#term-instance"><strong>[3]</strong></a>, <a href="PythonTurtle/Glossary.html#term-instance"><strong>[4]</strong></a>
+</dt>
+<dt><a href="PythonTurtle/Themathmodule.html#index-0">instantiate</a>, <a href="ClassesBasics/Glossary.html#term-instantiate"><strong>[1]</strong></a>
+</dt>
+<dt><a href="ClassesBasics/UserDefinedClasses.html#index-0">instantiation</a>
+</dt>
+<dt><a href="SimplePythonData/Input.html#index-0">int</a>, <a href="SimplePythonData/Typeconversionfunctions.html#index-0">[1]</a>, <a href="SimplePythonData/Glossary.html#term-int"><strong>[2]</strong></a>
+</dt>
+<dt><a href="SimplePythonData/ValuesandDataTypes.html#index-0">integer</a>
+</dt>
+<dt><a href="SimplePythonData/Glossary.html#term-integer-division"><strong>integer division</strong></a>
+</dt>
+<dt><a href="GeneralIntro/ThePythonProgrammingLanguage.html#index-0">interpret</a>, <a href="save-my-spot.html#index-2">[1]</a>, <a href="GeneralIntro/Glossary.html#term-interpret"><strong>[2]</strong></a>, <a href="save-my-spot.html#term-interpret"><strong>[3]</strong></a>
+</dt>
+<dt><a href="PythonTurtle/Glossary.html#term-invoke"><strong>invoke</strong></a>
+</dt>
+<dt><a href="ClassesDiggingDeeper/Sameness.html#index-0">is</a>
+</dt>
+<dt><a href="Lists/ListsareMutable.html#index-0">item assignment</a>
+</dt>
+<dt><a href="Lists/Listsandforloops.html#index-0">iteration</a>, <a href="MoreAboutIteration/2DimensionalIterationImageProcessing.html#index-0">[1]</a>, <a href="MoreAboutIteration/breakandcontinueStatements.html#index-0">[2]</a>, <a href="MoreAboutIteration/intro-IterationRevisited.html#index-0">[3]</a>, <a href="PythonTurtle/TheforLoop.html#index-0">[4]</a>, <a href="Strings/StringTraversal.html#index-0">[5]</a>, <a href="PythonTurtle/Glossary.html#term-iteration"><strong>[6]</strong></a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="J">J</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Lists/splitandjoin.html#index-0">join</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="K">K</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Dictionaries/intro-Dictionaries.html#index-0">key</a>, <a href="Dictionaries/Glossary.html#term-key"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Dictionaries/intro-Dictionaries.html#index-0">key-value pair</a>, <a href="Dictionaries/Glossary.html#term-key-value-pair"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Dictionaries/Dictionarymethods.html#index-0">keys</a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="SimplePythonData/Glossary.html#term-keyword"><strong>keyword</strong></a>
+</dt>
+<dt><a href="SimplePythonData/VariableNamesandKeywords.html#index-0">keywords</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="L">L</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Dictionaries/Dictionaryoperations.html#index-0">len</a>, <a href="Lists/ListsandStringsareSimilar.html#index-0">[1]</a>, <a href="SimplePythonData/StatementsandExpressions.html#index-0">[2]</a>, <a href="Strings/IndexOperatorWorkingwiththeCharactersofaString.html#index-0">[3]</a>
+</dt>
+<dt><a href="Dictionaries/Enumerate.html#index-0">list</a>, <a href="Lists/ListsareMutable.html#index-0">[1]</a>, <a href="Lists/UsingListsasParameters.html#index-0">[2]</a>, <a href="Lists/splitandjoin.html#index-0">[3]</a>, <a href="PythonTurtle/TheforLoop.html#index-0">[4]</a>, <a href="Lists/Glossary.html#term-list"><strong>[5]</strong></a>
+</dt>
+<dt><a href="Lists/ListComprehensions.html#index-0">list comprehension</a>
+</dt>
+<dt><a href="Lists/ListsandStringsareSimilar.html#index-0">list deletion</a>
+</dt>
+<dt><a href="Lists/ListMethods.html#index-0">list methods</a>
+</dt>
+<dt><a href="Lists/Listsandforloops.html#index-0">list traversal</a>, <a href="Lists/Glossary.html#term-list-traversal"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Lists/Aliasing.html#index-0">lists</a>, <a href="Lists/ConcatenationandRepetition.html#index-0">[1]</a>, <a href="Lists/Lists.html#index-0">[2]</a>, <a href="Lists/ListsandStringsareSimilar.html#index-0">[3]</a>, <a href="Lists/ObjectsandReferences.html#index-0">[4]</a>, <a href="Lists/RepetitionandReferences.html#index-0">[5]</a>
+</dt>
+<dt><a href="Functions/Parametersandlocalvariables.html#index-0">local scope</a>
+</dt>
+<dt><a href="Functions/Functionsthatreturnvalues.html#index-0">local variable</a>, <a href="Functions/Parametersandlocalvariables.html#index-0">[1]</a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Selection/Glossary.html#term-logical-operator"><strong>logical operator</strong></a>
+</dt>
+<dt><a href="Selection/Logicaloperators.html#index-0">logical operators</a>
+</dt>
+<dt><a href="MoreAboutIteration/2DimensionalIterationImageProcessing.html#index-0">loop</a>, <a href="PythonTurtle/Glossary.html#term-loop"><strong>[1]</strong></a>
+</dt>
+<dt><a href="MoreAboutIteration/ThewhileStatement.html#index-0">loop body</a>, <a href="MoreAboutIteration/breakandcontinueStatements.html#index-0">[1]</a>, <a href="PythonTurtle/TheforLoop.html#index-0">[2]</a>, <a href="PythonTurtle/Glossary.html#term-loop-body"><strong>[3]</strong></a>
+</dt>
+<dt><a href="PythonTurtle/TheforLoop.html#index-0">loop variable</a>, <a href="PythonTurtle/Glossary.html#term-loop-variable"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Strings/Loopingandcounting.html#index-0">looping</a>
+</dt>
+<dt><a href="MoreAboutIteration/SimpleTables.html#index-0">loops</a>
+</dt>
+<dt><a href="GeneralIntro/ThePythonProgrammingLanguage.html#index-0">low-level language</a>, <a href="save-my-spot.html#index-2">[1]</a>, <a href="GeneralIntro/Glossary.html#term-low-level-language"><strong>[2]</strong></a>, <a href="save-my-spot.html#term-low-level-language"><strong>[3]</strong></a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="M">M</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Functions/mainfunction.html#index-0">main</a>
+</dt>
+<dt><a href="Dictionaries/intro-Dictionaries.html#index-0">mapping type</a>, <a href="Dictionaries/Glossary.html#term-mapping-type"><strong>[1]</strong></a>
+</dt>
+<dt><a href="PythonTurtle/Themathmodule.html#index-0">math module</a>
+</dt>
+<dt><a href="Dictionaries/Sparsematrices.html#index-0">matrix</a>
+</dt>
+<dt><a href="ClassesBasics/ObjectsRevisited.html#index-0">method</a>, <a href="PythonTurtle/OurFirstTurtleProgram.html#index-0">[1]</a>, <a href="ClassesBasics/Glossary.html#term-method"><strong>[2]</strong></a>, <a href="PythonTurtle/Glossary.html#term-method"><strong>[3]</strong></a>
+</dt>
+<dt><a href="ClassesBasics/AddingOtherMethodstoourClass.html#index-0">methods</a>
+</dt>
+<dt><a href="Lists/UsingListsasParameters.html#index-0">modifier</a>, <a href="Lists/Glossary.html#term-modifier"><strong>[1]</strong></a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="PythonTurtle/MoreAboutUsingModules.html#index-0">module</a>, <a href="PythonTurtle/OurFirstTurtleProgram.html#index-0">[1]</a>, <a href="PythonTurtle/intro-HelloLittleTurtles.html#index-0">[2]</a>, <a href="PythonTurtle/modules.html#index-0">[3]</a>, <a href="StringsContinued/Optionalparameters.html#index-0">[4]</a>, <a href="PythonTurtle/Glossary.html#term-module"><strong>[5]</strong></a>
+</dt>
+<dt><a href="SimplePythonData/OperatorsandOperands.html#index-1">modulus</a>
+</dt>
+<dt><a href="SimplePythonData/Glossary.html#term-modulus-operator"><strong>modulus operator</strong></a>
+</dt>
+<dt><a href="Dictionaries/TuplesandMutability.html#index-0">mutability</a>
+</dt>
+<dt><a href="Dictionaries/Dictionaryoperations.html#index-0">mutable</a>, <a href="Lists/ListsareMutable.html#index-0">[1]</a>
+</dt>
+<dt><a href="Lists/Glossary.html#term-mutable-data-type"><strong>mutable data type</strong></a>, <a href="Recursion/Glossary.html#term-mutable-data-type"><strong>[1]</strong></a>
+</dt>
+<dt><a href="ClassesDiggingDeeper/ObjectsareMutable.html#index-0">mutator</a>, <a href="Lists/ListMethods.html#index-0">[1]</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="N">N</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="SimplePythonData/VariableNamesandKeywords.html#index-0">naming conventions</a>
+</dt>
+<dt><a href="GeneralIntro/Glossary.html#term-natural-language"><strong>natural language</strong></a>, <a href="save-my-spot.html#term-natural-language"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Selection/Nestedconditionals.html#index-0">nested conditionals</a>
+</dt>
+<dt><a href="MoreAboutIteration/2DimensionalIterationImageProcessing.html#index-0">nested iteration</a>
+</dt>
+<dt><a href="Lists/Lists.html#index-0">nested list</a>, <a href="Lists/Glossary.html#term-nested-list"><strong>[1]</strong></a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="MoreAboutIteration/Glossary.html#term-nested-loop"><strong>nested loop</strong></a>
+</dt>
+<dt><a href="Selection/Glossary.html#term-nesting"><strong>nesting</strong></a>
+</dt>
+<dt><a href="MoreAboutIteration/SimpleTables.html#index-0">newline</a>, <a href="MoreAboutIteration/Glossary.html#term-newline"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Functions/Glossary.html#term-none"><strong>None</strong></a>
+</dt>
+<dt><a href="Dictionaries/Dictionarymethods.html#index-0">not in</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="O">O</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="ClassesBasics/ObjectsRevisited.html#index-0">object</a>, <a href="ClassesBasics/ObjectsasArgumentsandParameters.html#index-0">[1]</a>, <a href="ClassesBasics/UserDefinedClasses.html#index-0">[2]</a>, <a href="ClassesBasics/Glossary.html#term-object"><strong>[3]</strong></a>, <a href="PythonTurtle/Glossary.html#term-object"><strong>[4]</strong></a>, <a href="SimplePythonData/Glossary.html#term-object"><strong>[5]</strong></a>
+</dt>
+<dt><a href="GeneralIntro/Glossary.html#term-object-code"><strong>object code</strong></a>, <a href="save-my-spot.html#term-object-code"><strong>[1]</strong></a>
+</dt>
+<dt><a href="ClassesBasics/Glossary.html#term-object-oriented-language"><strong>object-oriented language</strong></a>
+</dt>
+<dt><a href="ClassesBasics/Achangeofperspective.html#index-0">object-oriented programming</a>, <a href="ClassesBasics/Objectorientedprogramming.html#index-0">[1]</a>, <a href="ClassesDiggingDeeper/Inheritance.html#index-0">[2]</a>, <a href="ClassesBasics/Glossary.html#term-object-oriented-programming"><strong>[3]</strong></a>
+</dt>
+<dt><a href="Lists/ObjectsandReferences.html#index-0">objects</a>, <a href="SimplePythonData/ValuesandDataTypes.html#index-0">[1]</a>
+</dt>
+<dt><a href="Files/Glossary.html#term-open"><strong>open</strong></a>
+</dt>
+<dt><a href="SimplePythonData/Glossary.html#term-operand"><strong>operand</strong></a>
+</dt>
+<dt><a href="SimplePythonData/OperatorsandOperands.html#index-0">operands</a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="SimplePythonData/Glossary.html#term-operator"><strong>operator</strong></a>
+</dt>
+<dt><a href="Selection/PrecedenceofOperators.html#index-0">operator precedence</a>
+</dt>
+<dt><a href="SimplePythonData/OperatorsandOperands.html#index-0">operators</a>
+</dt>
+<dt><a href="StringsContinued/Afindfunction.html#index-0">optional parameter</a>
+</dt>
+<dt><a href="SimplePythonData/OrderofOperations.html#index-0">order of operations</a>
+</dt>
+<dt><a href="Strings/OperationsonStrings.html#index-0">ordinal value</a>
+</dt>
+<dt><a href="Functions/ProgramDevelopment.html#index-0">output</a>, <a href="GeneralIntro/MoreAboutPrograms.html#index-0">[1]</a>, <a href="save-my-spot.html#index-4">[2]</a>
+</dt>
+<dt><a href="ClassesBasics/ConvertinganObjecttoaString.html#index-0">override</a>, <a href="ClassesDiggingDeeper/ArithmeticMethods.html#index-0">[1]</a>, <a href="ClassesDiggingDeeper/Inheritance.html#index-0">[2]</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="P">P</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="ClassesBasics/ObjectsasArgumentsandParameters.html#index-0">parameter</a>, <a href="Functions/Functionsthatreturnvalues.html#index-0">[1]</a>, <a href="Functions/Parametersandlocalvariables.html#index-0">[2]</a>, <a href="Functions/functions.html#index-0">[3]</a>
+</dt>
+<dd><dl>
+<dt><a href="StringsContinued/Afindfunction.html#index-0">optional</a>
+</dt>
+</dl></dd>
+<dt><a href="Lists/UsingListsasParameters.html#index-0">parameters</a>
+</dt>
+<dt><a href="Debugging/Glossary.html#term-parse"><strong>parse</strong></a>
+</dt>
+<dt><a href="Lists/UsingListsasParameters.html#index-0">pattern</a>, <a href="Lists/Glossary.html#term-pattern"><strong>[1]</strong></a>
+</dt>
+<dt><a href="MoreAboutIteration/2DimensionalIterationImageProcessing.html#index-0">pixel</a>
+</dt>
+<dt><a href="Lists/ListMethods.html#index-0">pop</a>
+</dt>
+<dt><a href="GeneralIntro/Glossary.html#term-portability"><strong>portability</strong></a>, <a href="save-my-spot.html#term-portability"><strong>[1]</strong></a>
+</dt>
+<dt><a href="GeneralIntro/ThePythonProgrammingLanguage.html#index-0">portable</a>, <a href="save-my-spot.html#index-2">[1]</a>
+</dt>
+<dt><a href="ClassesBasics/ConvertinganObjecttoaString.html#index-0">print</a>, <a href="SimplePythonData/StatementsandExpressions.html#index-0">[1]</a>, <a href="SimplePythonData/ValuesandDataTypes.html#index-0">[2]</a>
+</dt>
+<dt><a href="GeneralIntro/Glossary.html#term-print-function"><strong>print function</strong></a>, <a href="save-my-spot.html#term-print-function"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Exceptions/PrinciplesofProblemSolving.html#index-0">problem solving</a>, <a href="GeneralIntro/intro-TheWayoftheProgram.html#index-0">[1]</a>, <a href="MoreAboutIteration/AlgorithmsRevisited.html#index-0">[2]</a>, <a href="save-my-spot.html#index-0">[3]</a>, <a href="GeneralIntro/Glossary.html#term-problem-solving"><strong>[4]</strong></a>, <a href="save-my-spot.html#term-problem-solving"><strong>[5]</strong></a>
+</dt>
+<dt><a href="ClassesBasics/Objectorientedprogramming.html#index-0">procedural programming</a>
+</dt>
+<dt><a href="Functions/ProgramDevelopment.html#index-0">processing</a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="GeneralIntro/Glossary.html#term-program"><strong>program</strong></a>, <a href="save-my-spot.html#term-program"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Functions/ProgramDevelopment.html#index-0">program development</a>
+</dt>
+<dt><a href="GeneralIntro/ThePythonProgrammingLanguage.html#index-0">programming language</a>, <a href="save-my-spot.html#index-2">[1]</a>, <a href="GeneralIntro/Glossary.html#term-programming-language"><strong>[2]</strong></a>, <a href="save-my-spot.html#term-programming-language"><strong>[3]</strong></a>
+</dt>
+<dt><a href="ClassesBasics/Objectorientedprogramming.html#index-0">programming paradigm</a>
+</dt>
+<dt><a href="ProblemSets/Initials.html#index-0">project directory</a>
+</dt>
+<dt><a href="SimplePythonData/Glossary.html#term-prompt-string"><strong>prompt string</strong></a>
+</dt>
+<dt><a href="PythonTurtle/Therandommodule.html#index-0">pseudo-random</a>
+</dt>
+<dt><a href="PythonTurtle/Glossary.html#term-pseudo-random-number"><strong>pseudo-random number</strong></a>
+</dt>
+<dt><a href="Lists/UsingListsasParameters.html#index-0">pure function</a>, <a href="Lists/Glossary.html#term-pure-function"><strong>[1]</strong></a>
+</dt>
+<dt><a href="PythonTurtle/modules.html#index-0">Python Documentation</a>
+</dt>
+<dt><a href="GeneralIntro/Glossary.html#term-python-shell"><strong>Python shell</strong></a>, <a href="save-my-spot.html#term-python-shell"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Debugging/StyleHighlights.html#index-0">Python Style Guide</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="R">R</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Exceptions/01_intro_exceptions.html#index-0">raise</a>, <a href="Exceptions/intro-Exceptions.html#index-0">[1]</a>, <a href="Recursion/Glossary.html#term-raise"><strong>[2]</strong></a>
+</dt>
+<dt><a href="PythonTurtle/Therandommodule.html#index-1">random</a>
+</dt>
+<dt><a href="PythonTurtle/Glossary.html#term-random-number"><strong>random number</strong></a>
+</dt>
+<dt><a href="PythonTurtle/Glossary.html#term-random-number-generator"><strong>random number generator</strong></a>
+</dt>
+<dt><a href="PythonTurtle/TherangeType.html#index-0">range</a>, <a href="PythonTurtle/Glossary.html#term-range"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Files/Glossary.html#term-read"><strong>read</strong></a>
+</dt>
+<dt><a href="Functions/ProgrammingWithStyle.html#index-0">readability</a>
+</dt>
+<dt><a href="Files/Glossary.html#term-readline"><strong>readline</strong></a>
+</dt>
+<dt><a href="Files/Glossary.html#term-readlines"><strong>readlines</strong></a>
+</dt>
+<dt><a href="SimplePythonData/Reassignment.html#index-0">reassignment</a>
+</dt>
+<dt><a href="Dictionaries/TuplesandMutability.html#index-0">records</a>
+</dt>
+<dt><a href="Recursion/Glossary.html#term-recursion"><strong>recursion</strong></a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Recursion/Glossary.html#term-recursive-call"><strong>recursive call</strong></a>
+</dt>
+<dt><a href="Recursion/Glossary.html#term-recursive-definition"><strong>recursive definition</strong></a>
+</dt>
+<dt><a href="Lists/UsingListsasParameters.html#index-0">reference</a>
+</dt>
+<dt><a href="SimplePythonData/Glossary.html#term-reference-diagram"><strong>reference diagram</strong></a>
+</dt>
+<dt><a href="Lists/ObjectsandReferences.html#index-0">references</a>, <a href="Lists/RepetitionandReferences.html#index-0">[1]</a>
+</dt>
+<dt><a href="SimplePythonData/OperatorsandOperands.html#index-1">remainder operator</a>
+</dt>
+<dt><a href="GeneralIntro/MoreAboutPrograms.html#index-0">repetition</a>, <a href="Lists/ConcatenationandRepetition.html#index-0">[1]</a>, <a href="Lists/RepetitionandReferences.html#index-0">[2]</a>, <a href="Strings/OperationsonStrings.html#index-0">[3]</a>, <a href="save-my-spot.html#index-4">[4]</a>
+</dt>
+<dt><a href="ClassesBasics/InstancesasReturnValues.html#index-0">return value</a>, <a href="Functions/Functionsthatreturnvalues.html#index-0">[1]</a>, <a href="Functions/Glossary.html#term-return-value"><strong>[2]</strong></a>
+</dt>
+<dt><a href="MoreAboutIteration/2DimensionalIterationImageProcessing.html#index-0">RGB Color Model</a>
+</dt>
+<dt><a href="SimplePythonData/OrderofOperations.html#index-0">rules of precedence</a>, <a href="SimplePythonData/Glossary.html#term-rules-of-precedence"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Exceptions/intro-Exceptions.html#index-0">run-time stack</a>
+</dt>
+<dt><a href="Debugging/RuntimeErrors.html#index-0">runtime error</a>, <a href="Debugging/Glossary.html#term-runtime-error"><strong>[1]</strong></a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="S">S</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="ClassesDiggingDeeper/Sameness.html#index-0">sameness</a>
+</dt>
+<dt><a href="Functions/Parametersandlocalvariables.html#index-0">scope</a>
+</dt>
+<dt><a href="PythonTurtle/Therandommodule.html#index-0">seed</a>
+</dt>
+<dt><a href="Selection/Chainedconditionals.html#index-0">selection</a>, <a href="Selection/ConditionalExecutionBinarySelection.html#index-0">[1]</a>
+</dt>
+<dt><a href="Debugging/SemanticErrors.html#index-0">semantic error</a>, <a href="Debugging/Glossary.html#term-semantic-error"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Debugging/Glossary.html#term-semantics"><strong>semantics</strong></a>
+</dt>
+<dt><a href="Lists/splitandjoin.html#index-0">separator</a>
+</dt>
+<dt><a href="Lists/Glossary.html#term-sequence"><strong>sequence</strong></a>
+</dt>
+<dt><a href="PythonTurtle/Glossary.html#term-sequential"><strong>sequential</strong></a>
+</dt>
+<dt><a href="PythonTurtle/FlowofExecutionoftheforLoop.html#index-0">sequential flow</a>
+</dt>
+<dt><a href="Functions/Parametersandlocalvariables.html#index-0">shadow</a>
+</dt>
+<dt><a href="ClassesDiggingDeeper/Sameness.html#index-0">shallow equality</a>, <a href="ClassesDiggingDeeper/Glossary.html#term-shallow-equality"><strong>[1]</strong></a>
+</dt>
+<dt><a href="GeneralIntro/Glossary.html#term-shell-mode"><strong>shell mode</strong></a>, <a href="save-my-spot.html#term-shell-mode"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Lists/UsingListsasParameters.html#index-0">side effect</a>, <a href="Lists/Glossary.html#term-side-effect"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Dictionaries/TuplesandMutability.html#index-0">slice</a>, <a href="Lists/ListsandStringsareSimilar.html#index-0">[1]</a>, <a href="Lists/ListsareMutable.html#index-0">[2]</a>, <a href="Strings/Glossary.html#term-slice"><strong>[3]</strong></a>
+</dt>
+<dt><a href="Strings/TheSliceOperator.html#index-0">slice operator</a>
+</dt>
+<dt><a href="Lists/ListMethods.html#index-0">sort</a>
+</dt>
+<dt><a href="GeneralIntro/Glossary.html#term-source-code"><strong>source code</strong></a>, <a href="save-my-spot.html#term-source-code"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Dictionaries/Sparsematrices.html#index-0">sparse matrices</a>
+</dt>
+<dt><a href="Lists/splitandjoin.html#index-0">split</a>
+</dt>
+<dt><a href="Exceptions/DebuggingReview.html#index-0">stack overflow</a>
+</dt>
+<dt><a href="Exceptions/StandardExceptions.html#index-0">standard exceptions</a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="PythonTurtle/modules.html#index-0">standard library</a>, <a href="PythonTurtle/Glossary.html#term-standard-library"><strong>[1]</strong></a>
+</dt>
+<dt><a href="ClassesBasics/ObjectsRevisited.html#index-0">state</a>, <a href="PythonTurtle/InstancesAHerdofTurtles.html#index-0">[1]</a>, <a href="PythonTurtle/OurFirstTurtleProgram.html#index-0">[2]</a>, <a href="PythonTurtle/Glossary.html#term-state"><strong>[3]</strong></a>
+</dt>
+<dt><a href="SimplePythonData/Glossary.html#term-state-snapshot"><strong>state snapshot</strong></a>
+</dt>
+<dt><a href="SimplePythonData/StatementsandExpressions.html#index-0">statement</a>, <a href="SimplePythonData/Glossary.html#term-statement"><strong>[1]</strong></a>
+</dt>
+<dt><a href="PythonTurtle/TherangeType.html#index-0">step</a>
+</dt>
+<dt><a href="SimplePythonData/Input.html#index-0">str</a>, <a href="SimplePythonData/Typeconversionfunctions.html#index-0">[1]</a>, <a href="SimplePythonData/Glossary.html#term-str"><strong>[2]</strong></a>
+</dt>
+<dt><a href="Strings/StringMethods.html#index-0">str.format</a>
+</dt>
+<dt><a href="ClassesBasics/ConvertinganObjecttoaString.html#index-0">string</a>, <a href="Lists/splitandjoin.html#index-0">[1]</a>, <a href="SimplePythonData/ValuesandDataTypes.html#index-0">[2]</a>
+</dt>
+<dt><a href="Strings/StringMethods.html#index-0">string methods</a>
+</dt>
+<dt><a href="Strings/Characterclassification.html#index-0">string module</a>, <a href="StringsContinued/Optionalparameters.html#index-0">[1]</a>
+</dt>
+<dt><a href="Strings/OperationsonStrings.html#index-0">string operations</a>
+</dt>
+<dt><a href="Strings/StringTraversal.html#index-0">string traversal</a>
+</dt>
+<dt><a href="Lists/ListsandStringsareSimilar.html#index-0">strings</a>, <a href="Lists/ObjectsandReferences.html#index-0">[1]</a>, <a href="Strings/ACollectionDataType.html#index-0">[2]</a>, <a href="Strings/TheSliceOperator.html#index-0">[3]</a>
+</dt>
+<dt><a href="Functions/ProgrammingWithStyle.html#index-0">style</a>
+</dt>
+<dt><a href="ClassesDiggingDeeper/Inheritance.html#index-0">subclass</a>
+</dt>
+<dt><a href="Lists/Lists.html#index-0">sublist</a>
+</dt>
+<dt><a href="ClassesDiggingDeeper/Inheritance.html#index-0">superclass</a>
+</dt>
+<dt><a href="Dictionaries/TupleAssignment.html#index-0">swap</a>
+</dt>
+<dt><a href="Debugging/Syntaxerrors.html#index-0">syntax</a>, <a href="Debugging/Glossary.html#term-syntax"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Debugging/Glossary.html#term-syntax-error"><strong>syntax error</strong></a>
+</dt>
+<dt><a href="Debugging/Syntaxerrors.html#index-0">syntax errors</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="T">T</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="MoreAboutIteration/SimpleTables.html#index-0">tab</a>, <a href="MoreAboutIteration/Glossary.html#term-tab"><strong>[1]</strong></a>
+</dt>
+<dt><a href="MoreAboutIteration/SimpleTables.html#index-0">tables</a>
+</dt>
+<dt><a href="Functions/Functionsthatreturnvalues.html#index-0">temporary variable</a>, <a href="Functions/Glossary.html#term-temporary-variable"><strong>[1]</strong></a>
+</dt>
+<dt><a href="PythonTurtle/TheforLoop.html#index-0">terminating condition</a>, <a href="PythonTurtle/Glossary.html#term-terminating-condition"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Debugging/HowtoAvoidDebugging.html#index-0">testing</a>
+</dt>
+<dt><a href="GeneralIntro/Glossary.html#term-token"><strong>token</strong></a>, <a href="save-my-spot.html#term-token"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Strings/Glossary.html#term-traverse"><strong>traverse</strong></a>
+</dt>
+<dt><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">True</a>
+</dt>
+<dt><a href="Selection/Logicaloperators.html#index-0">truth tables</a>
+</dt>
+<dt><a href="Exceptions/intro-Exceptions.html#index-0">try</a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Exceptions/01_intro_exceptions.html#index-0">try: except:</a>
+</dt>
+<dt><a href="Dictionaries/Dictionarymethods.html#index-0">tuple</a>, <a href="Dictionaries/Enumerate.html#index-0">[1]</a>, <a href="Dictionaries/Sparsematrices.html#index-0">[2]</a>, <a href="Dictionaries/Glossary.html#term-tuple"><strong>[3]</strong></a>, <a href="Recursion/Glossary.html#term-tuple"><strong>[4]</strong></a>
+</dt>
+<dt><a href="Dictionaries/TupleAssignment.html#index-0">tuple assignment</a>, <a href="Recursion/Glossary.html#term-tuple-assignment"><strong>[1]</strong></a>
+</dt>
+<dt><a href="Dictionaries/TuplesandMutability.html#index-0">tuples</a>
+</dt>
+<dt><a href="Functions/ATurtleBarChart.html#index-0">turtle</a>, <a href="MoreAboutIteration/RandomlyWalkingTurtles.html#index-0">[1]</a>, <a href="PythonTurtle/OurFirstTurtleProgram.html#index-0">[2]</a>, <a href="PythonTurtle/intro-HelloLittleTurtles.html#index-0">[3]</a>, <a href="PythonTurtle/Glossary.html#term-turtle"><strong>[4]</strong></a>
+</dt>
+<dt><a href="PythonTurtle/SummaryofTurtleMethods.html#index-0">turtle methods</a>
+</dt>
+<dt><a href="SimplePythonData/ValuesandDataTypes.html#index-0">type</a>
+</dt>
+<dt><a href="ClassesBasics/ConvertinganObjecttoaString.html#index-0">type conversion</a>, <a href="Lists/splitandjoin.html#index-0">[1]</a>, <a href="SimplePythonData/Input.html#index-0">[2]</a>, <a href="SimplePythonData/Typeconversionfunctions.html#index-0">[3]</a>
+</dt>
+<dt><a href="SimplePythonData/Glossary.html#term-type-conversion-function"><strong>type conversion function</strong></a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="U">U</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Selection/OmittingtheelseClauseUnarySelection.html#index-0">unary selection</a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="ClassesBasics/UserDefinedClasses.html#index-0">user defined class</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="V">V</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Dictionaries/intro-Dictionaries.html#index-0">value</a>, <a href="SimplePythonData/ValuesandDataTypes.html#index-0">[1]</a>, <a href="SimplePythonData/Variables.html#index-0">[2]</a>, <a href="SimplePythonData/Glossary.html#term-value"><strong>[3]</strong></a>
+</dt>
+<dt><a href="Functions/TheAccumulatorPattern.html#index-0">variable</a>, <a href="SimplePythonData/Reassignment.html#index-0">[1]</a>, <a href="SimplePythonData/UpdatingVariables.html#index-0">[2]</a>, <a href="SimplePythonData/VariableNamesandKeywords.html#index-0">[3]</a>, <a href="SimplePythonData/Variables.html#index-0">[4]</a>, <a href="SimplePythonData/Glossary.html#term-variable"><strong>[5]</strong></a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="SimplePythonData/Glossary.html#term-variable-name"><strong>variable name</strong></a>
+</dt>
+<dt><a href="Dictionaries/Dictionarymethods.html#index-0">view</a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="W">W</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="MoreAboutIteration/ChoosingWhichLoopToUse.html#index-0">while</a>, <a href="MoreAboutIteration/RandomlyWalkingTurtles.html#index-0">[1]</a>, <a href="MoreAboutIteration/ThewhileStatement.html#index-0">[2]</a>, <a href="Strings/StringTraversal.html#index-0">[3]</a>
+</dt>
+<dt><a href="Strings/Glossary.html#term-whitespace"><strong>whitespace</strong></a>
+</dt>
+</dl></td>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="Files/Glossary.html#term-write"><strong>write</strong></a>
+</dt>
+</dl></td>
+</tr></table>
+<h2 id="Z">Z</h2>
+<table class="indextable genindextable" style="width: 100%"><tr>
+<td style="width: 33%" valign="top"><dl>
+<dt><a href="PythonTurtle/TherangeType.html#index-0">zero-based indexing</a>
+</dt>
+</dl></td>
+</tr></table>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/genindex.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>7. Exercises — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/ChapterHeadings/Heading8" rel="next" title="Chapter 8: More About Iteration"/>
+<link href="/Exceptions/DebuggingReview" rel="prev" title="6. Debugging Review"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="exercises">
+<h1>7. Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><div data-component="tabbedStuff" id="q4"><div data-component="tab" data-tabname="Question">
+<p>Fill out the <code class="docutils literal"><span class="pre">main</span></code> function below so that you handle two exceptions that may be raised by your call to <code class="docutils literal"><span class="pre">some_function</span></code>. If this function raises a <code class="docutils literal"><span class="pre">ValueError</span></code>, print “value error happening now”; if this function raises a <code class="docutils literal"><span class="pre">UnicodeError</span></code>, print “unicode error happening now”. Make sure your code can handle both errors. (Note: since <code class="docutils literal"><span class="pre">some_function</span></code> isn’t filled out, neither exception will be raised when you run the program.)</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_ex4">
+def some_function():
+    # Imagine code that could raise value or unicode errors
+    pass
+
+def main():
+    # Put your exception handling code below
+    some_function()
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_answer4">
+def some_function():
+    # Imagine code that could raise value or unicode errors
+    pass
+
+def main():
+    try:
+        some_function()
+    except UnicodeError:
+        print("unicode error happening now")
+    except ValueError:
+        print("value error happening now")
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div>
+</div>
+</li>
+</ol>
+<p>These next several problems are variations on a theme. Each will have you return a string that consists of a shape built out of <code class="docutils literal"><span class="pre">#</span></code> (hash) characters. It is left up to you to add the code you would need to run your functions (i.e., adding a <code class="docutils literal"><span class="pre">main</span></code> function and calling the respective function). These problems build in difficulty, and are examples in how solving smaller problems can lead you to incrementally build the solutions to larger problems.</p>
+<ol class="arabic" start="2">
+<li><div data-component="tabbedStuff" id="q5"><div data-component="tab" data-tabname="Question">
+<p>Write a function <code class="docutils literal"><span class="pre">line(n)</span></code> that returns a line with exactly <code class="docutils literal"><span class="pre">n</span></code> hashes.</p>
+<dl class="docutils">
+<dt><strong>Example:</strong></dt>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">print(line(5))</span></code></p>
+</dd>
+<dt><strong>Output:</strong></dt>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">#####</span></code></p>
+</dd>
+</dl>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_ex5">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_answer5">
+def line(n):
+    line_str = ''
+    for i in range(n):
+        line_str = line_str + '#'
+
+    return line_str
+
+def main():
+    print(line(5))
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div>
+</div>
+</li>
+<li><div data-component="tabbedStuff" id="q6"><div data-component="tab" data-tabname="Question">
+<p>Write a function <code class="docutils literal"><span class="pre">square(n)</span></code> that returns an <code class="docutils literal"><span class="pre">n</span></code> by <code class="docutils literal"><span class="pre">n</span></code> square of hashes. Utilize your <code class="docutils literal"><span class="pre">line</span></code> function.</p>
+<dl class="docutils">
+<dt><strong>Example:</strong></dt>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">print(square(5))</span></code></p>
+</dd>
+</dl>
+<p><strong>Output:</strong></p>
+<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="c1">#####</span>
+<span class="c1">#####</span>
+<span class="c1">#####</span>
+<span class="c1">#####</span>
+<span class="c1">#####</span>
+</pre></div>
+</div>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_ex6">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_answer6">
+def line(n):
+    line_str = ''
+    for i in range(n):
+        line_str = line_str + '#'
+
+    return line_str
+
+def square(n):
+    square_str = ''
+    for i in range(n):
+        square_str += (line(n) + '\n')
+    return square_str
+
+def main():
+    print(square(5))
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div>
+</div>
+</li>
+<li><div data-component="tabbedStuff" id="q7"><div data-component="tab" data-tabname="Question">
+<p>Write a function <code class="docutils literal"><span class="pre">rectangle(width,</span> <span class="pre">height)</span></code> that returns a rectangle of the width and height given by the parameters. Again, utilize your <code class="docutils literal"><span class="pre">line</span></code> function to do this.</p>
+<dl class="docutils">
+<dt><strong>Example:</strong></dt>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">print(rectangle(5,</span> <span class="pre">3))</span></code></p>
+</dd>
+</dl>
+<p><strong>Output:</strong></p>
+<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="c1">#####</span>
+<span class="c1">#####</span>
+<span class="c1">#####</span>
+</pre></div>
+</div>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_ex7">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_answer7">
+def line(n):
+    line_str = ''
+    for i in range(n):
+        line_str = line_str + '#'
+
+    return line_str
+
+def rectangle(width, height):
+    rectangle_str = ''
+    for i in range(height):
+        rectangle_str += (line(width) + '\n')
+
+    return rectangle_str
+
+def main():
+    print(rectangle(5, 3))
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div>
+</div>
+</li>
+<li><div data-component="tabbedStuff" id="q8"><div data-component="tab" data-tabname="Question">
+<p>Write a function <code class="docutils literal"><span class="pre">stairs(n)</span></code> that prints the pattern shown below, with height <code class="docutils literal"><span class="pre">n</span></code>.  Again, utilize your <code class="docutils literal"><span class="pre">line</span></code> function to do this.</p>
+<dl class="docutils">
+<dt><strong>Example:</strong></dt>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">stairs(5))</span></code></p>
+</dd>
+</dl>
+<p><strong>Output:</strong></p>
+<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1">##</span>
+<span class="c1">###</span>
+<span class="c1">####</span>
+<span class="c1">#####</span>
+</pre></div>
+</div>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_ex8">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_answer8">
+def line(n):
+    line_str = ''
+    for i in range(n):
+        line_str = line_str + '#'
+
+    return line_str
+
+def stairs(n):
+    stair_str = ''
+    for level_len in range(n):
+        stair_str += (line(level_len+1) + '\n')
+
+    return stair_str
+
+def main():
+    print(stairs(5))
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div>
+</div>
+</li>
+<li><div data-component="tabbedStuff" id="q9"><div data-component="tab" data-tabname="Question">
+<p>Write a function <code class="docutils literal"><span class="pre">space_line(spaces,</span> <span class="pre">hashes)</span></code> that returns a line with exactly the specified number of spaces, followed by the specified number of hashes.</p>
+<dl class="docutils">
+<dt><strong>Example:</strong></dt>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">print(space_line(3,5))</span></code></p>
+</dd>
+</dl>
+<p><strong>Output:</strong></p>
+<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="c1">#This is where the edge is, so there's 3 spaces before hashes</span>
+   <span class="c1">#####</span>
+</pre></div>
+</div>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_ex9">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_answer9">
+def space_line(spaces, hashes):
+    return spaces * ' ' + hashes * '#'
+
+def main():
+    print(space_line(3, 5))
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div>
+</div>
+</li>
+<li><div data-component="tabbedStuff" id="q10"><div data-component="tab" data-tabname="Question">
+<p>Write a function <code class="docutils literal"><span class="pre">triangle(n)</span></code> that returns an upright triangle of height <code class="docutils literal"><span class="pre">n</span></code>.</p>
+<dl class="docutils">
+<dt><strong>Example:</strong></dt>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">print(triangle(5))</span></code></p>
+</dd>
+</dl>
+<p><strong>Output:</strong></p>
+<div class="highlight-Python"><div class="highlight"><pre><span></span>    <span class="c1">#</span>
+   <span class="c1">###</span>
+  <span class="c1">#####</span>
+ <span class="c1">#######</span>
+<span class="c1">#########</span>
+</pre></div>
+</div>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_ex10">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_answer10">
+def space_line(spaces, hashes):
+    return spaces * ' ' + hashes * '#'
+
+def triangle(n):
+    triangle_str = ''
+    for i in range(n):
+        triangle_str += (space_line(n-i-1, 2*i+1) + '\n')
+    return triangle_str
+
+def main():
+    print(triangle(5))
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div>
+</div>
+</li>
+<li><div data-component="tabbedStuff" id="q11"><div data-component="tab" data-tabname="Question">
+<p>Write a function <code class="docutils literal"><span class="pre">diamond(n)</span></code> that returns a diamond where the triangle formed by the top portion has height <code class="docutils literal"><span class="pre">n</span></code>. Notice that this means the diamond has <code class="docutils literal"><span class="pre">2n</span> <span class="pre">-</span> <span class="pre">1</span></code> rows.</p>
+<dl class="docutils">
+<dt><strong>Example:</strong></dt>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">diamond(5))</span></code></p>
+</dd>
+</dl>
+<p><strong>Output:</strong></p>
+<div class="highlight-Python"><div class="highlight"><pre><span></span>    <span class="c1">#</span>
+   <span class="c1">###</span>
+  <span class="c1">#####</span>
+ <span class="c1">#######</span>
+<span class="c1">#########</span>
+ <span class="c1">#######</span>
+  <span class="c1">#####</span>
+   <span class="c1">###</span>
+    <span class="c1">#</span>
+</pre></div>
+</div>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_ex11">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="exceptions_answer11">
+def space_line(spaces, hashes):
+    return spaces * ' ' + hashes * '#'
+
+def triangle(n):
+    triangle_str = ''
+    for i in range(n):
+        triangle_str += (space_line(n-i-1, 2*i+1) + '\n')
+    return triangle_str
+
+def diamond(n):
+    diamond_str = triangle(n)
+    for i in range(n-2, -1, -1):
+        diamond_str += (space_line(n-i-1, 2*i+1) + '\n')
+    return diamond_str
+
+def main():
+    print(diamond(5))
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 6. Debugging Review">
+<a href="/Exceptions/DebuggingReview">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/Exceptions/DebuggingReview" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - Chapter 8: More About Iteration">
+<a href="/ChapterHeadings/Heading8">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/ChapterHeadings/Heading8" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/Exceptions/Exercises.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

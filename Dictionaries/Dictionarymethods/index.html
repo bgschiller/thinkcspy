@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>3. Dictionary Methods — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/Dictionaries/Aliasingandcopying" rel="next" title="4. Aliasing and Copying"/>
+<link href="/Dictionaries/Dictionaryoperations" rel="prev" title="2. Dictionary Operations"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="dictionary-methods">
+<span id="index-0"></span><h1>3. Dictionary Methods<a class="headerlink" href="#dictionary-methods" title="Permalink to this headline">¶</a></h1>
+<p>Dictionaries have a number of useful built-in methods. The following table provides a summary and more details can be found in the <a class="reference external" href="http://docs.python.org/py3k/library/stdtypes.html#mapping-types-dict">Python Documentation</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%"></col>
+<col width="18%"></col>
+<col width="70%"></col>
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">Parameters</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>keys</td>
+<td>none</td>
+<td>Returns a view of the keys in the dictionary</td>
+</tr>
+<tr class="row-odd"><td>values</td>
+<td>none</td>
+<td>Returns a view of the values in the dictionary</td>
+</tr>
+<tr class="row-even"><td>items</td>
+<td>none</td>
+<td>Returns a view of the key-value pairs in the dictionary</td>
+</tr>
+<tr class="row-odd"><td>get</td>
+<td>key</td>
+<td>Returns the value associated with key; None otherwise</td>
+</tr>
+<tr class="row-even"><td>get</td>
+<td>key,alt</td>
+<td>Returns the value associated with key; alt otherwise</td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal"><span class="pre">keys</span></code> method returns what Python 3 calls a <strong>view</strong> of its underlying keys. We can iterate over the view or turn the view into a list by using the <code class="docutils literal"><span class="pre">list</span></code> conversion function.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="chp12_dict6">
+inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}
+
+for akey in inventory.keys():     # the order in which we get the keys is not defined
+   print("Got key", akey, "which maps to value", inventory[akey])
+
+key_list = list(inventory.keys())
+print(key_list)
+</textarea>
+<p>It is so common to iterate over the keys in a dictionary that you can omit the <code class="docutils literal"><span class="pre">keys</span></code> method call in the <code class="docutils literal"><span class="pre">for</span></code> loop — iterating over a dictionary implicitly iterates over its keys.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="chp12_dict7">
+inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}
+
+for k in inventory:
+   print("Got key", k)
+</textarea>
+<p>As we saw earlier with strings and lists, dictionary methods use dot notation, which specifies the name of the method to the right of the dot and the name of the object on which to apply the method immediately to the left of the dot. The empty parentheses in the case of <code class="docutils literal"><span class="pre">keys</span></code> indicate that this method takes no parameters.</p>
+<p>The <code class="docutils literal"><span class="pre">values</span></code> and <code class="docutils literal"><span class="pre">items</span></code> methods are similar to <code class="docutils literal"><span class="pre">keys</span></code>. They return view objects which can be turned into lists or iterated over directly. Note that the items are shown as tuples containing the key and the associated value.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="chp12_dict8">
+inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}
+
+print(list(inventory.values()))
+print(list(inventory.items()))
+
+for (k,v) in inventory.items():
+    print("Got", k, "that maps to", v)
+
+for k in inventory:
+    print("Got", k, "that maps to", inventory[k])
+</textarea>
+<p>Note that tuples (which will be discussed later in this chapter) are often useful for getting both the key and the value at the same time while you are looping. You can see an example of using the tuple in the first <code class="docutils literal"><span class="pre">for</span></code> loop. The two loops do the same thing, the former just does it using a tuple.</p>
+<p>The <code class="docutils literal"><span class="pre">in</span></code> and <code class="docutils literal"><span class="pre">not</span> <span class="pre">in</span></code> operators can test if a key is in the dictionary:</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="chp12_dict9">
+inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}
+print('apples' in inventory)
+print('cherries' in inventory)
+
+if 'bananas' in inventory:
+    print(inventory['bananas'])
+else:
+    print("We have no bananas")
+</textarea>
+<p>This operator can be very useful since looking up a non-existent key in a dictionary causes a <em>runtime error</em>.</p>
+<p>The <code class="docutils literal"><span class="pre">get</span></code> method allows us to access the value associated with a key, similar to the <code class="docutils literal"><span class="pre">[</span> <span class="pre">]</span></code> operator. The important difference is that <code class="docutils literal"><span class="pre">get</span></code> will not cause a runtime error if the key is not present. It will instead return None.</p>
+<p>There exists a variation of <code class="docutils literal"><span class="pre">get</span></code> that allows a second parameter that serves as an alternative return value in the case where the key is not present. This can be seen in the final example below. In this case, since “cherries” is not a key, return 0 (instead of <code class="docutils literal"><span class="pre">None</span></code>).</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="chp12_dict10">
+inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}
+
+print(inventory.get("apples"))
+print(inventory.get("cherries"))
+
+print(inventory.get("cherries", 0))
+</textarea>
+<p><strong>Check your understanding</strong></p>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question11_3_1">
+<p>What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"cat"</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s2">"elephant"</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="s2">"bear"</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+<span class="n">key_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">my_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">key_list</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">key_list</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+<li data-component="answer" id="test_question11_3_1_opt_a">cat</li><li data-component="feedback" id="test_question11_3_1_opt_a">key_list is a list of all the keys which is then sorted. cat would be at index 1.</li>
+<li data-component="answer" id="test_question11_3_1_opt_b">dog</li><li data-component="feedback" id="test_question11_3_1_opt_b">key_list is a list of all the keys which is then sorted. dog would be at index 2.</li>
+<li data-component="answer" data-correct="" id="test_question11_3_1_opt_c">elephant</li><li data-component="feedback" id="test_question11_3_1_opt_c">Yes, the list of keys is sorted and the item at index 3 is printed.</li>
+<li data-component="answer" id="test_question11_3_1_opt_d">bear</li><li data-component="feedback" id="test_question11_3_1_opt_d">key_list is a list of all the keys which is then sorted. bear would be at index 0.</li>
+</ul>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question11_3_2">
+<p>What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"cat"</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s2">"elephant"</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="s2">"bear"</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"cat"</span><span class="p">)</span> <span class="o">//</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"dog"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+</pre></div>
+</div>
+<li data-component="answer" data-correct="" id="test_question11_3_2_opt_a">2</li><li data-component="feedback" id="test_question11_3_2_opt_a">get returns the value associated with a given key so this divides 12 by 6.</li>
+<li data-component="answer" id="test_question11_3_2_opt_b">0.5</li><li data-component="feedback" id="test_question11_3_2_opt_b">12 is divided by 6, not the other way around.</li>
+<li data-component="answer" id="test_question11_3_2_opt_c">bear</li><li data-component="feedback" id="test_question11_3_2_opt_c">Take another look at the example for get above. get returns the value associated with a given key.</li>
+<li data-component="answer" id="test_question11_3_2_opt_d">Error, divide is not a valid operation on dictionaries.</li><li data-component="feedback" id="test_question11_3_2_opt_d">The integer division operator is being used on the values returned from the get method, not on the dictionary.</li>
+</ul>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question11_3_3">
+<p>What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"cat"</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s2">"elephant"</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="s2">"bear"</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"dog"</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+<li data-component="answer" data-correct="" id="test_question11_3_3_opt_a">True</li><li data-component="feedback" id="test_question11_3_3_opt_a">Yes, dog is a key in the dictionary.</li>
+<li data-component="answer" id="test_question11_3_3_opt_b">False</li><li data-component="feedback" id="test_question11_3_3_opt_b">The in operator returns True if a key is in the dictionary, False otherwise.</li>
+</ul>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question11_3_4">
+<p>What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"cat"</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s2">"elephant"</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="s2">"bear"</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="mi">23</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+<li data-component="answer" id="test_question11_3_4_opt_a">True</li><li data-component="feedback" id="test_question11_3_4_opt_a">23 is a value in the dictionary, not a key.</li>
+<li data-component="answer" data-correct="" id="test_question11_3_4_opt_b">False</li><li data-component="feedback" id="test_question11_3_4_opt_b">Yes, the in operator returns True if a key is in the dictionary, False otherwise.</li>
+</ul>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question11_3_5">
+<p>What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"cat"</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s2">"elephant"</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="s2">"bear"</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">akey</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">:</span>
+   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">akey</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+      <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">my_dict</span><span class="p">[</span><span class="n">akey</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+<li data-component="answer" id="test_question11_3_5_opt_a">18</li><li data-component="feedback" id="test_question11_3_5_opt_a">Add the values that have keys greater than 3, not equal to 3.</li>
+<li data-component="answer" data-correct="" id="test_question11_3_5_opt_b">43</li><li data-component="feedback" id="test_question11_3_5_opt_b">Yes, the for statement iterates over the keys. It adds the values of the keys that have length greater than 3.</li>
+<li data-component="answer" id="test_question11_3_5_opt_c">0</li><li data-component="feedback" id="test_question11_3_5_opt_c">This is the accumulator pattern. total starts at 0 but then changes as the iteration proceeds.</li>
+<li data-component="answer" id="test_question11_3_5_opt_d">61</li><li data-component="feedback" id="test_question11_3_5_opt_d">Not all the values are added together. The if statement only chooses some of them.</li>
+</ul>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 2. Dictionary Operations">
+<a href="/Dictionaries/Dictionaryoperations">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/Dictionaries/Dictionaryoperations" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 4. Aliasing and Copying">
+<a href="/Dictionaries/Aliasingandcopying">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/Dictionaries/Aliasingandcopying" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/Dictionaries/Dictionarymethods.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>3. The while Statement — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/MoreAboutIteration/breakandcontinueStatements" rel="next" title="4. break and continue Statements"/>
+<link href="/MoreAboutIteration/Theforlooprevisited" rel="prev" title="2. The for Loop Revisited"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="the-while-statement">
+<span id="index-0"></span><h1>3. The while Statement<a class="headerlink" href="#the-while-statement" title="Permalink to this headline">¶</a></h1>
+<p>There is another Python statement that can also be used for iteration. It is called the <code class="docutils literal"><span class="pre">while</span></code> statement or a <code class="docutils literal"><span class="pre">while</span></code> loop. The <code class="docutils literal"><span class="pre">while</span></code> statement provides a much more general mechanism for iterating. Similar to the <code class="docutils literal"><span class="pre">if</span></code> statement, it uses a boolean expression to control the flow of execution. The body of the <code class="docutils literal"><span class="pre">while</span></code> loop will be repeated as long as the controlling boolean expression evaluates to <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<p>The following figure shows the flow of control.</p>
+<img alt="../_images/while_flow.png" src="/_images/while_flow.png"/>
+<p>We can use the <code class="docutils literal"><span class="pre">while</span></code> loop to create any type of iteration we wish, including anything that we have previously done with a <code class="docutils literal"><span class="pre">for</span></code> loop. For example, the program in the previous section could be rewritten using <code class="docutils literal"><span class="pre">while</span></code> by taking the following steps.</p>
+<p>Instead of relying on the <code class="docutils literal"><span class="pre">range</span></code> function to produce the numbers for our summation, we will need to produce them ourselves. To do this, <em>before</em> entering the <code class="docutils literal"><span class="pre">while</span></code> loop, we will create the variable called <code class="docutils literal"><span class="pre">num</span></code> and initialize it to 1, the first number in the summation. Every iteration will add <code class="docutils literal"><span class="pre">num</span></code> to the running total, and increment <code class="docutils literal"><span class="pre">num</span></code> to the next value, until all the desired values have been used.</p>
+<p>In order to control the iteration, we must create a boolean expression that evaluates to <code class="docutils literal"><span class="pre">True</span></code> as long as we want to keep adding values to our running total. In this case, as long as <code class="docutils literal"><span class="pre">num</span></code> is less than or equal to the upper bound, we should keep going.</p>
+<p>Here is a new version of the summation program that uses a <code class="docutils literal"><span class="pre">while</span></code> statement.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="iteration_while1">
+def sum_to(n):
+    """ Return the sum of 1+2+3 ... n """
+
+    sum = 0
+    num = 0
+
+    while num &lt;= n:
+        sum = sum + num
+        num = num + 1
+
+    return sum
+
+print(sum_to(4))
+
+print(sum_to(1000))
+</textarea>
+<p>You can almost read the <code class="docutils literal"><span class="pre">while</span></code> statement as if it were in natural language. It means, while <code class="docutils literal"><span class="pre">num</span></code> is less than or equal to <code class="docutils literal"><span class="pre">n</span></code>, continue executing the body of the loop. Within the body, each time the loop executes, update <code class="docutils literal"><span class="pre">sum</span></code> using the accumulator pattern and increment <code class="docutils literal"><span class="pre">num</span></code>. After the body of the loop finishes, we go back up to the condition of the <code class="docutils literal"><span class="pre">while</span></code> and reevaluate it. When <code class="docutils literal"><span class="pre">num</span></code> becomes greater than <code class="docutils literal"><span class="pre">n</span></code>, the condition fails to be <code class="docutils literal"><span class="pre">True</span></code> and flow of control continues to the <code class="docutils literal"><span class="pre">return</span></code> statement, the next statement outside the <code class="docutils literal"><span class="pre">while</span></code> loop.</p>
+<p>The same program in codelens will allow you to observe the flow of execution.</p>
+<div class="alert alert-warning cd_section">
+<div id="iteration_while2"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (iteration_while2)</span> </p>
+</div>
+<script type="text/javascript">
+var iteration_while2_trace = {"code": "def sum_to(n):\n    \"\"\" Return the sum of 1+2+3 ... n \"\"\"\n\n    sum = 0\n    num = 0\n\n    while num <= n:\n        sum = sum + num\n        num = num + 1\n\n    return sum\n\nprint(sum_to(4))", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 13, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 0, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 0, "num": 0, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 0, "num": 0, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 0, "num": 0, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 0, "num": 1, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 0, "num": 1, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 1, "num": 1, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 1, "num": 2, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 1, "num": 2, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 3, "num": 2, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 3, "num": 3, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 3, "num": 3, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 6, "num": 3, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 6, "num": 4, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 6, "num": 4, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 10, "num": 4, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 10, "num": 5, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"sum": 10, "num": 5, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["sum_to"], "stdout": "", "func_name": "sum_to", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"__return__": 10, "sum": 10, "num": 5, "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "sum_to", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "sum_to_f1", "ordered_varnames": ["n", "sum", "num", "__return__"]}], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 11, "event": "return"}, {"ordered_globals": ["sum_to"], "stdout": "10\n", "func_name": "<module>", "stack_to_render": [], "globals": {"sum_to": ["REF", 1]}, "heap": {"1": ["FUNCTION", "sum_to(n)", null]}, "line": 13, "event": "return"}]};
+var iteration_while2_vis;
+
+$(document).ready(function() {
+    try {
+        iteration_while2_vis = new ExecutionVisualizer('iteration_while2',iteration_while2_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    // LC MOD
+                                    // increase codelense width to 600
+                                    codeDivWidth: 600,
+                                    lang : 'py3'
+                                    });
+        attachLoggers(iteration_while2_vis,'iteration_while2');
+        styleButtons('iteration_while2');
+        allVisualizers.push(iteration_while2_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component iteration_while2_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#iteration_while2_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'iteration_while2'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    if (iteration_while2_vis) {
+        iteration_while2_vis.redrawConnectors();
+    }
+});
+</script>
+<p>Here is the flow of execution for a <code class="docutils literal"><span class="pre">while</span></code> statement:</p>
+<ol class="arabic simple">
+<li>Evaluate the condition, which yields a value of <code class="docutils literal"><span class="pre">False</span></code> or <code class="docutils literal"><span class="pre">True</span></code>.</li>
+<li>If the condition is <code class="docutils literal"><span class="pre">False</span></code>, exit the <code class="docutils literal"><span class="pre">while</span></code> statement and continue execution at the next statement after the loop body.</li>
+<li>If the condition is <code class="docutils literal"><span class="pre">True</span></code>, execute the statements in the body and then go back to step 1.</li>
+</ol>
+<p>The body consists of all of the statements below the header and indented at least 4 spaces in from the header of the <code class="docutils literal"><span class="pre">while</span></code> loop.</p>
+<p>This type of flow is called a <strong>loop</strong> because the third step loops back around to the top. Notice that if the condition is <code class="docutils literal"><span class="pre">False</span></code> the first time through the loop, the statements inside the loop are never executed.</p>
+<p>The body of the loop should change the value of one or more variables so that eventually the condition becomes <code class="docutils literal"><span class="pre">False</span></code> and the loop terminates. Otherwise the loop will repeat forever. When this happens, the loop is called an <strong>infinite loop</strong>.</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">Is it possible for a <code class="docutils literal"><span class="pre">for</span></code> loop to be an infinite loop?</p>
+</div>
+<p>Infinite loops are ubiquitous in programming — every programmer accidentally writes one from time to time. They’re such an established part of computer science history and culture that Apple named the street connecting the buildings on its corporate campus “Infinite Loop”.</p>
+<img alt="../_images/infinite-loop-street.jpg" src="/_images/infinite-loop-street.jpg"/>
+<p>In the code shown above, if we had forgotten to increment the value of <code class="docutils literal"><span class="pre">num</span></code> within the loop body, we would wind up with an infinite loop. As it stands, however, we can prove that the loop terminates because we know that the value of <code class="docutils literal"><span class="pre">n</span></code> is finite, and we can see that the value of <code class="docutils literal"><span class="pre">num</span></code> increments each time through the loop, so eventually it will have to exceed <code class="docutils literal"><span class="pre">n</span></code>. In other cases, it is not so easy to tell.</p>
+<p>The <code class="docutils literal"><span class="pre">for</span></code> statement will always iterate through a sequence of values like a list of names or a list of numbers created by <code class="docutils literal"><span class="pre">range</span></code>. Since we know that it will iterate once for each value in the collection, it is often said that a <code class="docutils literal"><span class="pre">for</span></code> loop creates a <strong>definite iteration</strong> because we definitely know how many times we are going to iterate.</p>
+<p>On the other hand, the <code class="docutils literal"><span class="pre">while</span></code> statement is <em>dependent on a condition</em> that needs to evaluate to <code class="docutils literal"><span class="pre">False</span></code> in order for the loop to terminate. Since we do not necessarily know when (of even if) this will happen, it creates what we call <strong>indefinite iteration</strong>. Indefinite iteration simply means that we don’t know how many times we will repeat. We expect that eventually the condition controlling the iteration will evaluate to <code class="docutils literal"><span class="pre">False</span></code> and the iteration will stop. (Unless we have an infinite loop, which is the problem we want to avoid.)</p>
+<p>What you will notice here is that the <code class="docutils literal"><span class="pre">while</span></code> loop is more work for you, the programmer, than the equivalent <code class="docutils literal"><span class="pre">for</span></code> loop. When using a <code class="docutils literal"><span class="pre">while</span></code> loop you have to control the loop variable yourself. You give it an initial value, test for completion, and then make sure you update the program state in the body so that the loop eventually terminates.</p>
+<p>So why have two kinds of loops if <code class="docutils literal"><span class="pre">for</span></code> looks easier? The short answer is that there are times when your program won’t know, in advance of runtime, how many iterations it will need to perform. Later in this chapter we will see an example of indefinite iteration where we need this extra power we get from the <code class="docutils literal"><span class="pre">while</span></code> loop. But first, let’s check your understanding.</p>
+<p><strong>Check your understanding</strong></p>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question_iteration_2_1">
+            True or False: You can rewrite any <code class="docutils literal"><span class="pre">for</span></code> loop as a <code class="docutils literal"><span class="pre">while</span></code> loop.
+            <li data-component="answer" data-correct="" id="test_question_iteration_2_1_opt_a">True</li><li data-component="feedback" id="test_question_iteration_2_1_opt_a">Although the while loop uses a different syntax, it is just as powerful as a for loop and often more flexible.</li>
+<li data-component="answer" id="test_question_iteration_2_1_opt_b">False</li><li data-component="feedback" id="test_question_iteration_2_1_opt_b">Often a for loop is more natural and convenient for a task, but that same task can always be expressed using a while loop.</li>
+</ul>
+<ul data-component="multiplechoice" data-multipleanswers="false" id="test_question_iteration_2_2">
+<p>The following code contains an infinite loop. Which is the best explanation for why the loop does not terminate?</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">answer</span> <span class="o">+</span> <span class="n">n</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+</pre></div>
+</div>
+<li data-component="answer" data-correct="" id="test_question_iteration_2_2_opt_a">n starts at 10 and is incremented by 1 each time through the loop, so it will always be positive</li><li data-component="feedback" id="test_question_iteration_2_2_opt_a">The loop will run as long as n is positive. In this case, we can see that n will never become non-positive.</li>
+<li data-component="answer" id="test_question_iteration_2_2_opt_b">answer starts at 1 and is incremented by n each time, so it will always be positive</li><li data-component="feedback" id="test_question_iteration_2_2_opt_b">While it is true that answer will always be positive, answer is not considered in the loop condition.</li>
+<li data-component="answer" id="test_question_iteration_2_2_opt_c">You cannot compare n to 0 in a while loop. You must compare it to another variable.</li><li data-component="feedback" id="test_question_iteration_2_2_opt_c">It is perfectly valid to compare n to 0. Though indirectly, this is what causes the infinite loop.</li>
+<li data-component="answer" id="test_question_iteration_2_2_opt_d">In the while loop body, we must set n to False, and this code does not do that.</li><li data-component="feedback" id="test_question_iteration_2_2_opt_d">The loop condition must become False for the loop to terminate, but n by itself is not the condition in this case.</li>
+</ul>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 2. The for Loop Revisited">
+<a href="/MoreAboutIteration/Theforlooprevisited">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/MoreAboutIteration/Theforlooprevisited" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 4. break and continue Statements">
+<a href="/MoreAboutIteration/breakandcontinueStatements">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/MoreAboutIteration/breakandcontinueStatements" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/MoreAboutIteration/ThewhileStatement.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

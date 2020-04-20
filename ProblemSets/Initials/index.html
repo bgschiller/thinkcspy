@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>1. Initials — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/ProblemSets/Crypto" rel="next" title="2. Crypto"/>
+<link href="/Studios/blog-design" rel="prev" title="14. Blog Design"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="initials">
+<span id="index-0"></span><h1>1. Initials<a class="headerlink" href="#initials" title="Permalink to this headline">¶</a></h1>
+<p>The main goal of this assignment is to remove you from the comfortable sandbox of the Active Code editors in this online book, and introduce you to the tools you need to start writing Python code locally on your own computer. By the end of the assignment, you will have written a small text-based program that tells the user the initials of his or her name.</p>
+<p>The assignment is broken into 2 parts:</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt><a class="reference external" href="#part-1-using-python-locally">Using Python Locally</a></dt>
+<dd><p class="first">In part 1, we will guide you through all the setup work necessary for writing and executing Python code on your machine:</p>
+<ul class="last simple">
+<li>Learn how to use the <em>command line</em> interface on your computer</li>
+<li>Install a text editor</li>
+<li>Install Python</li>
+<li>Use your text editor to write Python code in a <code class="docutils literal"><span class="pre">.py</span></code> file</li>
+<li>Execute your Python file on the command line.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="#part-2-initials">Initials</a></dt>
+<dd><p class="first last">In part 2, you will get down to business creating the program described above. This will be just like one of the typical Exercises at the end of the chapters in this book. The only difference is that you will be writing your code in a text editor and saving it locally on your computer.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="section" id="part-1-using-python-locally">
+<h2>Part 1: Using Python Locally<a class="headerlink" href="#part-1-using-python-locally" title="Permalink to this headline">¶</a></h2>
+<p>In this section, you will learn how to interact with your computer using the command line, and then you will install everything you need to start writing and running code. Pick the operating system you use to go to the associated setup instructions page:</p>
+<p><a class="reference internal" href="/ProblemSets/LocalPythonWindows#windows-setup"><span class="std std-ref">Using Python Locally: Windows</span></a></p>
+<p><a class="reference internal" href="/ProblemSets/LocalPythonMac#mac-setup"><span class="std std-ref">Using Python Locally: macOS</span></a></p>
+<p><a class="reference internal" href="/ProblemSets/LocalPythonLinux#linux-setup"><span class="std std-ref">Using Python Locally: Linux</span></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have already completed our <strong>Unit 0: Coding Prep</strong>, then you have already practiced working on the command line. In this case, it is up to you to decide whether you’d like to do the command line practice suggested in these sections for review, or – if you feel you’re proficient on the command line – to skip it.</p>
+</div>
+</div>
+<div class="section" id="part-2-initials">
+<span id="initials-page"></span><h2>Part 2: Initials<a class="headerlink" href="#part-2-initials" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have a little practice using the command-line, and have installed Python and a text editor, it is time to create your program.</p>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<p>First, you must create a new folder for the project, and a new file within the folder. And while we’re here, let’s make sure you set up your overall directory structure in a nice, organized way for future assignments.</p>
+<p>Open up a terminal (command line) window on your computer. After completing the Python setup above, you should already have a folder named <code class="docutils literal"><span class="pre">lc101/</span></code> in your home directory, where you will save all your assignments for this class.</p>
+<p>But if you do <em>not</em> yet have such a class parent folder on your file system, then create one now:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ mkdir lc101
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Remember that in the example above, you should not actually type the dollar sign <code class="docutils literal"><span class="pre">$</span></code>. We use that symbol just as a convention to indicate that the example takes place at the command-line prompt in a terminal window.</p>
+</div>
+<p>Next, use the <code class="docutils literal"><span class="pre">cd</span></code> command to navigate so that you are inside that parent folder:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd lc101
+</pre></div>
+</div>
+<p>Once you are inside your directory for the class, create a new sub-directory for this assignment called <code class="docutils literal"><span class="pre">initials/</span></code>, and then <code class="docutils literal"><span class="pre">cd</span></code> into it:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ mkdir initials
+$ cd initials
+</pre></div>
+</div>
+<p>In general, for the remainder of LC 101, you should follow this same pattern for every new assignment:</p>
+<ol class="arabic simple">
+<li>Navigate into the parent folder (e.g. <code class="docutils literal"><span class="pre">lc101/</span></code>).</li>
+<li>Create a new subfolder for the new assignment.</li>
+<li>Change directories into that new subfolder.</li>
+<li>Start coding!</li>
+</ol>
+<p>For example, if you are starting an assignment called <em>Hungry Hungry Hippos</em>, then you should do this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd lc101
+$ mkdir hungry-hungry-hippos
+$ cd hungry-hungry-hippos
+</pre></div>
+</div>
+<p>And your overall directory structure will look like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">lc101</span><span class="o">/</span>
+    <span class="o">|</span>
+    <span class="o">+------</span> <span class="n">using</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="n">locally</span><span class="o">/</span>
+    <span class="o">|</span>           <span class="o">|</span>
+    <span class="o">|</span>           <span class="o">+-----</span> <span class="n">hello</span><span class="o">.</span><span class="n">py</span>
+    <span class="o">|</span>
+    <span class="o">+------</span> <span class="n">initials</span><span class="o">/</span>
+    <span class="o">|</span>           <span class="o">|</span>
+    <span class="o">|</span>           <span class="o">+-----</span> <span class="c1"># initials stuff</span>
+    <span class="o">|</span>
+    <span class="o">+------</span> <span class="n">hungry</span><span class="o">-</span><span class="n">hungry</span><span class="o">-</span><span class="n">hippos</span><span class="o">/</span>
+    <span class="o">|</span>           <span class="o">|</span>
+    <span class="o">|</span>           <span class="o">+-----</span> <span class="c1"># hippo stuff</span>
+    <span class="o">...</span> <span class="n">etc</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-initials-program">
+<h3>The Initials Program<a class="headerlink" href="#the-initials-program" title="Permalink to this headline">¶</a></h3>
+<p>Now you are finally ready to start coding! Inside your <code class="docutils literal"><span class="pre">initials/</span></code> folder, create a new file called <code class="docutils literal"><span class="pre">initials.py</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ touch initials.py
+</pre></div>
+</div>
+<p>Open up that file in your text editor (e.g., Visual Studio Code), and copy and paste in the following starter code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_initials</span><span class="p">(</span><span class="n">fullname</span><span class="p">):</span>
+    <span class="sd">""" Given a person's name, returns the person's initials (uppercase) """</span>
+    <span class="c1"># TODO your code here</span>
+</pre></div>
+</div>
+<p>Your function will receive one argument – <code class="docutils literal"><span class="pre">fullname</span></code>, a string representing someone’s name – and should return a string with that name’s capitalized initials.</p>
+<p>Here are some examples of what your function should return for various <code class="docutils literal"><span class="pre">fullname</span></code> arguments:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%"></col>
+<col width="49%"></col>
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><code class="docutils literal"><span class="pre">fullname</span></code></th>
+<th class="head">return value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Ozzie Smith</td>
+<td>OS</td>
+</tr>
+<tr class="row-odd"><td>Bonnie blair</td>
+<td>BB</td>
+</tr>
+<tr class="row-even"><td>George</td>
+<td>G</td>
+</tr>
+<tr class="row-odd"><td>Daniel Day Lewis</td>
+<td>DDL</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Even if the name starts with a lowercase letter, you should always capitalize the initials. For example, notice how even if <code class="docutils literal"><span class="pre">fullname</span> <span class="pre">==</span> <span class="pre">"Bonnie</span> <span class="pre">blair"</span></code>, you should still return <code class="docutils literal"><span class="pre">"BB"</span></code> rather than <code class="docutils literal"><span class="pre">"Bb"</span></code></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You may assume that the name will contain only letters (uppercase and/or lowercase) plus single spaces between words. This means you don’t have to worry about Conan O’Brien, T.S. Eliot, or Cee-Lo Green.</p>
+</div>
+<p>If you were to invoke your function and print the result, it would look something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ozzie_inits</span> <span class="o">=</span> <span class="n">get_initials</span><span class="p">(</span><span class="s2">"Ozzie Smith"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"The initials of 'Ozzie Smith' are"</span><span class="p">,</span> <span class="n">ozzie_inits</span><span class="p">)</span>
+<span class="c1"># =&gt; prints "The initials of 'Ozzie Smith' are OS"</span>
+</pre></div>
+</div>
+<p>Okay, enough chit-chat. Go forth and code!</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">You’ll need to collect the initials as you find them, and return them all together at the end. You may want to re-read about <a class="reference external" href="../Strings/Loopingandcounting.html#the-accumulator-pattern-with-strings">The Accumulator Pattern</a>.</p>
+</div>
+</div>
+<div class="section" id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
+<p>When (you think) you are finished writing your <code class="docutils literal"><span class="pre">get_initials</span></code> function, you should test it to make sure it works. There are a few ways to do this:</p>
+<ol class="arabic simple">
+<li>You can import your script into a REPL (Python shell), and then feed various inputs into your function.</li>
+<li>Alternatively, you can just add some print statements (like the “Ozzie Smith” example above) to your <code class="docutils literal"><span class="pre">initials.py</span></code> script, and check to see that various inputs produce the correct results.</li>
+</ol>
+<p>Technique 1 looks like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python
+Python 3.6.0 |Continuum Analytics, Inc.| (default, Dec 23 2016, 13:19:00)
+[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.57)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; from initials import get_initials
+&gt;&gt;&gt; get_initials("Ozzie Smith")
+OS
+&gt;&gt;&gt; get_initials("bonnie blair")
+BB
+&gt;&gt;&gt; get_initials("Daniel Day Lewis")
+DDL
+... etc
+quit()
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must run <code class="docutils literal"><span class="pre">python</span></code> from your <cite>lc101/initials</cite> directory for the <code class="docutils literal"><span class="pre">import</span></code> command to work.</p>
+</div>
+<p>That looks complicated but its actually very easy. Try typing <code class="docutils literal"><span class="pre">python</span></code> into your terminal and you’ll see. Technique 1 is definitely recommended, because writing and changing bunch of print statements starts to get annoying very quickly.</p>
+<p>But if you prefer Technique 2, here’s how that works: Simply add print statements to your file, and then run your script on the command-line:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python caesar.py
+The initials of 'Ozzie Smith' are OS
+The initials of 'bonnie blair' are BB
+The initials of 'Daniel Day Lewis' are DDL
+... etc
+</pre></div>
+</div>
+<p>After running your script, just test by hand that the output matches what you expected to see.</p>
+<p>Either way, whether using the REPL or print statements, make sure to test your function against a healthy variety of inputs.</p>
+</div>
+<div class="section" id="make-it-interactive">
+<h3>Make It Interactive<a class="headerlink" href="#make-it-interactive" title="Permalink to this headline">¶</a></h3>
+<p>Let’s now turn this into an interactive program that a user can run from the terminal. All you have to do is add an <code class="docutils literal"><span class="pre">input</span></code> statement to ask the user for his/her name, and then a <code class="docutils literal"><span class="pre">print</span></code> statement to report the results back to him/her. Your program should work like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python initials.py
+What is your full name?
+Ozzie Smith
+OS
+</pre></div>
+</div>
+<p>Just to be clear about the example above:</p>
+<ul class="simple">
+<li>The user typed the first line, causing the program to run.</li>
+<li>Then, the program printed the second line asking for their name.</li>
+<li>Then the user typed the third line (“Ozzie Smith”).</li>
+<li>Finally, the program printed the initials (“OS”).</li>
+</ul>
+</div>
+<div class="section" id="make-it-importable">
+<h3>Make it Importable<a class="headerlink" href="#make-it-importable" title="Permalink to this headline">¶</a></h3>
+<p>Almost done! There is one more thing you must do before submitting. Presumably, your file now looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_initials</span><span class="p">(</span><span class="n">fullname</span><span class="p">):</span>
+    <span class="c1"># some code here</span>
+
+<span class="c1"># some more code here (input and print statements)</span>
+</pre></div>
+</div>
+<p>As you know, the second block of code contains the lines that actually get executed when the user runs the script. The code <em>inside</em> the <code class="docutils literal"><span class="pre">get_initials</span></code> function, by contrast, only executes thanks to the fact that it <em>gets invoked</em> by one of the statements from that second block of code that sits all the way on the left, at the global level of scope.</p>
+<p>Generally speaking, however, it is actually bad practice to have “loose” statements floating around at that left-most, unindented scope of a script. There are two reasons why:</p>
+<p><strong>Issue 1: Organization.</strong> As your script grows larger, it can become hard to keep track of all those loose statements, especially if you don’t keep them all together in one block. At that point, you will start to loose track of exactly what happens when the script is run.</p>
+<p><strong>Issue 2: Importing.</strong> When some other file tries to <code class="docutils literal"><span class="pre">import</span></code> this file, all the loose statements will be executed, which is probably not what the other file wanted. For example, say you are writing another script, and you once again encounter the need to parse initials from people’s names. Instead of re-writing the <code class="docutils literal"><span class="pre">get_initials</span></code> function, this is a perfect chance to reuse the code you have already written by importing your <code class="docutils literal"><span class="pre">initials.py</span></code> file. Sounds great! But unfortunately, the moment you import the file, those <code class="docutils literal"><span class="pre">input</span></code> and <code class="docutils literal"><span class="pre">print</span></code> statements will blurt out and start talking to the user.</p>
+<p>The solution to Issue 1 is to move your <code class="docutils literal"><span class="pre">input</span></code> and <code class="docutils literal"><span class="pre">print</span></code> statements into a <code class="docutils literal"><span class="pre">main</span></code> function, like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_initials</span><span class="p">(</span><span class="n">fullname</span><span class="p">):</span>
+    <span class="c1"># some code here</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># some more code here (input and print statements)</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In the new version, notice that we have placed the second block of code inside a function called <code class="docutils literal"><span class="pre">main</span></code>. This is the generally accepted pattern: Move all loose statements into a <code class="docutils literal"><span class="pre">main</span></code> function so that you have them together in one place. Finally, the <em>only</em> loose statement left is the invocation of <code class="docutils literal"><span class="pre">main</span></code> at the end.</p>
+<p>Issue 2 can be solved by adding one more line of code that places the <code class="docutils literal"><span class="pre">main()</span></code> invocation inside a (strange-looking) <code class="docutils literal"><span class="pre">if</span></code> statement:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_initials</span><span class="p">(</span><span class="n">fullname</span><span class="p">):</span>
+    <span class="c1"># some code here</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># some more code here (input and print statements)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In effect, that conditional says:</p>
+<blockquote>
+<div>“If this is actually the main program that is being run, then go ahead and execute the <code class="docutils literal"><span class="pre">main</span></code> function. Otherwise, if this file is being imported, or something else is going on, then stay quiet and do nothing.”</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are curious about the <code class="docutils literal"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code> conditional, you can check out this <a class="reference external" href="http://stackoverflow.com/questions/419163/what-does-if-name-main-do#419185">Stack Overflow post</a>.</p>
+</div>
+<p>Now we are good to go! The program works normally when run directly from the command-line, but if some other file imports it, the <code class="docutils literal"><span class="pre">main</span></code> function will not execute. All of this should be a review, since we have been using this structure throughout the book after learning about <code class="docutils literal"><span class="pre">__main__</span></code> in the Functions chapter.</p>
+</div>
+</div>
+<div class="section" id="how-to-submit">
+<h2>How to Submit<a class="headerlink" href="#how-to-submit" title="Permalink to this headline">¶</a></h2>
+<p>Make a github gist with your <code class="docutils literal"><span class="pre">initials.py</span></code> file and email us a link.</p>
+</div>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 14. Blog Design">
+<a href="/Studios/blog-design">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/Studios/blog-design" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 2. Crypto">
+<a href="/ProblemSets/Crypto">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/ProblemSets/Crypto" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/ProblemSets/Initials.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

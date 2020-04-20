@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>6. Choosing Which Loop to Use — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/MoreAboutIteration/SimpleTables" rel="next" title="7. Simple Tables"/>
+<link href="/MoreAboutIteration/RandomlyWalkingTurtles" rel="prev" title="5. Randomly Walking Turtles"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="choosing-which-loop-to-use">
+<span id="index-0"></span><h1>6. Choosing Which Loop to Use<a class="headerlink" href="#choosing-which-loop-to-use" title="Permalink to this headline">¶</a></h1>
+<p>In this lesson we’ll explore two more examples of indefinite iteration: the 3n + 1 sequence and user input. Then we’ll review how you can choose whether a <code class="docutils literal"><span class="pre">for</span></code> loop or a <code class="docutils literal"><span class="pre">while</span></code> loop will best suit your needs in various circumstances.</p>
+<div class="section" id="the-3n-1-sequence">
+<h2>The 3n + 1 Sequence<a class="headerlink" href="#the-3n-1-sequence" title="Permalink to this headline">¶</a></h2>
+<p>Let’s look at a sequence of integers that mathematicians find interesting. The rule for creating the sequence is to start from some given number, call it <code class="docutils literal"><span class="pre">n</span></code>. The next term of the sequence is:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">n</span> <span class="pre">/</span> <span class="pre">2</span></code>, if <code class="docutils literal"><span class="pre">n</span></code> is even</li>
+<li><code class="docutils literal"><span class="pre">3n</span> <span class="pre">+</span> <span class="pre">1</span></code>, if <code class="docutils literal"><span class="pre">n</span></code> is odd</li>
+</ul>
+<p>The sequence stops when <code class="docutils literal"><span class="pre">n</span></code> becomes 1.</p>
+<p>This Python function captures that algorithm. Try running this program several times supplying different values for <code class="docutils literal"><span class="pre">n</span></code>.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="iter_indef1">
+def sequence_3n_plus_one(n):
+    """ Print the 3n+1 sequence from n, terminating when it reaches 1."""
+
+    while n != 1:
+
+        print(n)
+
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3*n + 1
+
+    print(n)
+
+sequence_3n_plus_one(3)
+</textarea>
+<p>The condition for this <code class="docutils literal"><span class="pre">while</span></code> loop is <code class="docutils literal"><span class="pre">n</span> <span class="pre">!=</span> <span class="pre">1</span></code>.  In other words, the loop will continue running until <code class="docutils literal"><span class="pre">n</span> <span class="pre">==</span> <span class="pre">1</span></code>, since this is precisely when the condition <code class="docutils literal"><span class="pre">n</span> <span class="pre">!=</span> <span class="pre">1</span></code> evaluates to <code class="docutils literal"><span class="pre">False</span></code>.</p>
+<p>Each time through the loop, the program prints the value of <code class="docutils literal"><span class="pre">n</span></code> and then checks whether it is even or odd using the remainder operator. If it is even, the value of <code class="docutils literal"><span class="pre">n</span></code> is divided by 2 using integer division. If it is odd, the value is replaced by <code class="docutils literal"><span class="pre">3*n</span> <span class="pre">+</span> <span class="pre">1</span></code>.</p>
+<p>Since <code class="docutils literal"><span class="pre">n</span></code> sometimes increases and sometimes decreases, it is not clear that <code class="docutils literal"><span class="pre">n</span></code> will ever reach 1, or that the program terminates. For some particular values of <code class="docutils literal"><span class="pre">n</span></code>, we can prove that the sequence eventually reaches 1. For example, if the starting value is a power of two, then the value of <code class="docutils literal"><span class="pre">n</span></code> will be even each time through the loop until it reaches 1.</p>
+<p>You might like to have some fun and see if you can find a small starting number that needs more than a hundred steps before it terminates.</p>
+<p>Particular values aside, the interesting question is whether we can prove that this sequence terminates for <em>all</em> values of <code class="docutils literal"><span class="pre">n</span></code>. So far, no one has been able to prove it <em>or</em> disprove it!</p>
+<p>Think about what would be needed for to prove or disprove the hypothesis: <em>All positive integers will eventually converge to 1</em>.  With fast computers, we have been able to test every integer up to very large values, and so far, they all eventually end up at 1. But this doesn’t mean that there might not be some as-yet untested number which does not reduce to 1.</p>
+<p>You’ll notice that if you don’t stop when you reach one, the sequence gets into its own loop: 1, 4, 2, 1, 4, 2, 1, 4, and so on. One possibility is that there might be other cycles that we just haven’t found.</p>
+</div>
+<div class="section" id="user-input">
+<h2>User Input<a class="headerlink" href="#user-input" title="Permalink to this headline">¶</a></h2>
+<p>Another example of a time when it makes sense to use a <code class="docutils literal"><span class="pre">while</span></code> loop is in the case where program execution depends on a user choosing whether or not to continue the program. For instance, say you have a program that will simulate a coin flip for the user. You don’t want the user to have to run the program from scratch every time they want to flip a coin. Instead, you want to keep the program running <em>as long as</em> they answer “Yes” to the question of “Would you like to flip a coin?”. Since you can’t know in advance for how long the user will want to flip the coin, it is an example of indefinite iteration.</p>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="iter_coin">
+import random
+
+def flip_coin():
+    """ simulates a coin flip (0 is heads, 1 is tails) """
+
+    coin = random.randrange(0, 2)
+    if coin == 0:
+        return "heads"
+    else:
+        return "tails"
+
+def main():
+    keep_playing = input("Would you like to flip a coin? If so, enter Yes.")
+
+    while keep_playing == "Yes":
+        print(flip_coin())
+        keep_playing = input("Would you like to flip a coin? If so, enter Yes.")
+
+    print("Thanks for flipping!")
+
+if __name__ == "__main__":
+    main()
+</textarea>
+<p>Notice that just as we had to increment <code class="docutils literal"><span class="pre">num</span></code> in our <code class="docutils literal"><span class="pre">while</span></code> loop example of the accumulator pattern a few pages back in Section 3 of this chapter, we also have to prompt the user for input again <em>within the body</em> of the <code class="docutils literal"><span class="pre">while</span></code> loop to avoid an infinite loop. Otherwise the program will keep printing the results of <code class="docutils literal"><span class="pre">flip_coin()</span></code> indefinitely.</p>
+</div>
+<div class="section" id="choosing-between-for-and-while">
+<h2>Choosing Between for and while<a class="headerlink" href="#choosing-between-for-and-while" title="Permalink to this headline">¶</a></h2>
+<p>Use a <code class="docutils literal"><span class="pre">for</span></code> loop if you know the maximum number of times that you’ll need to execute the body. For example, if you’re traversing a list of elements, or can formulate a suitable call to <code class="docutils literal"><span class="pre">range</span></code>, then choose the <code class="docutils literal"><span class="pre">for</span></code> loop.</p>
+<p>Any problem statement like “search this list of words” or “check all integers up to 10000 to see which are prime” suggests that a <code class="docutils literal"><span class="pre">for</span></code> loop is your best choice.</p>
+<p>By contrast, if you are required to repeat some computation until some condition is met, as we did in the two problems above, you’ll need a <code class="docutils literal"><span class="pre">while</span></code> loop.</p>
+<p>As we noted before, the former case is called a <strong>definite iteration</strong> — we have definite bounds for what is needed. The latter case is called an <strong>indefinite iteration</strong> — we are not sure how many iterations we’ll need. For an indefinite iteration, it is generally impossible to determine the maximum number of times the loop might run.</p>
+</div>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 5. Randomly Walking Turtles">
+<a href="/MoreAboutIteration/RandomlyWalkingTurtles">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/MoreAboutIteration/RandomlyWalkingTurtles" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 7. Simple Tables">
+<a href="/MoreAboutIteration/SimpleTables">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/MoreAboutIteration/SimpleTables" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/MoreAboutIteration/ChoosingWhichLoopToUse.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

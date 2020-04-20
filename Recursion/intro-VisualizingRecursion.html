@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>5. Visualizing Recursion — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/Recursion/SierpinskiTriangle" rel="next" title="6. Sierpinski Triangle"/>
+<link href="/Recursion/ConvertinganIntegertoaStringinAnyBase" rel="prev" title="4. Converting an Integer to a String in Any Base"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="visualizing-recursion">
+<h1>5. Visualizing Recursion<a class="headerlink" href="#visualizing-recursion" title="Permalink to this headline">¶</a></h1>
+<p>Some problems are easy to
+solve using recursion; however, it can still be difficult to find a
+mental model or a way of visualizing what is happening in a recursive
+function. This can make recursion difficult for people to grasp. In this
+section we will look at using recursion to draw
+some interesting pictures. As you watch these pictures take shape you
+will get some new insight into the recursive process that may be helpful
+in cementing your understanding of recursion.</p>
+<p>For our next program we are
+going to draw a fractal tree. Fractals come from a branch of
+mathematics, and have much in common with recursion. The definition of a
+fractal is that when you look at it the fractal has the same basic shape
+no matter how much you magnify it. Some examples from nature are the
+coastlines of continents, snowflakes, mountains, and even trees or
+shrubs. The fractal nature of many of these natural phenomenon makes it
+possible for programmers to generate very realistic looking scenery for
+computer generated movies. In our next example we will generate a
+fractal tree.</p>
+<p>To understand how this is going to work it is helpful to think of how we
+might describe a tree using a fractal vocabulary. Remember that we said
+above that a fractal is something that looks the same at all different
+levels of magnification. If we translate this to trees and shrubs we
+might say that even a small twig has the same shape and characteristics
+as a whole tree. Using this idea we could say that a <em>tree</em> is a trunk,
+with a smaller <em>tree</em> going off to the right and another smaller <em>tree</em>
+going off to the left. If you think of this definition recursively it
+means that we will apply the recursive definition of a tree to both of
+the smaller left and right trees.</p>
+<p>Let’s translate this idea to some Python code. <a class="reference internal" href="/Recursion/#lst-fractree"><span class="std std-ref">Listing 1</span></a>
+shows how we can use our turtle to generate a fractal tree. Let’s look at
+the code a bit more closely. You will see that on lines 5 and 7 we are
+making a recursive call. On line 5 we make the recursive call right
+after the turtle turns to the right by 20 degrees; this is the right
+tree mentioned above. Then in line 7 the turtle makes another recursive
+call, but this time after turning left by 40 degrees. The reason the
+turtle must turn left by 40 degrees is that it needs to undo the
+original 20 degree turn to the right and then do an additional 20 degree
+turn to the left in order to draw the left tree. Also notice that each
+time we make a recursive call to <code class="docutils literal"><span class="pre">tree</span></code> we subtract some amount from
+the <code class="docutils literal"><span class="pre">branchLen</span></code> parameter; this is to make sure that the recursive
+trees get smaller and smaller. You should also recognize the initial
+<code class="docutils literal"><span class="pre">if</span></code> statement on line 2 as a check for the base case of <code class="docutils literal"><span class="pre">branchLen</span></code>
+getting too small.</p>
+<p id="lst-fractree"><strong>Listing 1</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tree</span><span class="p">(</span><span class="n">branchLen</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">branchLen</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">branchLen</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+        <span class="n">tree</span><span class="p">(</span><span class="n">branchLen</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+        <span class="n">tree</span><span class="p">(</span><span class="n">branchLen</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">branchLen</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>The complete program for this tree example is shown below. Before you run
+the code think about how you expect to see the tree take shape. Look at
+the recursive calls and think about how this tree will unfold. Will it
+be drawn symmetrically with the right and left halves of the tree taking
+shape simultaneously? Will it be drawn right side first then left side?</p>
+<textarea data-audio="" data-caption="Recursively Drawing a Tree" data-component="activecode" data-lang="python" data-timelimit="25000" id="lst_complete_tree_editor">
+import turtle
+
+def tree(branchLen,t):
+    if branchLen &gt; 5:
+        t.forward(branchLen)
+        t.right(20)
+        tree(branchLen-15,t)
+        t.left(40)
+        tree(branchLen-15,t)
+        t.right(20)
+        t.backward(branchLen)
+
+def main():
+    t = turtle.Turtle()
+    myWin = turtle.Screen()
+    t.left(90)
+    t.up()
+    t.backward(100)
+    t.down()
+    t.color("green")
+    tree(75,t)
+    myWin.exitonclick()
+
+main()
+</textarea>
+<p>Notice how each branch point on the tree corresponds to a recursive
+call, and notice how the tree is drawn to the right all the way down to
+its shortest twig. You can see this in <a class="reference internal" href="/Recursion/#fig-tree1"><span class="std std-ref">Figure 1</span></a>. Now, notice
+how the program works its way back up the trunk until the entire right
+side of the tree is drawn. You can see the right half of the tree in
+<a class="reference internal" href="/Recursion/#fig-tree2"><span class="std std-ref">Figure 2</span></a>. Then the left side of the tree is drawn, but not by
+going as far out to the left as possible. Rather, once again the entire
+right side of the left tree is drawn until we finally make our way out
+to the smallest twig on the left.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-tree1"></span><img alt="../_images/tree1.png" src="/_images/tree1.png"/>
+<p class="caption"><span class="caption-text">Figure 1: The Beginning of a Fractal Tree</span></p>
+</div>
+<div class="figure align-center" id="id2">
+<span id="fig-tree2"></span><img alt="../_images/tree2.png" src="/_images/tree2.png"/>
+<p class="caption"><span class="caption-text">Figure 2: The First Half of the Tree</span></p>
+</div>
+<p>This simple tree program is just a starting point for you, and you will
+notice that the tree does not look particularly realistic because nature
+is just not as symmetric as a computer program. Here are a few ideas for how to explore some
+interesting options to make your tree look more realistic.</p>
+<div class="admonition-self-check admonition">
+<p class="first admonition-title">Self Check</p>
+<p>Modify the recursive tree program using one or all of the following
+ideas:</p>
+<ul class="simple">
+<li>Modify the thickness of the branches so that as the <code class="docutils literal"><span class="pre">branchLen</span></code>
+gets smaller, the line gets thinner.</li>
+<li>Modify the color of the branches so that as the <code class="docutils literal"><span class="pre">branchLen</span></code> gets
+very short it is colored like a leaf.</li>
+<li>Modify the angle used in turning the turtle so that at each branch
+point the angle is selected at random in some range. For example
+choose the angle between 15 and 45 degrees. Play around to see
+what looks good.</li>
+<li>Modify the <code class="docutils literal"><span class="pre">branchLen</span></code> recursively so that instead of always
+subtracting the same amount you subtract a random amount in some
+range.</li>
+</ul>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="recursion_sc_3">
+
+
+</textarea>
+</div>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 4. Converting an Integer to a String in Any Base">
+<a href="/Recursion/ConvertinganIntegertoaStringinAnyBase">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/Recursion/ConvertinganIntegertoaStringinAnyBase" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 6. Sierpinski Triangle">
+<a href="/Recursion/SierpinskiTriangle">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/Recursion/SierpinskiTriangle" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/Recursion/intro-VisualizingRecursion.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

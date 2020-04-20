@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Sept 5 - Oct 26 2017 at Emily Griffith Technical College — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="sept-5-oct-26-2017-at-emily-griffith-technical-college">
+<h1>Sept 5 - Oct 26 2017 at Emily Griffith Technical College<a class="headerlink" href="#sept-5-oct-26-2017-at-emily-griffith-technical-college" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="class-1-1-tues-sep-5">
+<h2>Class 1.1, Tues Sep 5<a class="headerlink" href="#class-1-1-tues-sep-5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prep-work">
+<h3>Prep Work<a class="headerlink" href="#prep-work" title="Permalink to this headline">¶</a></h3>
+<p>Before coming to the first day of class, there is a little bit of “Prep Work” for you to do. In fact, most days of class will be preceded by Prep Work, usually reading from an e-book and working on practice exercises.</p>
+<p>Since this is the first day of class, your Coding Prep will be fairly light reading, but there are a few additional things we would like you to read as well.</p>
+<p>Prep Work will usually involve reading chapters in the book as well as attempting exercises. The readings are interspersed with interactive components such as active code examples with which you can tinker and explore, and multiple-choice questions so you can check your understanding. After completing the reading, you should attempt at least 5 exercises listed at the end of that chapter. You are encouraged to do more and try to get them all correct, but you must at a minimum attempt 5 exercises from each chapter.</p>
+</div>
+<div class="section" id="due-today">
+<h3>Due Today<a class="headerlink" href="#due-today" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="read-the-following-chapters-from-the-textbook">
+<h4>Read the following chapters from the textbook.<a class="headerlink" href="#read-the-following-chapters-from-the-textbook" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="/#general-intro">Chapter 1: General Intro</a></li>
+<li><a class="reference external" href="/#simple-python-data">Chapter 2: Simple Python Data</a></li>
+</ul>
+</div>
+<div class="section" id="exercises">
+<h4>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h4>
+<p>At the end of chapter 2 is a page called <em>Excercises</em>. Please attempt as many of these exercises as you can. You don’t have to solve them, just do your best. You are required to attempt <strong>at least 5</strong> of them.</p>
+</div>
+<div class="section" id="logistics-prep">
+<h4>Logistics Prep<a class="headerlink" href="#logistics-prep" title="Permalink to this headline">¶</a></h4>
+<p>Please take a moment to read over the <a class="reference external" href="/course/welcome">Course Welcome</a> page, where we describe in more detail how Coding 101 will work.</p>
+</div>
+</div>
+<div class="section" id="in-class">
+<h3>In Class<a class="headerlink" href="#in-class" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>First, we will go over some logistical things, and you will meet your fellow classmates and your instructor.</li>
+<li>Tips for getting un-stuck.</li>
+<li>Afterwards, we’ll learn how to use some of the websites and programs necessary for the class.<ol class="arabic">
+<li>Textbook (<a class="reference external" href="/">coding101.devetry.com</a>)</li>
+<li><a class="reference external" href="https://github.com">github.com</a></li>
+<li><a class="reference external" href="https://atom.io">Atom</a></li>
+</ol>
+</li>
+<li>If there’s time, we’ll split into pairs to work on Studio: Holiday. A Studio is a practice problem that you work on during class time. Today the studio is optional.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="class-1-2-thurs-sep-7">
+<h2>Class 1.2, Thurs Sep 7<a class="headerlink" href="#class-1-2-thurs-sep-7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Due Today<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Read through the following chapters and work through the examples contained within.</p>
+<ul class="simple">
+<li><a class="reference external" href="/#debugging">Chapter 3: Debugging</a></li>
+<li><a class="reference external" href="/#modules-and-turtles">Chapter 4: Modules (and Turtles!)</a></li>
+</ul>
+<p>At the end of each chapter, make sure to work on at least 5 of the exercises.</p>
+</div>
+<div class="section" id="id2">
+<h3>In Class<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>In class today, we will do two studios!</p>
+<ul class="simple">
+<li><a class="reference external" href="Studios/donuts">Studio: Donuts</a></li>
+<li><a class="reference external" href="Studios/turtle-racing">Studio: Turtle Racing</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-1-3-tues-sep-12">
+<h2>Class 1.3, Tues Sep 12<a class="headerlink" href="#class-1-3-tues-sep-12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>Due Today<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Read through the following chapter, working through the exercises at the end.</p>
+<ul class="simple">
+<li><a class="reference external" href="/#functions">Chapter 5: Functions</a></li>
+</ul>
+<div class="section" id="assignment">
+<h4>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h4>
+<p>Each chapter in the textbook contains a page called Exercises. At the bottom of that page, you will see that the final exercise is specially marked as a Graded Lesson Assignment. Once your code for a Graded Lesson Assignment is working, copy it from the textbook into a github gist and email us the link.</p>
+<p>To: <a class="reference external" href="mailto:coding101%40devetry.com">coding101<span>@</span>devetry<span>.</span>com</a>
+Subject: Chapter 3 Assignment</p>
+<p>Your first Graded Lesson Assignment is to do <a class="reference external" href="/Debugging/Exercises#graded-lesson-assignment">this exercise from Chapter 3</a>.</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>In Class<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="/Studios/wagon-wheel">Studio: Wagon Wheel</a></p>
+</div>
+</div>
+<div class="section" id="class-1-4-thurs-sep-14">
+<h2>Class 1.4, Thurs Sep 14<a class="headerlink" href="#class-1-4-thurs-sep-14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Due Today<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Read through the following chapter, working through the exercises at the end.</p>
+<ul class="simple">
+<li><a class="reference external" href="/#selection">Chapter 6: Selection</a></li>
+</ul>
+<div class="section" id="id6">
+<h4>Assignment<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>Once your code for the Graded Lesson Assignment is working, copy it from the textbook into a github gist and email us the link.</p>
+<p>To: <a class="reference external" href="mailto:coding101%40devetry.com">coding101<span>@</span>devetry<span>.</span>com</a>
+Subject: Chapters 4 and 5 Assignment</p>
+<p>Your Graded Lesson Assignment is to do <a class="reference external" href="/PythonTurtle/Exercises#graded-lesson-assignment">this exercise from Chapter 4</a>, and <a class="reference external" href="/Functions/Exercises#graded-lesson-assignment">this one from Chapter 5</a>.</p>
+<p>(You may submit them as separate files in the same gist, or different gists altogether – up to you.)</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>In Class<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="/Studios/sherlock">Studio: Sherlock</a></p>
+</div>
+</div>
+<div class="section" id="class-1-5-tues-sep-19">
+<h2>Class 1.5, Tues Sep 19<a class="headerlink" href="#class-1-5-tues-sep-19" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>Due Today<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Read through the following chapter, working through the exercises at the end.</p>
+<ul class="simple">
+<li><a class="reference external" href="/#exceptions-and-problem-solving">Chapter 7: Exceptions and Problem Solving</a></li>
+</ul>
+<div class="section" id="id9">
+<h4>Assignment<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>Once your code for the Graded Lesson Assignment is working, copy it into a github gist and email us the link.</p>
+<p>To: <a class="reference external" href="mailto:coding101%40devetry.com">coding101<span>@</span>devetry<span>.</span>com</a>
+Subject: Chapter 6 Assignment</p>
+<p>Your Graded Lesson Assignment is to do <a class="reference external" href="/Selection/Exercises#graded-lesson-assignment">this exercise from Chapter 6</a>.</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>In Class<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="/Studios/blurring">Studio: Blurring an Image</a></p>
+</div>
+</div>
+<div class="section" id="thurs-sep-21">
+<h2>Thurs Sep 21<a class="headerlink" href="#thurs-sep-21" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h3>Due Today<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>Read through the following chapter, working through the exercises at the end.</p>
+<ul class="simple">
+<li><a class="reference external" href="/#more-about-iteration">Chapter 8: More About Iteration</a></li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h3>In Class<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>Catch-up day! We’ll go over exercises or anything folks would like to understand better.</p>
+</div>
+</div>
+<div class="section" id="class-1-6-tues-sep-26">
+<h2>Class 1.6, Tues Sep 26<a class="headerlink" href="#class-1-6-tues-sep-26" title="Permalink to this headline">¶</a></h2>
+<p>No new reading for today, but please come to class with chapter 8 under your belt.</p>
+<p>Additionally, start working on the <a class="reference external" href="/ProblemSets/Initials">Initials assignment</a>.</p>
+<div class="section" id="id13">
+<h3>In Class<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="/Studios/sorted">Studio: Sorted</a></p>
+</div>
+</div>
+<div class="section" id="class-1-7-thurs-sep-28">
+<h2>Class 1.7, Thurs Sep 28<a class="headerlink" href="#class-1-7-thurs-sep-28" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h3>Due Today<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Please do (and turn in) <a class="reference external" href="/MoreAboutIteration/Exercises#graded-lesson-assignment">this exercise from chapter 8</a>.</li>
+<li>Read <a class="reference external" href="/#strings">Chapter 9: Strings</a> and try some exercises.</li>
+<li>Do the <a class="reference external" href="/ProblemSets/Initials">Initials assignment</a>.</li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h3>In Class<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="/Studios/bugz">Studio: Bugz</a></p>
+</div>
+</div>
+<div class="section" id="class-1-8-tues-oct-3">
+<h2>Class 1.8, Tues Oct 3<a class="headerlink" href="#class-1-8-tues-oct-3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h3>Due Today<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Please do (and turn in) <a class="reference external" href="/Strings/Exercises#graded-lesson-assignment">this exercise from chapter 9</a>.</li>
+<li>Read <a class="reference external" href="/#lists">Chapter 10: Lists</a> and try some exercises.</li>
+<li>Do (or start) the <a class="reference external" href="/ProblemSets/Initials">Initials assignment</a>.</li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h3>In Class<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="/Studios/bubble-sort">Studio: Bubble sort</a></p>
+</div>
+</div>
+<div class="section" id="class-1-9-thurs-oct-5">
+<h2>Class 1.9, Thurs Oct 5<a class="headerlink" href="#class-1-9-thurs-oct-5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id20">
+<h3>Due Today<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Please do (and turn in) <a class="reference external" href="/Lists/Exercises#graded-lesson-assignment">this exercise from chapter 10</a>.
+(I just noticed that those are called “Graded Lesson Assignments”, yet we usually have two due
+every week. Doesn’t seem very fair...)</li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h3>In Class<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>Catch-up day. We’ll go over homework problems and then have work time during which you can ask questions.</p>
+</div>
+</div>
+<div class="section" id="class-1-9-tues-oct-10">
+<h2>Class 1.9, Tues Oct 10<a class="headerlink" href="#class-1-9-tues-oct-10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id22">
+<h3>Due Today<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Please read <a class="reference external" href="/#dictionaries-and-tuples">Chapter 11: Dictionaries and Tuples</a> and try some exercises.</li>
+<li>Finish the <a class="reference external" href="/ProblemSets/Initials">Initials assignment</a>. Be ready to demo it to your instructor.</li>
+</ul>
+</div>
+<div class="section" id="id24">
+<h3>In Class<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="/Studios/yahtzee">Studio: Yahtzee</a></p>
+<p>Also, you will demo your Initials assignment to your instructor.</p>
+</div>
+</div>
+<div class="section" id="class-1-10-thurs-oct-12">
+<h2>Class 1.10, Thurs Oct 12<a class="headerlink" href="#class-1-10-thurs-oct-12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id25">
+<h3>Due Today<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Please do (and turn in) <a class="reference external" href="/Dictionaries/Exercises#graded-lesson-assignment">this exercise from chapter 11</a>.</li>
+<li>Read through the <a class="reference external" href="/ProblemSets/Crypto">Crypto assignment</a>.</li>
+</ul>
+</div>
+<div class="section" id="id26">
+<h3>In Class<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<p>Catch-up day! We’ll go through some exercises, answer questions, talk about the Crypto assignment – whatever you’re confused about.</p>
+</div>
+</div>
+<div class="section" id="class-1-11-tues-oct-17">
+<h2>Class 1.11, Tues Oct 17<a class="headerlink" href="#class-1-11-tues-oct-17" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id27">
+<h3>Due Today<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>No homework due today!</li>
+<li>Please read <a class="reference external" href="/#classes-and-objects-basics">Chapter 12: Classes and Objects Basics</a>.</li>
+<li>Keep working on <a class="reference external" href="/ProblemSets/Crypto">Crypto</a>.</li>
+</ul>
+</div>
+<div class="section" id="id28">
+<h3>In Class<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<p>Studio: <a class="reference external" href="/Studios/counting-characters">Counting Characters</a></p>
+</div>
+</div>
+<div class="section" id="class-1-12-thurs-oct-19">
+<h2>Class 1.12, Thurs Oct 19<a class="headerlink" href="#class-1-12-thurs-oct-19" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id29">
+<h3>Due Today<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Please read <a class="reference external" href="/#classes-and-objects-digging-deeper">Chapter 13: Classes and Objects - Digging Deeper</a> (the last chapter!)</li>
+<li>Keep working on <a class="reference external" href="/ProblemSets/Crypto">Crypto</a>.</li>
+</ul>
+</div>
+<div class="section" id="id31">
+<h3>In Class<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<p>TBD</p>
+</div>
+</div>
+<div class="section" id="class-1-13-tues-oct-24">
+<h2>Class 1.13, Tues Oct 24<a class="headerlink" href="#class-1-13-tues-oct-24" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id32">
+<h3>Due Today<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Keep working on <a class="reference external" href="/ProblemSets/Crypto">Crypto</a>.</li>
+</ul>
+</div>
+<div class="section" id="id34">
+<h3>In Class<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>We’ll build something together as a class. Maybe a twitter bot, maybe a website? Bring ideas!</li>
+<li>Anyone who’s done with Crypto can demo it to their instructor.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-1-14-thurs-oct-26">
+<h2>Class 1.14, Thurs Oct 26<a class="headerlink" href="#class-1-14-thurs-oct-26" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id35">
+<h3>Due Today<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="/ProblemSets/Crypto">Crypto Assignment</a> .</li>
+</ul>
+</div>
+<div class="section" id="id37">
+<h3>In Class<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Demo Crypto to your instructor.</li>
+<li>Update on Coding 102.</li>
+<li>Options for continuing to learn until we can offer that class.</li>
+</ul>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/course/schedule-sept-2017.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>15. Exercises — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/ChapterHeadings/Heading5" rel="next" title="Chapter 5: Functions"/>
+<link href="/PythonTurtle/Glossary" rel="prev" title="14. Glossary"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="exercises">
+<h1>15. Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="full-width container">
+<ol class="arabic">
+<li><div data-component="tabbedStuff" id="q1"><div data-component="tab" data-tabname="Question">
+<p>Write a program that prints <code class="docutils literal"><span class="pre">We</span> <span class="pre">like</span> <span class="pre">Python's</span> <span class="pre">turtles!</span></code> 1000 times.</p>
+<p>Now, update that program to prompt the user for an integer and then print the same message the given number of times.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_1">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="q1_answer">
+num_messages = int(input("Number of messages to print"))
+
+for i in range(num_messages):
+    print("We like Python's turtles!")
+</textarea>
+</div>
+</div>
+</li>
+<li><p class="first">Write a program that prints out the lyrics to the song “99 Bottles of Beer on the Wall”</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_2">
+
+
+</textarea>
+</li>
+<li><p class="first">Write a program that prints even integers from 0 to 50.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_evens">
+
+
+</textarea>
+</li>
+<li><div data-component="tabbedStuff" id="q3"><div data-component="tab" data-tabname="Question">
+<dl class="docutils">
+<dt>Write a program that uses a for loop to print</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="docutils literal"><span class="pre">One</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">months</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">year</span> <span class="pre">is</span> <span class="pre">January</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">One</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">months</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">year</span> <span class="pre">is</span> <span class="pre">February</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">One</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">months</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">year</span> <span class="pre">is</span> <span class="pre">March</span></code></div>
+<div class="line">etc ...</div>
+</div>
+</dd>
+</dl>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_3">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="q3_answer">
+for month in ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December']:
+    print("One of the months of the year is", month)
+</textarea>
+</div>
+</div>
+</li>
+<li><div data-component="tabbedStuff" id="q5"><div data-component="tab" data-tabname="Question">
+<p>Use <code class="docutils literal"><span class="pre">for</span></code> loops to make a turtle draw these regular polygons
+(regular means all sides the same lengths, all angles the same):</p>
+<ul class="simple">
+<li>An equilateral triangle</li>
+<li>A square</li>
+<li>A hexagon (six sides)</li>
+<li>An octagon (eight sides)</li>
+</ul>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_5">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># draw an equilateral triangle</span>
+<span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">norvig</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">norvig</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="c1"># the angle of each vertice of a regular polygon</span>
+    <span class="c1"># is 360 divided by the number of sides</span>
+    <span class="n">norvig</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">360</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">wn</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># draw a square</span>
+<span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">kurzweil</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">kurzweil</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">kurzweil</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">360</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">wn</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># draw a hexagon</span>
+<span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">dijkstra</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">dijkstra</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">dijkstra</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">360</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">wn</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># draw an octogon</span>
+<span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">wn</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">knuth</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+    <span class="n">knuth</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+    <span class="n">knuth</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">360</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">wn</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</li>
+<li><p class="first">Write a program that asks the user for the number of sides, the length of the side, the color, and the fill color of a
+regular polygon.</p>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_6">
+
+
+</textarea>
+</li>
+<li><div data-component="tabbedStuff" id="q7"><div data-component="tab" data-tabname="Question">
+<p>A drunk pirate makes a random turn and then takes 100 steps forward, makes another random turn, takes another 100 steps, turns another random amount, etc. A social science student records the angle of each turn before the next 100 steps are taken. Her experimental data is <code class="docutils literal"><span class="pre">160,</span> <span class="pre">-43,</span> <span class="pre">270,</span> <span class="pre">-97,</span> <span class="pre">-43,</span> <span class="pre">200,</span> <span class="pre">-940,</span> <span class="pre">17,</span> <span class="pre">-86</span></code>. (Positive angles are counter-clockwise.)  Use a turtle to draw the path taken by our drunk friend.</p>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_7">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="q7_answer">
+import turtle
+
+wn = turtle.Screen()
+lovelace = turtle.Turtle()
+
+# move the turtle forward a little so that the whole path fits on the screen
+lovelace.penup()
+lovelace.forward(60)
+
+# now draw the drunk pirate's path
+lovelace.pendown()
+for angle in [160, -43, 270, -97, -43, 200, -940, 17, -86]:
+
+    # we use .left() so that positive angles are counter-clockwise
+    # and negative angles are clockwise
+    lovelace.left(angle)
+    lovelace.forward(100)
+
+wn.exitonclick()
+</textarea>
+</div>
+</div>
+</li>
+<li><p class="first">On a piece of scratch paper, trace the the path of the turtle in the following program. When you are done, press <code class="docutils literal"><span class="pre">run</span></code>
+and check your answer.</p>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_8">
+import turtle
+wn = turtle.Screen()
+tess = turtle.Turtle()
+tess.speed(5)
+tess.right(90)
+tess.left(3600)
+tess.right(-90)
+tess.left(3600)
+tess.forward(-100)
+</textarea>
+</li>
+<li><div data-component="tabbedStuff" id="q9"><div data-component="tab" data-tabname="Question">
+<p>Write a program to draw a shape like this:</p>
+<img alt="../_images/star1.png" src="/_images/star1.png"/>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_9">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="q9_answer">
+import turtle
+
+turing = turtle.Turtle()
+
+for i in range(5):
+    turing.forward(110)
+    turing.left(216)
+</textarea>
+</div>
+</div>
+</li>
+<li><p class="first">Write a program to draw a face of a clock that looks something like this:</p>
+<img alt="../_images/tess_clock1.png" src="/_images/tess_clock1.png"/>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_10">
+
+
+</textarea>
+</li>
+<li><div data-component="tabbedStuff" id="q11"><div data-component="tab" data-tabname="Question">
+<p>Write a program to draw some kind of picture. Be creative and experiment
+with the turtle methods provided in <a class="reference internal" href="/PythonTurtle/SummaryofTurtleMethods#turtle-methods"><span class="std std-ref">Summary of Turtle Methods</span></a>.</p>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_11">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="q11_answer">
+import turtle
+
+tanenbaum = turtle.Turtle()
+tanenbaum.hideturtle()
+tanenbaum.speed(20)
+
+for i in range(350):
+    tanenbaum.forward(i)
+    tanenbaum.right(98)
+</textarea>
+</div>
+</div>
+</li>
+<li><p class="first">Create a turtle and assign it to a variable. When you print its type, what do you get?</p>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_12">
+
+
+</textarea>
+</li>
+<li><div data-component="tabbedStuff" id="q13"><div data-component="tab" data-tabname="Question">
+<p>A sprite is a simple spider shaped thing with n legs coming out from a center
+point. The angle between each leg is 360 / n degrees.</p>
+<p>Write a program to draw a sprite where the number of legs is provided by the user.</p>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_13">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="q13_answer">
+import turtle
+
+wn = turtle.Screen()
+
+babbage = turtle.Turtle()
+babbage.shape("triangle")
+
+n = int(input("How many legs should this sprite have? "))
+angle = 360 / n
+
+for i in range(n):
+    # draw the leg
+    babbage.right(angle)
+    babbage.forward(65)
+    babbage.stamp()
+
+    # go back to the middle and turn back around
+    babbage.right(180)
+    babbage.forward(65)
+    babbage.right(180)
+
+babbage.shape("circle")
+
+wn.exitonclick()
+</textarea>
+</div>
+</div>
+</li>
+<li><div data-component="tabbedStuff" id="q14"><div data-component="tab" data-tabname="Question">
+<p>Use a <code class="docutils literal"><span class="pre">for</span></code> statement to print 10 random numbers.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_14">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="q14_answer">
+import random
+
+for i in range(10):
+    num = random.randrange(1, 200)
+    print(num)
+</textarea>
+</div>
+</div>
+</li>
+<li><p class="first">Repeat the above exercise but this time print 10 random numbers between 25 and 35.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_mod_2">
+
+
+</textarea>
+</li>
+<li><div data-component="tabbedStuff" id="q16"><div data-component="tab" data-tabname="Question">
+<p>The <strong>Pythagorean Theorem</strong> tells us that the length of the hypotenuse of a right triangle is related to the lengths of the other two sides. Look through the <code class="docutils literal"><span class="pre">math</span></code> module and see if you can find a function that will compute this relationship for you. Once you find it, write a short program to try it out.</p>
+<blockquote>
+<div>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_16">
+
+
+</textarea>
+</div></blockquote>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="q16_answer">
+import math
+
+side1 = 3
+side2 = 4
+hypotenuse = math.hypot(side1,side2)
+print(hypotenuse)
+</textarea>
+</div>
+</div>
+</li>
+<li><p class="first">Search on the internet for a way to calculate an approximation for <strong>pi</strong>.  There are many that use simple arithmetic. Write a program to compute the approximation and then print that value as well as the value of <code class="docutils literal"><span class="pre">math.pi</span></code> from the math module.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_mod_4">
+
+
+</textarea>
+</li>
+</ol>
+</div>
+<div class="section" id="graded-lesson-assignment">
+<h2>Graded Lesson Assignment<a class="headerlink" href="#graded-lesson-assignment" title="Permalink to this headline">¶</a></h2>
+<div class="full-width container">
+<p>Assume you have a list of numbers <code class="docutils literal"><span class="pre">nums</span> <span class="pre">=</span> <span class="pre">[12,</span> <span class="pre">10,</span> <span class="pre">32,</span> <span class="pre">3,</span> <span class="pre">66,</span> <span class="pre">17,</span> <span class="pre">42,</span> <span class="pre">99,</span> <span class="pre">20]</span></code></p>
+<ol class="loweralpha">
+<li><p class="first">Write a loop that prints each of the numbers on a new line, like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">12</span>
+<span class="mi">10</span>
+<span class="o">...</span><span class="n">etc</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Write a second loop that prints each number and its square on a new line, precisely like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">square</span> <span class="n">of</span> <span class="mi">12</span> <span class="ow">is</span> <span class="mi">144</span>
+<span class="n">The</span> <span class="n">square</span> <span class="n">of</span> <span class="mi">10</span> <span class="ow">is</span> <span class="mi">100</span>
+<span class="o">...</span><span class="n">etc</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_3_4">
+nums = [12, 10, 32, 3, 66, 17, 42, 99, 20]
+</textarea>
+<p><strong>Ready to submit your code?  Time to fork, and submit a Pull Request to</strong>: <a class="reference external" href="https://github.com/devetrycodeforward/04-list-of-numbers">this Github Repository</a>.</p>
+</div>
+</div>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 14. Glossary">
+<a href="/PythonTurtle/Glossary">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/PythonTurtle/Glossary" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - Chapter 5: Functions">
+<a href="/ChapterHeadings/Heading5">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/ChapterHeadings/Heading5" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/PythonTurtle/Exercises.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

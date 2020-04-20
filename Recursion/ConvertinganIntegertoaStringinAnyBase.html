@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>4. Converting an Integer to a String in Any Base — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/Recursion/intro-VisualizingRecursion" rel="next" title="5. Visualizing Recursion"/>
+<link href="/Recursion/TheThreeLawsofRecursion" rel="prev" title="3. The Three Laws of Recursion"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="converting-an-integer-to-a-string-in-any-base">
+<h1>4. Converting an Integer to a String in Any Base<a class="headerlink" href="#converting-an-integer-to-a-string-in-any-base" title="Permalink to this headline">¶</a></h1>
+<p>Suppose you want to convert an integer to a string in some base between
+binary and hexadecimal. For example, convert the integer 10 to its
+string representation in decimal as <code class="docutils literal"><span class="pre">"10"</span></code>, or to its string
+representation in binary as <code class="docutils literal"><span class="pre">"1010"</span></code>. While there are many approaches one
+can take
+to solve this problem, the recursive formulation of the problem is very
+elegant.</p>
+<p>Let’s look at a concrete example using base 10 and the number 769.
+Suppose we have a sequence of characters corresponding to the first 10
+digits, like <code class="docutils literal"><span class="pre">convString</span> <span class="pre">=</span> <span class="pre">"0123456789"</span></code>. It is easy to convert a
+number less than 10 to its string equivalent by looking it up in the
+sequence. For example, if the number is 9, then the string is
+<code class="docutils literal"><span class="pre">convString[9]</span></code> or <code class="docutils literal"><span class="pre">"9"</span></code>. If we can arrange to break up the number
+769 into three single-digit numbers, 7, 6, and 9, then converting it to
+a string is simple. A number less than 10 sounds like a good base case.</p>
+<p>Knowing what our base is suggests that the overall algorithm will
+involve three components:</p>
+<ol class="arabic simple">
+<li>Reduce the original number to a series of single-digit numbers.</li>
+<li>Convert the single digit-number to a string using a lookup.</li>
+<li>Concatenate the single-digit strings together to form the final
+result.</li>
+</ol>
+<p>The next step is to figure out how to change state and make progress
+toward the base case. Since we are working with an integer, let’s
+consider what mathematical operations might reduce a number. The most
+likely candidates are division and subtraction. While subtraction might
+work, it is unclear what we should subtract from what. Integer division
+with remainders gives us a clear direction. Let’s look at what happens
+if we divide a number by the base we are trying to convert to.</p>
+<p>Using integer division to divide 769 by 10, we get 76 with a remainder
+of 9. This gives us two good results. First, the remainder is a number
+less than our base that can be converted to a string immediately by
+lookup. Second, we get a number that is smaller than our original and
+moves us toward the base case of having a single number less than our
+base. Now our job is to convert 76 to its string representation. Again
+we will use integer division plus remainder to get results of 7 and 6
+respectively. Finally, we have reduced the problem to converting 7,
+which we can do easily since it satisfies the base case condition of
+<span class="math">\(n &lt; base\)</span>, where <span class="math">\(base = 10\)</span>. The series of operations
+we have just performed is illustrated in <a class="reference internal" href="/Recursion/#fig-tostr"><span class="std std-ref">Figure 3</span></a>. Notice that
+the numbers we want to remember are in the remainder boxes along the
+right side of the diagram.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-tostr"></span><img alt="image" src="/_images/toStr.png"/>
+<p class="caption"><span class="caption-text">Figure 3: Converting an Integer to a String in Base 10</span></p>
+</div>
+<p>The activecode below shows the Python code that implements the algorithm
+outlined above for any base between 2 and 16.</p>
+<textarea data-audio="" data-caption="Recursively Converting from Integer to String" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="lst_rectostr_editor">
+def toStr(n,base):
+   convertString = "0123456789ABCDEF"
+   if n &lt; base:
+      return convertString[n]
+   else:
+      return toStr(n//base,base) + convertString[n%base]
+
+print(toStr(1453,16))
+</textarea>
+<p>Notice that in line 3 we check for the base case where <code class="docutils literal"><span class="pre">n</span></code>
+is less than the base we are converting to. When we detect the base
+case, we stop recursing and simply return the string from the
+<code class="docutils literal"><span class="pre">convertString</span></code> sequence. In line 6 we satisfy both the
+second and third laws–by making the recursive call and by reducing the
+problem size–using division.</p>
+<p>Let’s trace the algorithm again; this time we will convert the number 10
+to its base 2 string representation (<code class="docutils literal"><span class="pre">"1010"</span></code>).</p>
+<div class="figure align-center" id="id2">
+<span id="fig-tostr2"></span><img alt="image" src="/_images/toStrBase2.png"/>
+<p class="caption"><span class="caption-text">Figure 4: Converting the Number 10 to its Base 2 String Representation</span></p>
+</div>
+<p><a class="reference internal" href="/Recursion/#fig-tostr2"><span class="std std-ref">Figure 4</span></a> shows that we get the results we are looking for,
+but it looks like the digits are in the wrong order. The algorithm works
+correctly because we make the recursive call first on line
+6, then we add the string representation of the remainder.
+If we reversed returning the <code class="docutils literal"><span class="pre">convertString</span></code> lookup and returning the
+<code class="docutils literal"><span class="pre">toStr</span></code> call, the resulting string would be backward! But by delaying
+the concatenation operation until after the recursive call has returned,
+we get the result in the proper order.</p>
+<div class="admonition-self-check admonition">
+<p class="first admonition-title">Self Check</p>
+<p>Write a function that takes a string as a parameter and returns a new string that is the reverse of the old string.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="recursion_sc_1">
+from test import testEqual
+def reverse(s):
+    return s
+
+testEqual(reverse("hello"),"olleh")
+testEqual(reverse("l"),"l")
+testEqual(reverse("follow"),"wollof")
+testEqual(reverse(""),"")
+</textarea>
+<p>Write a function that takes a string as a parameter and returns True if the string is a palindrome, False otherwise. Remember that a string is a palindrome if it is spelled the same both forward and backward. for example:  radar is a palindrome. for bonus points palindromes can also be phrases, but you need to remove the spaces and punctuation before checking. for example:  madam i’m adam  is a palindrome. Other fun palindromes include:</p>
+<ul class="simple">
+<li>kayak</li>
+<li>aibohphobia</li>
+<li>Live not on evil</li>
+<li>Reviled did I live, said I, as evil I did deliver</li>
+<li>Go hang a salami; I’m a lasagna hog.</li>
+<li>Able was I ere I saw Elba</li>
+<li>Kanakanak –  a town in Alaska</li>
+<li>Wassamassaw – a town in South Dakota</li>
+</ul>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="recursion_sc_2">
+from test import testEqual
+def removeWhite(s):
+    return s
+
+def isPal(s):
+    return False
+
+testEqual(isPal(removeWhite("x")),True)
+testEqual(isPal(removeWhite("radar")),True)
+testEqual(isPal(removeWhite("hello")),False)
+testEqual(isPal(removeWhite("")),True)
+testEqual(isPal(removeWhite("hannah")),True)
+testEqual(isPal(removeWhite("madam i'm adam")),True)
+</textarea>
+</div>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 3. The Three Laws of Recursion">
+<a href="/Recursion/TheThreeLawsofRecursion">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/Recursion/TheThreeLawsofRecursion" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 5. Visualizing Recursion">
+<a href="/Recursion/intro-VisualizingRecursion">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/Recursion/intro-VisualizingRecursion" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/Recursion/ConvertinganIntegertoaStringinAnyBase.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

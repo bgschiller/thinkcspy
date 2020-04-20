@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>6. Sierpinski Triangle — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/Recursion/Glossary" rel="next" title="7. Glossary"/>
+<link href="/Recursion/intro-VisualizingRecursion" rel="prev" title="5. Visualizing Recursion"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="sierpinski-triangle">
+<h1>6. Sierpinski Triangle<a class="headerlink" href="#sierpinski-triangle" title="Permalink to this headline">¶</a></h1>
+<p>Another fractal that exhibits the property of self-similarity is the
+Sierpinski triangle. An example is shown in <a class="reference internal" href="/Recursion/#fig-sierpinski"><span class="std std-ref">Figure 3</span></a>. The
+Sierpinski triangle illustrates a three-way recursive algorithm. The
+procedure for drawing a Sierpinski triangle by hand is simple. Start
+with a single large triangle. Divide this large triangle into four new
+triangles by connecting the midpoint of each side. Ignoring the middle
+triangle that you just created, apply the same procedure to each of the
+three corner triangles. Each time you create a new set of triangles, you
+recursively apply this procedure to the three smaller corner triangles.
+You can continue to apply this procedure indefinitely if you have a
+sharp enough pencil. Before you continue reading, you may want to try
+drawing the Sierpinski triangle yourself, using the method described.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-sierpinski"></span><img alt="../_images/sierpinski.png" src="/_images/sierpinski.png"/>
+<p class="caption"><span class="caption-text">Figure 3: The Sierpinski Triangle</span></p>
+</div>
+<p>Since we can continue to apply the algorithm indefinitely, what is the
+base case? We will see that the base case is set arbitrarily as the
+number of times we want to divide the triangle into pieces. Sometimes we
+call this number the “degree” of the fractal. Each time we make a
+recursive call, we subtract 1 from the degree until we reach 0. When we
+reach a degree of 0, we stop making recursive calls. The code that
+generated this Sierpinski Triangle is shown below.</p>
+<textarea data-audio="" data-caption="Drawing a Sierpinski Triangle" data-component="activecode" data-lang="python" data-timelimit="25000" id="lst_st_editor">
+import turtle
+
+def drawTriangle(points,color,myTurtle):
+    myTurtle.fillcolor(color)
+    myTurtle.up()
+    myTurtle.goto(points[0][0],points[0][1])
+    myTurtle.down()
+    myTurtle.begin_fill()
+    myTurtle.goto(points[1][0],points[1][1])
+    myTurtle.goto(points[2][0],points[2][1])
+    myTurtle.goto(points[0][0],points[0][1])
+    myTurtle.end_fill()
+
+def getMid(p1,p2):
+    return ( (p1[0]+p2[0]) / 2, (p1[1] + p2[1]) / 2)
+
+def sierpinski(points,degree,myTurtle):
+    colormap = ['blue','red','green','white','yellow',
+                'violet','orange']
+    drawTriangle(points,colormap[degree],myTurtle)
+    if degree &gt; 0:
+        sierpinski([points[0],
+                        getMid(points[0], points[1]),
+                        getMid(points[0], points[2])],
+                   degree-1, myTurtle)
+        sierpinski([points[1],
+                        getMid(points[0], points[1]),
+                        getMid(points[1], points[2])],
+                   degree-1, myTurtle)
+        sierpinski([points[2],
+                        getMid(points[2], points[1]),
+                        getMid(points[0], points[2])],
+                   degree-1, myTurtle)
+
+def main():
+   myTurtle = turtle.Turtle()
+   myWin = turtle.Screen()
+   myPoints = [[-100,-50],[0,100],[100,-50]]
+   sierpinski(myPoints,3,myTurtle)
+   myWin.exitonclick()
+
+main()
+</textarea>
+<p>This program follows the ideas outlined above. The
+first thing <code class="docutils literal"><span class="pre">sierpinski</span></code> does is draw the outer triangle. Next, there
+are three recursive calls, one for each of the new corner triangles we
+get when we connect the midpoints.</p>
+<p>Look at the code and think about the order in which the triangles will
+be drawn. While the exact order of the corners depends upon how the
+initial set is specified, let’s assume that the corners are ordered
+lower left, top, lower right. Because of the way the <code class="docutils literal"><span class="pre">sierpinski</span></code>
+function calls itself, <code class="docutils literal"><span class="pre">sierpinski</span></code> works its way to the smallest
+allowed triangle in the lower-left corner, and then begins to fill out
+the rest of the triangles working back. Then it fills in the triangles
+in the top corner by working toward the smallest, topmost triangle.
+Finally, it fills in the lower-right corner, working its way toward the
+smallest triangle in the lower right.</p>
+<p>Sometimes it is helpful to think of a recursive algorithm in terms of a
+diagram of function calls. <a class="reference internal" href="/Recursion/#fig-stcalltree"><span class="std std-ref">Figure 4</span></a> shows that the recursive
+calls are always made going to the left. The active functions are
+outlined in black, and the inactive function calls are in gray. The
+farther you go toward the bottom of <a class="reference internal" href="/Recursion/#fig-stcalltree"><span class="std std-ref">Figure 4</span></a>, the smaller the
+triangles. The function finishes drawing one level at a time; once it is
+finished with the bottom left it moves to the bottom middle, and so on.</p>
+<div class="figure align-center" id="id2">
+<span id="fig-stcalltree"></span><img alt="../_images/stCallTree.png" src="/_images/stCallTree.png"/>
+<p class="caption"><span class="caption-text">Figure 4: Building a Sierpinski Triangle</span></p>
+</div>
+<p>The <code class="docutils literal"><span class="pre">sierpinski</span></code> function relies heavily on the <code class="docutils literal"><span class="pre">getMid</span></code> function.
+<code class="docutils literal"><span class="pre">getMid</span></code> takes as arguments two endpoints and returns the point
+halfway between them. In addition, this program has a function that
+draws a filled triangle using the <code class="docutils literal"><span class="pre">begin_fill</span></code> and <code class="docutils literal"><span class="pre">end_fill</span></code> turtle
+methods.</p>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 5. Visualizing Recursion">
+<a href="/Recursion/intro-VisualizingRecursion">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/Recursion/intro-VisualizingRecursion" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - 7. Glossary">
+<a href="/Recursion/Glossary">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/Recursion/Glossary" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/Recursion/SierpinskiTriangle.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

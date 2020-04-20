@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>11. Exercises — How to Think like a Computer Scientist: Interactive Edition</title>
+<link href="/_static/basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/livecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/pytutor.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/modal-basic.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codesplain.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/codemirror.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/activecode.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/parsons.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/lib/prettify.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/dragndrop.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/tabbedstuff.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/clickable.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/datafile.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/poll.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/video.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/fitb.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/bootstrap-sphinx.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/user-highlights.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/runestone-custom-sphinx-bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/_static/brian_custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="/_static/runestonebase.js" type="text/javascript"></script>
+<script src="/_static/jquery.js" type="text/javascript"></script>
+<script src="/_static/underscore.js" type="text/javascript"></script>
+<script src="/_static/doctools.js" type="text/javascript"></script>
+<script src="/_static/livecode.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/animationbase.js" type="text/javascript"></script>
+<script src="/_static/d3.v2.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.jsPlumb-1.3.10-all-min.js" type="text/javascript"></script>
+<script src="/_static/pytutor.js" type="text/javascript"></script>
+<script src="/_static/codelens.js" type="text/javascript"></script>
+<script src="/_static/shortanswer.js" type="text/javascript"></script>
+<script src="/_static/timed_shortanswer.js" type="text/javascript"></script>
+<script src="/_static/codesplain.js" type="text/javascript"></script>
+<script src="/_static/jquery.highlight.js" type="text/javascript"></script>
+<script src="/_static/bookfuncs.js" type="text/javascript"></script>
+<script src="/_static/codemirror.js" type="text/javascript"></script>
+<script src="/_static/xml.js" type="text/javascript"></script>
+<script src="/_static/css.js" type="text/javascript"></script>
+<script src="/_static/htmlmixed.js" type="text/javascript"></script>
+<script src="/_static/python.js" type="text/javascript"></script>
+<script src="/_static/javascript.js" type="text/javascript"></script>
+<script src="/_static/activecode.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/clike.js" type="text/javascript"></script>
+<script src="/_static/timed_activecode.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/_static/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/_static/lib/prettify.js" type="text/javascript"></script>
+<script src="/_static/lib/underscore-min.js" type="text/javascript"></script>
+<script src="/_static/lib/lis.js" type="text/javascript"></script>
+<script src="/_static/parsons_setup.js" type="text/javascript"></script>
+<script src="/_static/parsons.js" type="text/javascript"></script>
+<script src="/_static/parsons-noconflict.js" type="text/javascript"></script>
+<script src="/_static/timedparsons.js" type="text/javascript"></script>
+<script src="/_static/dragndrop.js" type="text/javascript"></script>
+<script src="/_static/timeddnd.js" type="text/javascript"></script>
+<script src="/_static/tabbedstuff.js" type="text/javascript"></script>
+<script src="/_static/clickable.js" type="text/javascript"></script>
+<script src="/_static/timedclickable.js" type="text/javascript"></script>
+<script src="/_static/skulpt.min.js" type="text/javascript"></script>
+<script src="/_static/skulpt-stdlib.js" type="text/javascript"></script>
+<script src="/_static/datafile.js" type="text/javascript"></script>
+<script src="/_static/poll.js" type="text/javascript"></script>
+<script src="/_static/reveal.js" type="text/javascript"></script>
+<script src="/_static/mchoice.js" type="text/javascript"></script>
+<script src="/_static/timedmc.js" type="text/javascript"></script>
+<script src="/_static/fitb.js" type="text/javascript"></script>
+<script src="/_static/timedfitb.js" type="text/javascript"></script>
+<script src="/_static/timed.js" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="/_static/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/_static/jquery-fix.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-3.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/_static/bootstrap-sphinx.js" type="text/javascript"></script>
+<script src="/_static/waypoints.min.js" type="text/javascript"></script>
+<script src="/_static/rangy-core.js" type="text/javascript"></script>
+<script src="/_static/rangy-textrange.js" type="text/javascript"></script>
+<script src="/_static/rangy-cssclassapplier.js" type="text/javascript"></script>
+<script src="/_static/user-highlights.js" type="text/javascript"></script>
+<script src="/_static/jquery.idle-timer.js" type="text/javascript"></script>
+<script src="/_static/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="/_static/jquery.hotkey.js" type="text/javascript"></script>
+<script src="/_static/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/_static/brian_custom.js" type="text/javascript"></script>
+<link href="/toc" rel="top" title="How to Think like a Computer Scientist: Interactive Edition"/>
+<link href="/ChapterHeadings/Heading10" rel="next" title="Chapter 10: Lists"/>
+<link href="/Strings/Glossary" rel="prev" title="10. Glossary"/>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://coding101.devetry.com' ? 'http://coding101.devetry.com' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'thinkcspy';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = true;
+  eBookConfig.basecourse = 'thinkcspy';
+  eBookConfig.lang = 'python'
+</script>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+</meta></meta></head>
+<body role="document">
+<!-- Begin navbar -->
+<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div>
+<a class="brand-logo" href="/" style='background: transparent url("../_static/img/devetry_logo.png") no-repeat 0px 0px;'>  </a>
+<a class="navbar-brand" href="/">Think Python</a>
+</div>
+</div>
+<div class="navbar-collapse collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="divider-vertical"></li>
+<!-- scratch code dropdown -->
+<li>
+<a href="javascript:ACFactory.toggleScratchActivecode()">
+<i class="glyphicon glyphicon-edit" style="opacity:0.9;"></i>
+</a>
+</li>
+<!-- search dropdown -->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+<i class="glyphicon glyphicon-search" style="opacity:0.9;"></i>
+</a>
+<ul class="dropdown-menu">
+<li style="width: 240px;">
+<form action="../search.html" class="navbar-search" method="get" style="margin:10px;">
+<div class="input-group">
+<input class="form-control" name="q" placeholder="Search this book" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" style="margin:0;" type="submit">
+<i class="glyphicon glyphicon-search"></i>
+</button>
+</span>
+</div><!-- /input-group -->
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+</li>
+<li class="divider"></li>
+<li><a href="/genindex">Directory of Concepts</a></li>
+</ul>
+</li>
+<!-- end search dropdown -->
+<li class="divider-vertical"></li>
+</ul></div>
+</div>
+</div>
+<div class="container" id="continue-reading"></div>
+<div class="container" id="main-content">
+<div class="section" id="exercises">
+<h1>11. Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="full-width container">
+<ol class="arabic">
+<li><div data-component="tabbedStuff" id="q1"><div data-component="tab" data-tabname="Question">
+<p>What is the result of each of the following:</p>
+<ol class="loweralpha simple">
+<li>‘Python’[1]</li>
+<li>“Strings are sequences of characters.”[5]</li>
+<li>len(“wonderful”)</li>
+<li>‘Mystery’[:4]</li>
+<li>‘p’ in ‘Pineapple’</li>
+<li>‘apple’ in ‘Pineapple’</li>
+<li>‘pear’ not in ‘Pineapple’</li>
+<li>‘apple’ &gt; ‘pineapple’</li>
+<li>‘pineapple’ &lt; ‘Peach’</li>
+</ol>
+</div><div data-component="tab" data-tabname="Answer">
+<ol class="loweralpha simple">
+<li>‘Python’[1] = ‘y’</li>
+<li>‘Strings are sequences of characters.’[5] = ‘g’</li>
+<li>len(‘wonderful’) = 9</li>
+<li>‘Mystery’[:4] = ‘Myst’</li>
+<li>‘p’ in ‘Pineapple’ = True</li>
+<li>‘apple’ in ‘Pineapple’ = True</li>
+<li>‘pear’ not in ‘Pineapple’ = True</li>
+<li>‘apple’ &gt; ‘pineapple’ = False</li>
+<li>‘pineapple’ &lt; ‘Peach’ = False</li>
+</ol>
+</div>
+</div>
+</li>
+<li><div data-component="tabbedStuff" id="q2"><div data-component="tab" data-tabname="Question">
+<p>Write a function that will return the number of digits in an integer.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_7_10">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="q2_answer">
+def find_num_digits(n):
+    n_str = str(n)
+    return len(n_str)
+
+def main():
+    print(find_num_digits(50))
+    print(find_num_digits(20000))
+    print(find_num_digits(1))
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div>
+</div>
+</li>
+<li><div data-component="tabbedStuff" id="q11"><div data-component="tab" data-tabname="Question">
+<p>Write a function that removes the first occurrence of a string from another string.</p>
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_8_10">
+from test import testEqual
+
+def remove(substr,original_string):
+    # your code here
+
+testEqual(remove('an', 'banana'), 'bana')
+testEqual(remove('cyc', 'bicycle'), 'bile')
+testEqual(remove('iss', 'Mississippi'), 'Missippi')
+testEqual(remove('egg', 'bicycle'), 'bicycle')
+testEqual(remove('oo', 'Yahoohoo'), 'Yahhoo')
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-component="activecode" data-lang="python" data-timelimit="25000" id="q11_answer">
+from test import testEqual
+
+def remove(substr,original_string):
+    index = original_string.find(substr)
+    if index &lt; 0: # substr doesn't exist in original_string
+        return original_string
+    return_str = original_string[:index] + original_string[index+len(substr):]
+    return return_str
+
+testEqual(remove('an', 'banana'), 'bana')
+testEqual(remove('cyc', 'bicycle'), 'bile')
+testEqual(remove('iss', 'Mississippi'), 'Missippi')
+testEqual(remove('egg', 'bicycle'), 'bicycle')
+</textarea>
+</div>
+</div>
+</li>
+<li><p class="first">Write a function <code class="docutils literal"><span class="pre">reverse</span></code> that receives a string argument, and returns a reversed version of the string.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_8_5">
+from test import testEqual
+
+def reverse(text):
+    # your code here
+
+testEqual(reverse("happy"), "yppah")
+testEqual(reverse("Python"), "nohtyP")
+testEqual(reverse(""), "")
+</textarea>
+</li>
+<li><p class="first">Write a function that recognizes palindromes. (Hint: use your <code class="docutils literal"><span class="pre">reverse</span></code> function to make this easy!).</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_8_8">
+from test import testEqual
+
+def is_palindrome(text):
+    # your code here
+
+testEqual(is_palindrome('abba'), True)
+testEqual(is_palindrome('abab'), False)
+testEqual(is_palindrome('straw warts'), True)
+testEqual(is_palindrome('a'), True)
+testEqual(is_palindrome(''), True)
+</textarea>
+</li>
+<li><p class="first">Write a function that mirrors its argument. For example, <code class="docutils literal"><span class="pre">mirror('good')</span></code> should return a string holding the value <code class="docutils literal"><span class="pre">gooddoog</span></code>. (Hint: Make use of the <code class="docutils literal"><span class="pre">reverse</span></code> function).</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_8_6">
+def mirror(text):
+    # your code here
+
+def reverse(text):
+    # your code here
+
+
+from test import testEqual
+testEqual(mirror('good'), 'gooddoog')
+testEqual(mirror('Python'), 'PythonnohtyP')
+testEqual(mirror(''), '')
+testEqual(mirror('a'), 'aa')
+</textarea>
+</li>
+<li><p class="first">Write a function that implements a substitution cipher. In a substitution cipher one letter is substituted for another to garble the message. For example A -&gt; Q, B -&gt; T, C -&gt; G etc. your function should take two parameters, the message you want to encrypt, and a string that represents the mapping of the 26 letters in the alphabet. Your function should return a string that is the encrypted version of the message.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_8_17">
+
+
+</textarea>
+</li>
+<li><div data-component="tabbedStuff" id="q19"><div data-component="tab" data-tabname="Question">
+<p>Write a function that decrypts the message from the previous exercise. It
+should also take two parameters. The encrypted message,
+and the mixed up alphabet. The function should return a string that is
+the same as the original unencrypted message.</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_8_18">
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="q19_answer">
+def encrypt(message, cipher):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    encrypted = ''
+    for char in message:
+        if char == ' ':
+            encrypted = encrypted + ' '
+        else:
+            pos = alphabet.index(char)
+            encrypted = encrypted + cipher[pos]
+    return encrypted
+
+def decrypt(encrypted, cipher):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    decrypted = ''
+    for char in encrypted:
+        if char == ' ':
+            decrypted = decrypted + ' '
+        else:
+            pos = cipher.index(char)
+            decrypted = decrypted + alphabet[pos]
+    return decrypted
+
+
+cipher = "badcfehgjilknmporqtsvuxwzy"
+
+encrypted = encrypt('hello world', cipher)
+print(encrypted)
+
+decrypted = decrypt(encrypted, cipher)
+print(decrypted)
+</textarea>
+</div>
+</div>
+</li>
+<li><div data-component="tabbedStuff" id="q21"><div data-component="tab" data-tabname="Question">
+<p>Write a function called <code class="docutils literal"><span class="pre">rot13</span></code> that uses the Caesar cipher to encrypt a message. The Caesar cipher works like a substitution cipher but each character is replaced by the character 13 characters to “its right” in the alphabet. So for example the letter “a” becomes the letter “n”. If a letter is past the middle of the alphabet then the counting wraps around to the letter “a” again, so “n” becomes “a”, “o” becomes “b” and so on.  <em>Hint:</em> Whenever you talk about things wrapping around its a good idea to think of modulo arithmetic (using the remainder operator).</p>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_8_20">
+def rot13(mess):
+    # Your code here
+
+def main():
+    print(rot13('abcde'))
+    print(rot13('nopqr'))
+    print(rot13(rot13('since rot thirteen is symmetric you should see this message')))
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div><div data-component="tab" data-tabname="Answer">
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="q21_answer">
+def rot13(mess):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    encrypted = ''
+    for char in mess:
+        if char == ' ':
+            encrypted = encrypted + ' '
+        else:
+            rotated_index = alphabet.index(char) + 13
+            if rotated_index &lt; 26:
+                encrypted = encrypted + alphabet[rotated_index]
+            else:
+                encrypted = encrypted + alphabet[rotated_index % 26]
+    return encrypted
+
+def main():
+    print(rot13('abcde'))
+    print(rot13('nopqr'))
+    print(rot13(rot13('since rot thirteen is symmetric you should see this message')))
+
+if __name__ == "__main__":
+    main()
+</textarea>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="graded-lesson-assignment">
+<h2>Graded Lesson Assignment<a class="headerlink" href="#graded-lesson-assignment" title="Permalink to this headline">¶</a></h2>
+<div class="full-width container">
+<p>Write a function <code class="docutils literal"><span class="pre">analyze_text</span></code> that receives a string as input. Your function should count the number of alphabetic characters (a through z, or A through Z) in the text and also keep track of how many are the letter <code class="docutils literal"><span class="pre">'e'</span></code> (upper or lowercase).</p>
+<p>Your function should return an analysis of the text in the form of a string phrased exactly like this:</p>
+<p>“The text contains 240 alphabetic characters, of which 105 (43.75%) are ‘e’.”</p>
+<p>You will need to make use of the <code class="docutils literal"><span class="pre">isalpha</span></code> function, which can be used like this</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="s2">"a"</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span> <span class="c1"># =&gt; evaluates to True</span>
+<span class="s2">"3"</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span> <span class="c1"># =&gt; evaluates to False</span>
+<span class="s2">"&amp;"</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span> <span class="c1"># =&gt; False</span>
+<span class="s2">" "</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span> <span class="c1"># =&gt; False</span>
+
+<span class="n">mystr</span> <span class="o">=</span> <span class="s2">"Q"</span>
+<span class="n">mystr</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span> <span class="c1"># =&gt; True</span>
+</pre></div>
+</div>
+<textarea data-audio="" data-codelens="true" data-component="activecode" data-lang="python" data-timelimit="25000" id="ex_8_3">
+def analyze_text(text):
+    # Your code here
+
+
+# Note that depending on whether you use str.format or string concatenation
+# your code will pass different tests. As long as your code passes either
+# tests 1-3 OR tests 4-6, yo'll be okay. See below for more details.
+from test import testEqual
+
+# Tests 1-3: solutions using string concatenation should pass these
+text1 = "Eeeee"
+answer1 = "The text contains 5 alphabetic characters, of which 5 (100.0%) are 'e'."
+testEqual(analyze_text(text1), answer1)
+
+text2 = "Blueberries are tasteee!"
+answer2 = "The text contains 21 alphabetic characters, of which 7 (33.3333333333%) are 'e'."
+testEqual(analyze_text(text2), answer2)
+
+text3 = "Wright's book, Gadsby, contains a total of 0 of that most common symbol ;)"
+answer3 = "The text contains 55 alphabetic characters, of which 0 (0.0%) are 'e'."
+testEqual(analyze_text(text3), answer3)
+
+# Tests 4-6: solutions using str.format should pass these
+text4 = "Eeeee"
+answer4 = "The text contains 5 alphabetic characters, of which 5 (100%) are 'e'."
+testEqual(analyze_text(text4), answer4)
+
+text5 = "Blueberries are tasteee!"
+answer5 = "The text contains 21 alphabetic characters, of which 7 (33.33333333333333%) are 'e'."
+testEqual(analyze_text(text5), answer5)
+
+text6 = "Wright's book, Gadsby, contains a total of 0 of that most common symbol ;)"
+answer6 = "The text contains 55 alphabetic characters, of which 0 (0%) are 'e'."
+testEqual(analyze_text(text6), answer6)
+</textarea>
+</div>
+<p><strong>Ready to submit your code?  Time to fork, and submit a Pull Request to</strong>: <a class="reference external" href="https://github.com/devetrycodeforward/09-analyze-text">this Github Repository</a>.</p>
+</div>
+</div>
+<li class="navLink" data-toggle="tooltip" id="relations-prev" title="Previous Section - 10. Glossary">
+<a href="/Strings/Glossary">
+<i class="prevNav glyphicon glyphicon-chevron-left"></i>
+</a>
+</li>
+<a class="navLinkBg" href="/Strings/Glossary" id="navLinkBgLeft"></a>
+<li class="navLink" data-toggle="tooltip" id="relations-next" title="Next Section - Chapter 10: Lists">
+<a href="/ChapterHeadings/Heading10">
+<i class="nextNav glyphicon glyphicon-chevron-right" id="relationsNextIcon"></i>
+</a>
+</li>
+<a class="navLinkBg navLink" href="/ChapterHeadings/Heading10" id="navLinkBgRight"></a>
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+<footer>
+<div class="center">
+<a class="edit-this-page-link" href="https://github.com/bgschiller/thinkcspy/tree/master/_sources/Strings/Exercises.rst">
+<svg class="edit-icon" enable-background="new 0 0 100 100" version="1.1" viewbox="0 0 100 100" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><polygon points="15.081,64.633 37.24,86.144 79.92,42.182 57.762,20.678 "></polygon><polygon points="31.516,92.047 9.356,70.535 0,100.869 "></polygon><path d="M0,100.869"></path><polygon points="77.841,0 63.5,14.768 85.659,36.279 100,21.504 "></polygon></svg>
+          Edit this page on GitHub
+      </a>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78748330-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

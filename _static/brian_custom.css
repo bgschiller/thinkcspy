@@ -1,0 +1,87 @@
+.section:before {
+  display: block;
+  content: " ";
+  margin-top: -53px; /* or if you have a non-hardcoded way to refer to the height of the nav */
+  height: 53px;
+  visibility: hidden;
+}
+
+/* We don't want red borders warning students they haven't saved, because
+  we've disabled saving. */
+.CodeMirror.cm-s-default {
+  border-top: none!important;
+  border-bottom: none!important;
+}
+
+.ac_editor_container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.ac_output pre.ac-code-changed {
+  background: initial;
+  animation: flash-background 1s;
+}
+@keyframes flash-background {
+  0% {
+    background: rgba(255, 255, 0, 0.3);
+  }
+  100% {
+    background: initial;
+  }
+}
+
+body {
+  /* The next/prev page links are absolutely positioned to 95px
+  above the bottom of the body, so they disappear if the body is
+  too short. */
+  min-height: 300px;
+}
+
+#save-your-spot-in-coding-101 #top-relations-console,
+#save-your-spot-in-coding-101 #bottom-relations-console,
+#save-your-spot-in-coding-101 .navLink,
+#register-for-coding-101 #top-relations-console,
+#register-for-coding-101 #bottom-relations-console,
+#register-for-coding-101 .navLink {
+  display: none;
+}
+
+.registrationlink {
+  margin-bottom: 40px;
+  border: 2px dashed #aaaaaa;
+  border-radius: 4px;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+.registrationlink > p {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.registrationlink > p:first-child {
+  margin-top: 10px;
+  font-size: x-large;
+  font-weight: bold;
+  display: block;
+}
+
+footer {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+footer .center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+footer .center .edit-icon {
+  width: 16px;
+  fill: #428bca;
+  margin-right: 4px;
+}
+body {
+  height: 100%;
+  padding-bottom: 6rem; /* leave room for the footer */
+}
