@@ -1,4 +1,4 @@
 Register for Code Forward
 =========================
 
-The next session will begin April 1st. We will meet on Mondays and Thursdays from 6pm - 8:30pm. We look forward to having you in class :)
+Our next cohort is scheduled to bein mid 2020.  Please sign up below to recieve more information when it becomes available.
